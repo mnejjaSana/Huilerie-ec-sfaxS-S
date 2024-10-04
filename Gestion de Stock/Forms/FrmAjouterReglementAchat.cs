@@ -366,9 +366,8 @@ namespace Gestion_de_Stock.Forms
 
 
             if (gridView1.RowCount != 0 && MontantEncaisse >= 3000)
-            {
+            { // Depense 
                 List<Personne_Passager> ListePassagers = new List<Personne_Passager>();
-
                 int row = 0;
                 // Initialiser la liste des passagers
 
@@ -379,6 +378,50 @@ namespace Gestion_de_Stock.Forms
                     ListePersonneTicket.Add(data);
                     row++;
                 }
+                for (int j = ListePassagers.Count - 1; j >= 0; j--)
+                {
+                    Depense D = new Depense();
+
+
+                    D.Nature = NatureMouvement.ReglementImpo;
+                    D.CodeTiers = Achat.Founisseur.Numero;
+                    D.Agriculteur = Achat.Founisseur;
+                    D.Montant = ListePassagers[j].MontantReglement;
+                    D.ModePaiement = "Espèce";
+                    D.Tiers = Achat.Founisseur.FullName;
+                    D.Commentaire = "Règlement Achat N° " + TxtCodeAchat.Text;
+                    db.Depenses.Add(D);
+                    db.SaveChanges();
+                    int lastDep = db.Depenses.ToList().Count() + 1;
+                    D.Numero = "D" + (lastDep).ToString("D8");
+                    db.SaveChanges();
+
+                    // mvmCaisse
+                    MouvementCaisse mvtCaisse = new MouvementCaisse();
+                    mvtCaisse.MontantSens = ListePassagers[j].MontantReglement * -1;
+                    mvtCaisse.Sens = Sens.Depense;
+                    mvtCaisse.Date = DateTime.Now;
+                    mvtCaisse.Agriculteur = Achat.Founisseur;
+                    mvtCaisse.CodeTiers = Achat.Founisseur.Numero;
+                    mvtCaisse.Source = "Agriculteur: " + Achat.Founisseur.FullName;
+
+                    Caisse CaisseDb = db.Caisse.Find(1);
+                    if (CaisseDb != null)
+                    {
+                        CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, ListePassagers[j].MontantReglement);
+
+                    }
+                    mvtCaisse.Commentaire = "Règlement Achat N° " + TxtCodeAchat.Text;
+
+                    int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
+                    mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
+                    mvtCaisse.Achat = Achat;
+                    mvtCaisse.Montant = CaisseDb.MontantTotal;
+                    db.MouvementsCaisse.Add(mvtCaisse);
+                }
+              
+
+            
 
                 decimal totalGrid = ListePassagers.Sum(x => x.MontantReglement);
                 if (totalGrid != MontantEncaisse)
@@ -445,45 +488,7 @@ namespace Gestion_de_Stock.Forms
                                 numeroachats.RemoveAt(i); // Supprime l'élément à l'index i
                                 ListePassagers.RemoveAt(j);
 
-                                // Depense 
-                                Depense D = new Depense();
-
-
-                                D.Nature = NatureMouvement.ReglementImpo;
-                                D.CodeTiers = Achat.Founisseur.Numero;
-                                D.Agriculteur = Achat.Founisseur;
-                                D.Montant = MtAPayeAvecImpoAjouterREG;
-                                D.ModePaiement = "Espèce";
-                                D.Tiers = Achat.Founisseur.FullName;
-                                D.Commentaire = "Règlement Achat N° " + TxtCodeAchat.Text;
-                                db.Depenses.Add(D);
-                                db.SaveChanges();
-                                int lastDep = db.Depenses.ToList().Count() + 1;
-                                D.Numero = "D" + (lastDep).ToString("D8");
-                                db.SaveChanges();
-
-                                // mvmCaisse
-                                MouvementCaisse mvtCaisse = new MouvementCaisse();
-                                mvtCaisse.MontantSens = MtAPayeAvecImpoAjouterREG * -1;
-                                mvtCaisse.Sens = Sens.Depense;
-                                mvtCaisse.Date = DateTime.Now;
-                                mvtCaisse.Agriculteur = Achat.Founisseur;
-                                mvtCaisse.CodeTiers = Achat.Founisseur.Numero;
-                                mvtCaisse.Source = "Agriculteur: " + Achat.Founisseur.FullName;
-
-                                Caisse CaisseDb = db.Caisse.Find(1);
-                                if (CaisseDb != null)
-                                {
-                                    CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MtAPayeAvecImpoAjouterREG);
-
-                                }
-                                mvtCaisse.Commentaire = "Règlement Achat N° " + TxtCodeAchat.Text;
-
-                                int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
-                                mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
-                                mvtCaisse.Achat = Achat;
-                                mvtCaisse.Montant = CaisseDb.MontantTotal;
-                                db.MouvementsCaisse.Add(mvtCaisse);
+                               
 
                                 break;
                             }
@@ -514,45 +519,7 @@ namespace Gestion_de_Stock.Forms
                                     Numero = Achatdb.Numero
                                 });
                                 db.HistoriquePaiementAchats.Add(HPAchat);
-                                // Depense 
-                                Depense D = new Depense();
-
-
-                                D.Nature = NatureMouvement.ReglementImpo;
-                                D.CodeTiers = Achat.Founisseur.Numero;
-                                D.Agriculteur = Achat.Founisseur;
-                                D.Montant = MtAPayeAvecImpoAjouterREG;
-                                D.ModePaiement = "Espèce";
-                                D.Tiers = Achat.Founisseur.FullName;
-                                D.Commentaire = "Règlement Achat N° " + TxtCodeAchat.Text;
-                                db.Depenses.Add(D);
-                                db.SaveChanges();
-                                int lastDep = db.Depenses.ToList().Count() + 1;
-                                D.Numero = "D" + (lastDep).ToString("D8");
-                                db.SaveChanges();
-
-                                // mvmCaisse
-                                MouvementCaisse mvtCaisse = new MouvementCaisse();
-                                mvtCaisse.MontantSens = MtAPayeAvecImpoAjouterREG * -1;
-                                mvtCaisse.Sens = Sens.Depense;
-                                mvtCaisse.Date = DateTime.Now;
-                                mvtCaisse.Agriculteur = Achat.Founisseur;
-                                mvtCaisse.CodeTiers = Achat.Founisseur.Numero;
-                                mvtCaisse.Source = "Agriculteur: " + Achat.Founisseur.FullName;
-
-                                Caisse CaisseDb = db.Caisse.Find(1);
-                                if (CaisseDb != null)
-                                {
-                                    CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MtAPayeAvecImpoAjouterREG);
-
-                                }
-                                mvtCaisse.Commentaire = "Règlement Achat N° " + TxtCodeAchat.Text;
-
-                                int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
-                                mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
-                                mvtCaisse.Achat = Achat;
-                                mvtCaisse.Montant = CaisseDb.MontantTotal;
-                                db.MouvementsCaisse.Add(mvtCaisse); ListePassagers.RemoveAt(j);
+                               ListePassagers.RemoveAt(j);
                                 break;
                             }
                             else if (ListePassagers[j].MontantReglement > Achatdb.ResteApayer)

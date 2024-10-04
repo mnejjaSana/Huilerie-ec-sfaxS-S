@@ -552,6 +552,12 @@
     <Compile Include="Forms\FrmResultatCaisse.Designer.cs">
       <DependentUpon>FrmResultatCaisse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmRetenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRetenu.Designer.cs">
+      <DependentUpon>FrmRetenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmSalarier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1141,6 +1147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmResultatCaisse.resx">
       <DependentUpon>FrmResultatCaisse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRetenu.resx">
+      <DependentUpon>FrmRetenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSalarier.resx">
       <DependentUpon>FrmSalarier.cs</DependentUpon>
