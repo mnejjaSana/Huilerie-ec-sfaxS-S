@@ -758,6 +758,10 @@
     <Compile Include="Migrations\202410042053105_retenu.designer.cs">
       <DependentUpon>202410042053105_retenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202410042201546_retenuuu.cs" />
+    <Compile Include="Migrations\202410042201546_retenuuu.designer.cs">
+      <DependentUpon>202410042201546_retenuuu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Achat.cs" />
     <Compile Include="Model\Affaire.cs" />
@@ -1277,6 +1281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202410042053105_retenu.resx">
       <DependentUpon>202410042053105_retenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410042201546_retenuuu.resx">
+      <DependentUpon>202410042201546_retenuuu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

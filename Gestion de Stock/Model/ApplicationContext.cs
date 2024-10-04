@@ -22,8 +22,9 @@ namespace Gestion_de_Stock.Model
         }
         public DbSet<Personne_Passager> PersonnePassagers { get; set; }
         
-        public DbSet<Utilisateur> Utilisateurs { get; set; }        
-
+        public DbSet<Utilisateur> Utilisateurs { get; set; }
+        public DbSet<Retenue> retenus { get; set; }
+        public DbSet<PersonneListeAchat> personnelisteachat { get; set; }
         public DbSet<Agriculteur> Agriculteurs { get; set; }
         public DbSet<Emplacement> Emplacements { get; set; }
         public DbSet<Mouvement> Mouvements { get; set; }

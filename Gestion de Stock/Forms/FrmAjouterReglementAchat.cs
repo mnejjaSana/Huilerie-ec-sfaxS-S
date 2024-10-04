@@ -723,6 +723,10 @@ namespace Gestion_de_Stock.Forms
                     if (newValue.Length != 8 || !newValue.All(char.IsDigit))
                     {
                         XtraMessageBox.Show("Le CIN doit contenir exactement 8 chiffres.", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        // Effacer le champ de saisie
+                        isCellValueChanging = true; // Désactiver temporairement l'événement
+                        gridView1.SetRowCellValue(e.RowHandle, e.Column, null);
+                        isCellValueChanging = false; // Réactiver l'événement
                         return;
                     }
 
@@ -745,7 +749,7 @@ namespace Gestion_de_Stock.Forms
 
                 if (newValue.HasValue)
                 {
-                    if (newValue.Value >= 3000)
+                    if (newValue.Value < 0 || newValue.Value >= 3000)
                     {
                         isCellValueChanging = true; // Désactiver temporairement l'événement
 
