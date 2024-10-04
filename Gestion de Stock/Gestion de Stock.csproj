@@ -786,6 +786,7 @@
     <Compile Include="Model\MouvementStockOlive.cs" />
     <Compile Include="Model\NumeriqueHelper.cs" />
     <Compile Include="Model\Personne Passager.cs" />
+    <Compile Include="Model\PersonneListeAchat.cs" />
     <Compile Include="Model\Pile.cs" />
     <Compile Include="Model\PileEmplacement.cs" />
     <Compile Include="Model\PileRapport.cs" />

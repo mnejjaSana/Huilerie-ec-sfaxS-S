@@ -30,5 +30,6 @@ namespace Gestion_de_Stock.Model
         public decimal MtAdeduireAjouterREG { get; set; }
         public decimal MtAPayeAvecImpoAjouterREG { get; set; }
         public List<Personne_Passager> PersonnesPassagers { get; set; }
+        public PersonneListeAchat PersonneListeAchat { get; set; }
     }
 }
