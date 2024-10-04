@@ -21,9 +21,9 @@ namespace Gestion_de_Stock.Model
 
             public decimal MontantReglement { get; set; }
 
-            public Achat Achat { get; set; }
+          
 
-            public HistoriquePaiementAchats NumHistoriqueAchat { get; set; }
+          
 
         
     }

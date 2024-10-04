@@ -744,6 +744,14 @@
     <Compile Include="Migrations\202410011030229_montantinitiaavance.designer.cs">
       <DependentUpon>202410011030229_montantinitiaavance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202410042041168_personnelisteachat.cs" />
+    <Compile Include="Migrations\202410042041168_personnelisteachat.designer.cs">
+      <DependentUpon>202410042041168_personnelisteachat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410042053105_retenu.cs" />
+    <Compile Include="Migrations\202410042053105_retenu.designer.cs">
+      <DependentUpon>202410042053105_retenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Achat.cs" />
     <Compile Include="Model\Affaire.cs" />
@@ -794,6 +802,7 @@
     <Compile Include="Model\Prelevement.cs" />
     <Compile Include="Model\Production.cs" />
     <Compile Include="Model\RapportVente.cs" />
+    <Compile Include="Model\Retenue.cs" />
     <Compile Include="Model\Salarier.cs" />
     <Compile Include="Model\Societe.cs" />
     <Compile Include="Model\LigneStock.cs" />
@@ -1253,6 +1262,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202410011030229_montantinitiaavance.resx">
       <DependentUpon>202410011030229_montantinitiaavance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410042041168_personnelisteachat.resx">
+      <DependentUpon>202410042041168_personnelisteachat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410042053105_retenu.resx">
+      <DependentUpon>202410042053105_retenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

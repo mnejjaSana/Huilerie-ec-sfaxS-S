@@ -111,17 +111,17 @@
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1145, 444);
+            this.layoutControl1.Size = new System.Drawing.Size(1336, 546);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.layoutControl2);
-            this.groupControl1.Location = new System.Drawing.Point(12, 12);
+            this.groupControl1.Location = new System.Drawing.Point(16, 16);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1121, 420);
+            this.groupControl1.Size = new System.Drawing.Size(1304, 514);
             this.groupControl1.TabIndex = 4;
             // 
             // layoutControl2
@@ -135,11 +135,11 @@
             this.layoutControl2.Controls.Add(this.dateFin);
             this.layoutControl2.Controls.Add(this.gridControl1);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(2, 20);
+            this.layoutControl2.Location = new System.Drawing.Point(2, 25);
             this.layoutControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(1117, 398);
+            this.layoutControl2.Size = new System.Drawing.Size(1300, 487);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -148,9 +148,10 @@
             this.Actualiser.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Actualiser.Appearance.Options.UseFont = true;
             this.Actualiser.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Actualiser.ImageOptions.Image")));
-            this.Actualiser.Location = new System.Drawing.Point(980, 12);
+            this.Actualiser.Location = new System.Drawing.Point(1140, 16);
+            this.Actualiser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Actualiser.Name = "Actualiser";
-            this.Actualiser.Size = new System.Drawing.Size(125, 22);
+            this.Actualiser.Size = new System.Drawing.Size(144, 28);
             this.Actualiser.StyleController = this.layoutControl2;
             this.Actualiser.TabIndex = 11;
             this.Actualiser.Text = "Actualiser";
@@ -158,7 +159,7 @@
             // 
             // TxtSoldeCaisse
             // 
-            this.TxtSoldeCaisse.Location = new System.Drawing.Point(997, 331);
+            this.TxtSoldeCaisse.Location = new System.Drawing.Point(1162, 405);
             this.TxtSoldeCaisse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtSoldeCaisse.Name = "TxtSoldeCaisse";
             this.TxtSoldeCaisse.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -167,16 +168,16 @@
             this.TxtSoldeCaisse.Properties.Mask.EditMask = "n3";
             this.TxtSoldeCaisse.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TxtSoldeCaisse.Properties.ReadOnly = true;
-            this.TxtSoldeCaisse.Size = new System.Drawing.Size(108, 25);
+            this.TxtSoldeCaisse.Size = new System.Drawing.Size(122, 29);
             this.TxtSoldeCaisse.StyleController = this.layoutControl2;
             this.TxtSoldeCaisse.TabIndex = 10;
             // 
             // label1
             // 
             this.label1.Image = global::Gestion_de_Stock.Properties.Resources.EC;
-            this.label1.Location = new System.Drawing.Point(12, 360);
+            this.label1.Location = new System.Drawing.Point(16, 440);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1093, 26);
+            this.label1.Size = new System.Drawing.Size(1268, 31);
             this.label1.TabIndex = 9;
             // 
             // BtnExportExcel
@@ -184,10 +185,10 @@
             this.BtnExportExcel.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExportExcel.Appearance.Options.UseFont = true;
             this.BtnExportExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnExportExcel.ImageOptions.Image")));
-            this.BtnExportExcel.Location = new System.Drawing.Point(560, 62);
+            this.BtnExportExcel.Location = new System.Drawing.Point(652, 78);
             this.BtnExportExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnExportExcel.Name = "BtnExportExcel";
-            this.BtnExportExcel.Size = new System.Drawing.Size(271, 22);
+            this.BtnExportExcel.Size = new System.Drawing.Size(314, 27);
             this.BtnExportExcel.StyleController = this.layoutControl2;
             this.BtnExportExcel.TabIndex = 8;
             this.BtnExportExcel.Text = "Export Excel";
@@ -198,10 +199,10 @@
             this.BtnExportPDF.Appearance.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExportPDF.Appearance.Options.UseFont = true;
             this.BtnExportPDF.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnExportPDF.ImageOptions.Image")));
-            this.BtnExportPDF.Location = new System.Drawing.Point(835, 62);
+            this.BtnExportPDF.Location = new System.Drawing.Point(972, 78);
             this.BtnExportPDF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnExportPDF.Name = "BtnExportPDF";
-            this.BtnExportPDF.Size = new System.Drawing.Size(270, 22);
+            this.BtnExportPDF.Size = new System.Drawing.Size(312, 27);
             this.BtnExportPDF.StyleController = this.layoutControl2;
             this.BtnExportPDF.TabIndex = 7;
             this.BtnExportPDF.Text = "Export PDF";
@@ -210,14 +211,14 @@
             // dateDebut
             // 
             this.dateDebut.EditValue = null;
-            this.dateDebut.Location = new System.Drawing.Point(97, 38);
+            this.dateDebut.Location = new System.Drawing.Point(117, 50);
             this.dateDebut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateDebut.Name = "dateDebut";
             this.dateDebut.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateDebut.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateDebut.Size = new System.Drawing.Size(459, 20);
+            this.dateDebut.Size = new System.Drawing.Size(529, 22);
             this.dateDebut.StyleController = this.layoutControl2;
             this.dateDebut.TabIndex = 6;
             this.dateDebut.EditValueChanged += new System.EventHandler(this.dateDebut_EditValueChanged);
@@ -225,14 +226,14 @@
             // dateFin
             // 
             this.dateFin.EditValue = null;
-            this.dateFin.Location = new System.Drawing.Point(645, 38);
+            this.dateFin.Location = new System.Drawing.Point(753, 50);
             this.dateFin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateFin.Name = "dateFin";
             this.dateFin.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateFin.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateFin.Size = new System.Drawing.Size(460, 20);
+            this.dateFin.Size = new System.Drawing.Size(531, 22);
             this.dateFin.StyleController = this.layoutControl2;
             this.dateFin.TabIndex = 5;
             this.dateFin.EditValueChanged += new System.EventHandler(this.dateFin_EditValueChanged);
@@ -241,14 +242,14 @@
             // 
             this.gridControl1.DataSource = this.mouvementCaisseBindingSource;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl1.Location = new System.Drawing.Point(12, 88);
+            this.gridControl1.Location = new System.Drawing.Point(16, 111);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryDetailMvmCaisse,
             this.repositoryImprimerTicket});
-            this.gridControl1.Size = new System.Drawing.Size(1093, 239);
+            this.gridControl1.Size = new System.Drawing.Size(1268, 288);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -448,15 +449,15 @@
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1117, 398);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1300, 487);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.gridControl1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 76);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 95);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1097, 243);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1274, 294);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -465,55 +466,55 @@
             this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem4.Control = this.dateDebut;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 34);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(548, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(636, 28);
             this.layoutControlItem4.Text = "Date début";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(81, 15);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(97, 17);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem3.Control = this.dateFin;
-            this.layoutControlItem3.Location = new System.Drawing.Point(548, 26);
+            this.layoutControlItem3.Location = new System.Drawing.Point(636, 34);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(549, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(638, 28);
             this.layoutControlItem3.Text = "Date fin";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(81, 15);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(97, 17);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.BtnExportPDF;
-            this.layoutControlItem5.Location = new System.Drawing.Point(823, 50);
+            this.layoutControlItem5.Location = new System.Drawing.Point(956, 62);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(274, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(318, 33);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 50);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 62);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(548, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(636, 33);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.BtnExportExcel;
-            this.layoutControlItem6.Location = new System.Drawing.Point(548, 50);
+            this.layoutControlItem6.Location = new System.Drawing.Point(636, 62);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(275, 26);
+            this.layoutControlItem6.Size = new System.Drawing.Size(320, 33);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.label1;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 348);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 424);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(1097, 30);
+            this.layoutControlItem7.Size = new System.Drawing.Size(1274, 37);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -522,28 +523,28 @@
             this.layoutControlItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem8.Control = this.TxtSoldeCaisse;
-            this.layoutControlItem8.Location = new System.Drawing.Point(900, 319);
+            this.layoutControlItem8.Location = new System.Drawing.Point(1045, 389);
             this.layoutControlItem8.MinSize = new System.Drawing.Size(148, 28);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(197, 29);
+            this.layoutControlItem8.Size = new System.Drawing.Size(229, 35);
             this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.Text = " Solde Caisse";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(81, 17);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(97, 19);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 319);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 389);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(900, 29);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(1045, 35);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.Actualiser;
-            this.layoutControlItem9.Location = new System.Drawing.Point(968, 0);
+            this.layoutControlItem9.Location = new System.Drawing.Point(1124, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(129, 26);
+            this.layoutControlItem9.Size = new System.Drawing.Size(150, 34);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -552,7 +553,7 @@
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(968, 26);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(1124, 34);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup1
@@ -564,7 +565,7 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1145, 444);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1336, 546);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -572,15 +573,15 @@
             this.layoutControlItem1.Control = this.groupControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1125, 424);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1310, 520);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // FrmMouvementCaisse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1145, 444);
+            this.ClientSize = new System.Drawing.Size(1336, 546);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
