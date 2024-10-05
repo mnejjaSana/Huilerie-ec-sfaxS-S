@@ -1414,6 +1414,7 @@
     <None Include="Properties\DataSources\Gestion_de_Stock.Model.MouvementStock.datasource" />
     <None Include="Properties\DataSources\Gestion_de_Stock.Model.MouvementStock1.datasource" />
     <None Include="Properties\DataSources\Gestion_de_Stock.Model.MouvementStockOlive.datasource" />
+    <None Include="Properties\DataSources\Gestion_de_Stock.Model.PersonneListeAchat.datasource" />
     <None Include="Properties\DataSources\Gestion_de_Stock.Model.Personne_Passager.datasource" />
     <None Include="Properties\DataSources\Gestion_de_Stock.Model.Pile.datasource" />
     <None Include="Properties\DataSources\Gestion_de_Stock.Model.Pointage.datasource" />

@@ -59,7 +59,7 @@ namespace Gestion_de_Stock.Forms
         {
             db = new Model.ApplicationContext();
             Caisse caisse = db.Caisse.FirstOrDefault();
-            List<Personne_Passager> ListePersonneTicket = new List<Personne_Passager>();
+            List<PersonneListeAchat> ListePersonneTicket = new List<PersonneListeAchat>();
             decimal MontantEncaisse;
             string MontantEncaisseStr = TxtMontantEncaisse.Text.Replace(",", decimalSeparator).Replace(".", decimalSeparator);
             decimal.TryParse(MontantEncaisseStr, out MontantEncaisse);
@@ -81,7 +81,8 @@ namespace Gestion_de_Stock.Forms
                 TxtMontantEncaisse.Text = Solde.ToString();
                 return;
 
-            }
+            } 
+
 
             if (MontantEncaisse > caisse.MontantTotal)
             {
@@ -367,17 +368,42 @@ namespace Gestion_de_Stock.Forms
 
             if (gridView1.RowCount != 0 && MontantEncaisse >= 3000)
             { // Depense 
-                List<Personne_Passager> ListePassagers = new List<Personne_Passager>();
+                List<PersonneListeAchat> ListePassagers = new List<PersonneListeAchat>();
                 int row = 0;
-                // Initialiser la liste des passagers
+                bool isValid = true; // Pour vérifier la validité des lignes
 
+                // Initialiser la liste des passagers
                 while (gridView1.IsValidRowHandle(row))
                 {
-                    var data = gridView1.GetRow(row) as Personne_Passager;
-                    ListePassagers.Add(data);
-                    ListePersonneTicket.Add(data);
+                    var data = gridView1.GetRow(row) as PersonneListeAchat;
+
+                    // Vérifiez les champs requis
+                    var cin = gridView1.GetRowCellValue(row, "cin") as string;
+                    var fullName = gridView1.GetRowCellValue(row, "FullName") as string;
+                    var montantReglement = gridView1.GetRowCellValue(row, "MontantReglement") as decimal?;
+
+                    // Vérifiez si tous les champs requis sont remplis
+                    if (string.IsNullOrEmpty(cin) || string.IsNullOrEmpty(fullName) ||
+                        !montantReglement.HasValue || montantReglement.Value <= 0)
+                    {
+                        XtraMessageBox.Show($"La ligne {row + 1} n'est pas valide. Vérifiez les champs CIN, Nom complet, et Montant de règlement.",
+                            "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        isValid = false; // Marquer comme invalide
+                        break; // Sortir de la boucle si une ligne n'est pas valide
+                    }
+
+                    // Ajouter à la liste seulement si le montant de règlement est valide (non nul et non vide)
+                    if (data != null && montantReglement.HasValue && montantReglement.Value > 0)
+                    {
+                        ListePassagers.Add(data);
+                        ListePersonneTicket.Add(data);
+                    }
+
                     row++;
                 }
+
+           
+
                 for (int j = ListePassagers.Count - 1; j >= 0; j--)
                 {
                     Depense D = new Depense();
@@ -473,18 +499,19 @@ namespace Gestion_de_Stock.Forms
                                     Commentaire = "Règlement Caisse",
                                     TypeAchat = Achatdb.TypeAchat,
 
+
                                 };
 
 
-                                HPAchat.PersonnesPassagers.Add(new Personne_Passager
+                                HPAchat.PersonneListeAchat = new PersonneListeAchat
                                 {
                                     FullName = ListePassagers[j].FullName,
                                     cin = ListePassagers[j].cin,
                                     MontantReglement = ListePassagers[j].MontantReglement,
                                     Numero = Achatdb.Numero
-                                });
+                                };
                                 db.HistoriquePaiementAchats.Add(HPAchat);
-
+                                db.SaveChanges();
                                 numeroachats.RemoveAt(i); // Supprime l'élément à l'index i
                                 ListePassagers.RemoveAt(j);
 
@@ -511,15 +538,16 @@ namespace Gestion_de_Stock.Forms
                                 HPAchat.ResteApayer = decimal.Subtract(Achatdb.MontantReglement, Achatdb.MontantRegle);
                                 HPAchat.Commentaire = "Règlement Caisse";
                                 HPAchat.TypeAchat = Achatdb.TypeAchat;
-                                HPAchat.PersonnesPassagers.Add(new Personne_Passager
+                                HPAchat.PersonneListeAchat = new PersonneListeAchat
                                 {
                                     FullName = ListePassagers[j].FullName,
                                     cin = ListePassagers[j].cin,
                                     MontantReglement = ListePassagers[j].MontantReglement,
                                     Numero = Achatdb.Numero
-                                });
+                                };
                                 db.HistoriquePaiementAchats.Add(HPAchat);
-                               ListePassagers.RemoveAt(j);
+                                db.SaveChanges();
+                                ListePassagers.RemoveAt(j);
                                 break;
                             }
                             else if (ListePassagers[j].MontantReglement > Achatdb.ResteApayer)
@@ -542,14 +570,15 @@ namespace Gestion_de_Stock.Forms
                                 HPAchat.ResteApayer = 0;
                                 HPAchat.Commentaire = "Règlement Caisse";
                                 HPAchat.TypeAchat = Achatdb.TypeAchat;
-                                HPAchat.PersonnesPassagers.Add(new Personne_Passager
+                                HPAchat.PersonneListeAchat = new PersonneListeAchat
                                 {
                                     FullName = ListePassagers[j].FullName,
                                     cin = ListePassagers[j].cin,
                                     MontantReglement = reste,
                                     Numero = Achatdb.Numero
-                                });
+                                };
                                 db.HistoriquePaiementAchats.Add(HPAchat);
+                                    db.SaveChanges();
                                 numeroachats.RemoveAt(i);
 
                                 ListePassagers[j].MontantReglement -= reste;
@@ -655,7 +684,7 @@ namespace Gestion_de_Stock.Forms
 
 
 
-                    List<Personne_Passager> personnes = new List<Personne_Passager>();
+                    List<PersonneListeAchat> personnes = new List<PersonneListeAchat>();
 
                     personnes.Add(item);
 
@@ -725,15 +754,17 @@ namespace Gestion_de_Stock.Forms
                         XtraMessageBox.Show("Le CIN doit contenir exactement 8 chiffres.", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                         // Effacer le champ de saisie
                         isCellValueChanging = true; // Désactiver temporairement l'événement
-                        gridView1.SetRowCellValue(e.RowHandle, e.Column, null);
+                        gridView1.SetRowCellValue(e.RowHandle, e.Column, null); // Effacer la valeur
                         isCellValueChanging = false; // Réactiver l'événement
-                        return;
+
+                        return; // Sortir
                     }
 
+                    // Vérifiez si le CIN existe déjà
                     for (int row = 0; row < gridView1.DataRowCount; row++)
                     {
                         var existingCIN = gridView1.GetRowCellValue(row, "cin") as string;
-                        if (existingCIN == newValue)
+                        if (existingCIN == newValue && row != e.RowHandle) // Vérifiez que ce n'est pas la même ligne
                         {
                             XtraMessageBox.Show("Ce CIN existe déjà.", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                             gridView1.SetRowCellValue(e.RowHandle, e.Column, null);
@@ -749,18 +780,22 @@ namespace Gestion_de_Stock.Forms
 
                 if (newValue.HasValue)
                 {
+                    // Vérifie si la valeur est négative ou supérieure ou égale à 3000
                     if (newValue.Value < 0 || newValue.Value >= 3000)
                     {
                         isCellValueChanging = true; // Désactiver temporairement l'événement
-
-                        XtraMessageBox.Show("Le montant de règlement doit être inférieur à 3000!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                        gridView1.SetRowCellValue(e.RowHandle, e.Column, 0);
+                        XtraMessageBox.Show("Le montant de règlement doit être positif et inférieur à 3000!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        gridView1.SetRowCellValue(e.RowHandle, e.Column, 0); // Réinitialiser à 0
                         isCellValueChanging = false; // Réactiver l'événement
                         return;
                     }
                 }
             }
+
+          
         }
+
+      
 
 
         private void BtnSupprimer_Click_1(object sender, EventArgs e)

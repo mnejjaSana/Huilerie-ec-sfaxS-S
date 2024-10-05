@@ -151,6 +151,7 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -158,10 +159,10 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 487);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 478);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1343, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1343, 40);
             // 
             // ribbon
             // 
@@ -250,9 +251,10 @@
             this.barEtatImpots,
             this.BtnListeChaines,
             this.BtnTransfetEmplacement,
-            this.barListePointageSalarier});
+            this.barListePointageSalarier,
+            this.barButtonItem13});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 98;
+            this.ribbon.MaxItemId = 99;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.AccueilPage,
@@ -265,7 +267,7 @@
             this.ribbonPage1});
             this.ribbon.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(1343, 145);
+            this.ribbon.Size = new System.Drawing.Size(1343, 181);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -1115,6 +1117,7 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.barAchat);
             this.ribbonPageGroup2.ItemLinks.Add(this.barBtnListeAchats);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem13);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonListeDesAvances);
             this.ribbonPageGroup2.ItemLinks.Add(this.BtnAnnulerAvance);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
@@ -1349,10 +1352,20 @@
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Pile";
             // 
+            // barButtonItem13
+            // 
+            this.barButtonItem13.Caption = "Liste des Retenus";
+            this.barButtonItem13.Id = 98;
+            this.barButtonItem13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.Image")));
+            this.barButtonItem13.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.LargeImage")));
+            this.barButtonItem13.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem13.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem13.Name = "barButtonItem13";
+            // 
             // MainRibbonForm
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1343, 518);
             this.Controls.Add(this.ribbonStatusBar);
@@ -1498,5 +1511,6 @@
         private DevExpress.XtraBars.BarButtonItem BtnTransfetEmplacement;
         private DevExpress.XtraBars.BarButtonItem barListePointageSalarier;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup24;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
     }
 }

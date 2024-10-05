@@ -301,7 +301,7 @@ namespace Gestion_de_Stock.Forms
 
             db = new Model.ApplicationContext();
 
-            List<HistoriquePaiementAchats> result = db.HistoriquePaiementAchats.Include("PersonnesPassagers").Where(x => x.NumAchat.Equals(achat.Numero)).ToList();
+            List<HistoriquePaiementAchats> result = db.HistoriquePaiementAchats.Include("PersonneListeAchat").Where(x => x.NumAchat.Equals(achat.Numero)).ToList();
 
             FormshowNotParent(Forms.FrmHistoriquePaiementAchat.InstanceFrmHistoriquePaiementAchat);
 

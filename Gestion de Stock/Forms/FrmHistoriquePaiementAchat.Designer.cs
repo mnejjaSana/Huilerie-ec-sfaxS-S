@@ -46,6 +46,8 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.colPersonne = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Cin = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -69,28 +71,28 @@
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1100, 335);
+            this.layoutControl1.Size = new System.Drawing.Size(1283, 412);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.layoutControl2);
-            this.groupControl1.Location = new System.Drawing.Point(12, 12);
+            this.groupControl1.Location = new System.Drawing.Point(16, 16);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1076, 311);
+            this.groupControl1.Size = new System.Drawing.Size(1251, 380);
             this.groupControl1.TabIndex = 4;
             // 
             // layoutControl2
             // 
             this.layoutControl2.Controls.Add(this.gridControl1);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(2, 20);
+            this.layoutControl2.Location = new System.Drawing.Point(2, 25);
             this.layoutControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(1072, 289);
+            this.layoutControl2.Size = new System.Drawing.Size(1247, 353);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -98,11 +100,11 @@
             // 
             this.gridControl1.DataSource = this.historiquePaiementAchatsBindingSource;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl1.Location = new System.Drawing.Point(12, 12);
+            this.gridControl1.Location = new System.Drawing.Point(16, 16);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1048, 265);
+            this.gridControl1.Size = new System.Drawing.Size(1215, 321);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -120,7 +122,9 @@
             this.colMontantReglement,
             this.colMontantRegle,
             this.colResteApayer,
-            this.colCommentaire});
+            this.colCommentaire,
+            this.colPersonne,
+            this.Cin});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
@@ -229,7 +233,7 @@
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1072, 289);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1247, 353);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem2
@@ -237,7 +241,7 @@
             this.layoutControlItem2.Control = this.gridControl1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1052, 269);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1221, 327);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -250,7 +254,7 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1100, 335);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1283, 412);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -258,15 +262,35 @@
             this.layoutControlItem1.Control = this.groupControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1080, 315);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1257, 386);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // colPersonne
+            // 
+            this.colPersonne.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPersonne.AppearanceHeader.Options.UseFont = true;
+            this.colPersonne.Caption = "Personne";
+            this.colPersonne.FieldName = "PersonneListeAchat.FullName";
+            this.colPersonne.Name = "colPersonne";
+            this.colPersonne.Visible = true;
+            this.colPersonne.VisibleIndex = 7;
+            // 
+            // Cin
+            // 
+            this.Cin.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cin.AppearanceHeader.Options.UseFont = true;
+            this.Cin.Caption = "Cin";
+            this.Cin.FieldName = "PersonneListeAchat.cin";
+            this.Cin.Name = "Cin";
+            this.Cin.Visible = true;
+            this.Cin.VisibleIndex = 8;
+            // 
             // FrmHistoriquePaiementAchat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 335);
+            this.ClientSize = new System.Drawing.Size(1283, 412);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -311,5 +335,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colResteApayer;
         public System.Windows.Forms.BindingSource historiquePaiementAchatsBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colCommentaire;
+        private DevExpress.XtraGrid.Columns.GridColumn colPersonne;
+        private DevExpress.XtraGrid.Columns.GridColumn Cin;
     }
 }
