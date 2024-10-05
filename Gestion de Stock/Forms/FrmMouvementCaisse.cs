@@ -498,7 +498,7 @@ namespace Gestion_de_Stock.Forms
 
             string RsSte = societe.RaisonSocial;
 
-            if (mvmCaisseDb.Achat == null && !mvmCaisseDb.Source.Contains("Agriculteur") && !mvmCaisseDb.Commentaire.Contains("Avance avec achat"))
+            if (!mvmCaisseDb.Source.Contains("Agriculteur") && !mvmCaisseDb.Commentaire.Contains("Avance avec achat"))
             {
                 TicketPersonneMovCaisse Ticket = new TicketPersonneMovCaisse();
               

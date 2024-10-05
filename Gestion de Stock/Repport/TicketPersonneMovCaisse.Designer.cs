@@ -148,6 +148,7 @@
             // 
             this.commentaire.Description = "Parameter1";
             this.commentaire.Name = "commentaire";
+            this.commentaire.Visible = false;
             // 
             // xrLabel4
             // 
