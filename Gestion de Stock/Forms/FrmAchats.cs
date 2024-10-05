@@ -536,6 +536,23 @@ namespace Gestion_de_Stock.Forms
                 A.DateEcheance = dateEcheance.DateTime;
                 A.Banque = TxtBank.Text;
                 A.Coffre = true;
+
+
+                int row = 0;
+                List<Personne_Passager> ListePersonnes = new List<Personne_Passager>();
+                while (gridView4.IsValidRowHandle(row))
+                {
+                    var data = gridView4.GetRow(row) as Personne_Passager;
+                    ListePersonnes.Add(data);
+                    row++;
+                }
+                
+                if (ListePersonnes.Count > 0 && MontantRegle >0)
+                {
+                    XtraMessageBox.Show("Le mode de paiement n'est pas espèce, il est impossible de répartir le montant d'avance!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                
             }
 
             #region   controle sur solde caisse
@@ -643,18 +660,17 @@ namespace Gestion_de_Stock.Forms
                 decimal MontantRegleFinal = 0m;
 
                 List<Personne_Passager> ListePassagers = new List<Personne_Passager>();
+                int row = 0;
+
+                while (gridView4.IsValidRowHandle(row))
+                {
+                    var data = gridView4.GetRow(row) as Personne_Passager;
+                    ListePassagers.Add(data);
+                    row++;
+                }
 
                 if (MontantRegle >= 3000)
                 {
-                    int row = 0;
-
-                    while (gridView4.IsValidRowHandle(row))
-                    {
-                        var data = gridView4.GetRow(row) as Personne_Passager;
-                        ListePassagers.Add(data);
-                        row++;
-                    }
-
                     if(ListePassagers.Count==0)
                     {
                        
@@ -675,7 +691,25 @@ namespace Gestion_de_Stock.Forms
 
                     if (ListePassagers.Count > 0)
                     {
+                        foreach(var item in ListePassagers)
+                        {
+                            // Vérifiez les champs requis
+                            var cin = item.cin;
+                            var fullName = item.FullName;
+                            var montantReglement = item.MontantReglement as decimal?;
 
+                            // Vérifiez si tous les champs requis sont remplis
+                            if (string.IsNullOrEmpty(cin) || string.IsNullOrEmpty(fullName) ||
+                                !montantReglement.HasValue || montantReglement.Value <= 0 || montantReglement.Value>=3000)
+                            {
+                                XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item)} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom, et Montant de règlement.",
+                                    "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                             
+                                return;
+                            }
+                            
+                        }
+                        
                         decimal totalGrid = ListePassagers.Sum(x => x.MontantReglement);
 
                         if (totalGrid != MontantRegle)
@@ -687,6 +721,12 @@ namespace Gestion_de_Stock.Forms
 
 
                     }
+                }
+                else if (MontantRegle<3000 && ListePassagers.Count>0)
+                {
+                    XtraMessageBox.Show("Impossible de répartir de montant d'avance!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    return;
+
                 }
 
                 decimal PrixLitre;
@@ -1176,16 +1216,17 @@ namespace Gestion_de_Stock.Forms
 
                 List<Personne_Passager> ListePassagers = new List<Personne_Passager>();
 
+                int row = 0;
+
+                while (gridView4.IsValidRowHandle(row))
+                {
+                    var data = gridView4.GetRow(row) as Personne_Passager;
+                    ListePassagers.Add(data);
+                    row++;
+                }
                 if (MontantRegle >= 3000)
                 {
-                    int row = 0;
-
-                    while (gridView4.IsValidRowHandle(row))
-                    {
-                        var data = gridView4.GetRow(row) as Personne_Passager;
-                        ListePassagers.Add(data);
-                        row++;
-                    }
+                   
                     if (ListePassagers.Count == 0)
                     {
 
@@ -1204,7 +1245,24 @@ namespace Gestion_de_Stock.Forms
                     }
                     if (ListePassagers.Count > 0)
                     {
+                        foreach (var item in ListePassagers)
+                        {
+                            // Vérifiez les champs requis
+                            var cin = item.cin;
+                            var fullName = item.FullName;
+                            var montantReglement = item.MontantReglement as decimal?;
 
+                            // Vérifiez si tous les champs requis sont remplis
+                            if (string.IsNullOrEmpty(cin) || string.IsNullOrEmpty(fullName) ||
+                                !montantReglement.HasValue || montantReglement.Value <= 0 || montantReglement.Value >= 3000)
+                            {
+                                XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item)} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom, et Montant de règlement.",
+                                    "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                                return;
+                            }
+
+                        }
                         decimal totalGrid = ListePassagers.Sum(x => x.MontantReglement);
 
                         if (totalGrid != MontantRegle)
@@ -1217,6 +1275,14 @@ namespace Gestion_de_Stock.Forms
 
                     }
                 }
+                else if (MontantRegle < 3000 && ListePassagers.Count > 0)
+                {
+                    XtraMessageBox.Show("Impossible de répartir de montant d'avance!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    return;
+
+                }
+
+
                 A.StatutProd = StatutProduction.EnAttente;
 
                 if (comboBoxTypeOlive.Text.Equals("OliveVif"))
@@ -1629,20 +1695,18 @@ namespace Gestion_de_Stock.Forms
                 decimal MontantRegleFinal = 0m;
 
                 List<Personne_Passager> ListePassagers = new List<Personne_Passager>();
+                int row = 0;
 
+                while (gridView4.IsValidRowHandle(row))
+                {
+                    var data = gridView4.GetRow(row) as Personne_Passager;
+                    ListePassagers.Add(data);
+                    row++;
+                }
                 if (MontantRegle >= 3000)
                 {
-                    int row = 0;
-
-                    while (gridView4.IsValidRowHandle(row))
-                    {
-                        var data = gridView4.GetRow(row) as Personne_Passager;
-                        ListePassagers.Add(data);
-                        row++;
-                    }
                     if (ListePassagers.Count == 0)
                     {
-
                         var result = XtraMessageBox.Show(
                             "Voulez vous répartir le montant d'avance?",
                             "Configuration de l'application",
@@ -1658,6 +1722,24 @@ namespace Gestion_de_Stock.Forms
                     }
                     if (ListePassagers.Count > 0)
                     {
+                        foreach (var item in ListePassagers)
+                        {
+                            // Vérifiez les champs requis
+                            var cin = item.cin;
+                            var fullName = item.FullName;
+                            var montantReglement = item.MontantReglement as decimal?;
+
+                            // Vérifiez si tous les champs requis sont remplis
+                            if (string.IsNullOrEmpty(cin) || string.IsNullOrEmpty(fullName) ||
+                                !montantReglement.HasValue || montantReglement.Value <= 0 || montantReglement.Value >= 3000)
+                            {
+                                XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item)} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom, et Montant de règlement.",
+                                    "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                                return;
+                            }
+
+                        }
 
                         decimal totalGrid = ListePassagers.Sum(x => x.MontantReglement);
 
@@ -1671,6 +1753,14 @@ namespace Gestion_de_Stock.Forms
 
                     }
                 }
+                else if (MontantRegle < 3000 && ListePassagers.Count > 0)
+                {
+                    XtraMessageBox.Show("Impossible de répartir de montant d'avance!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    return;
+
+                }
+
+
                 A.StatutProd = StatutProduction.Stocké;
                 A.NuméroBon = TxtNuméroBon.Text;
 
@@ -2364,7 +2454,7 @@ namespace Gestion_de_Stock.Forms
 
             }
 
-            // avance
+            // achat de type avance
             else if (comboBoxTypeAchat.Text.Equals("Avance"))
             {
                 if (string.IsNullOrEmpty(TxtMontantRegle.Text))
@@ -2395,7 +2485,14 @@ namespace Gestion_de_Stock.Forms
                         row++;
                     }
 
-                if (ListePassagers.Count == 0)
+
+                    if(ListePassagers.Count > 0 && MontantRegle< 3000)
+                {
+                    XtraMessageBox.Show("Impossible de répartir de montant d'avance!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (ListePassagers.Count == 0 && MontantRegle >= 3000)
                 {
 
                     var result = XtraMessageBox.Show(
@@ -2411,6 +2508,39 @@ namespace Gestion_de_Stock.Forms
                     }
 
                 }
+
+                if (ListePassagers.Count > 0)
+                {
+                    foreach (var item in ListePassagers)
+                    {
+                        // Vérifiez les champs requis
+                        var cin = item.cin;
+                        var fullName = item.FullName;
+                        var montantReglement = item.MontantReglement as decimal?;
+
+                        // Vérifiez si tous les champs requis sont remplis
+                        if (string.IsNullOrEmpty(cin) || string.IsNullOrEmpty(fullName) ||
+                            !montantReglement.HasValue || montantReglement.Value <= 0 || montantReglement.Value >= 3000)
+                        {
+                            XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item)} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom, et Montant de règlement.",
+                                "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            return;
+                        }
+
+                    }
+                    decimal totalGrid = ListePassagers.Sum(x => x.MontantReglement);
+
+                    if (totalGrid != MontantRegle)
+                    {
+                        XtraMessageBox.Show("Merci de vérifier les montants ajoutés avec les personnes!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                        return;
+
+                    }
+
+
+                }
+                
                 decimal mtReg = MontantRegle;
                 decimal Deduit = decimal.Multiply(MontantRegle, 0.01m);
                 if (MontantRegle >= 3000 && ListePassagers.Count == 0)
@@ -2927,7 +3057,10 @@ namespace Gestion_de_Stock.Forms
 
             #endregion  Remise a zero
 
-
+            if (Application.OpenForms.OfType<FrmRetenu>().FirstOrDefault() != null)
+            {
+                Application.OpenForms.OfType<FrmRetenu>().First().retenueBindingSource.DataSource = db.retenus.ToList();
+            }
 
             if (Application.OpenForms.OfType<FrmListeAchats>().FirstOrDefault() != null)
             {

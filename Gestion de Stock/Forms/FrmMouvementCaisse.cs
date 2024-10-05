@@ -160,6 +160,8 @@ namespace Gestion_de_Stock.Forms
 
             var mvmCaisseDb = db.MouvementsCaisse.Find(MvmCaisse.Id);
 
+
+
             if (mvmCaisseDb.Achat != null)
             {
                 int codeAchat = mvmCaisseDb.Achat.Id;
@@ -375,13 +377,7 @@ namespace Gestion_de_Stock.Forms
                     }
 
                     #endregion
-
-
-
-
-
-
-
+                    
                 }
 
             }
@@ -502,6 +498,30 @@ namespace Gestion_de_Stock.Forms
 
             string RsSte = societe.RaisonSocial;
 
+            if (mvmCaisseDb.Achat == null && !mvmCaisseDb.Source.Contains("Agriculteur") && !mvmCaisseDb.Commentaire.Contains("Avance avec achat"))
+            {
+                TicketPersonneMovCaisse Ticket = new TicketPersonneMovCaisse();
+              
+                Ticket.Parameters["RsSte"].Value = RsSte;
+
+                Ticket.Parameters["RsSte"].Visible = false;
+
+                Ticket.Parameters["MtPaye"].Value = mvmCaisseDb.MontantSens * -1;
+
+                Ticket.Parameters["MtPaye"].Visible = false;
+                Ticket.Parameters["fullname"].Value = mvmCaisseDb.Source;
+                Ticket.Parameters["cin"].Value = mvmCaisseDb.CodeTiers;
+                Ticket.Parameters["commentaire"].Value = mvmCaisseDb.Commentaire;
+                
+
+                using (ReportPrintTool printTool = new ReportPrintTool(Ticket))
+                {
+                    printTool.ShowPreviewDialog();
+
+                }
+
+                
+            }
 
             if (mvmCaisseDb.Achat != null)
             {

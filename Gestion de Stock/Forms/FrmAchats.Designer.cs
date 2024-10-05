@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAchats));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
@@ -48,14 +47,14 @@
             this.TxtPUOliveFinal = new DevExpress.XtraEditors.TextEdit();
             this.TxtQteOlive = new DevExpress.XtraEditors.TextEdit();
             this.searchLookUpEmplacement = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.emplacementBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.emplacementBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.TxtMtOpPrev = new DevExpress.XtraEditors.TextEdit();
             this.TxtPUOlive = new DevExpress.XtraEditors.TextEdit();
             this.TxtRendement = new DevExpress.XtraEditors.TextEdit();
             this.TxtNuméroBon = new DevExpress.XtraEditors.TextEdit();
             this.searchLookUpPile = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.pileBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pileBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.comboBoxQualité = new DevExpress.XtraEditors.ComboBoxEdit();
             this.TxtQteHuileAchetee = new DevExpress.XtraEditors.TextEdit();
@@ -68,7 +67,7 @@
             this.TxtNbSac = new DevExpress.XtraEditors.TextEdit();
             this.comboBoxTypeOlive = new DevExpress.XtraEditors.ComboBoxEdit();
             this.searchLookUpFournisseur = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.fournisseurBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fournisseurBindingSource = new System.Windows.Forms.BindingSource();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.BtnEnregister = new DevExpress.XtraEditors.SimpleButton();
             this.dateEditDateFacture = new DevExpress.XtraEditors.DateEdit();
@@ -101,7 +100,7 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.personnePassagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.personnePassagerBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCIN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFullname = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -110,7 +109,7 @@
             this.BtnSupprimer = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.BtnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.achatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.achatBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colImprimenteTicker = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BtnImprimerTicket = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -150,7 +149,7 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();

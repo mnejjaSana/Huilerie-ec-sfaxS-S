@@ -32,6 +32,7 @@ namespace Gestion_de_Stock.Forms
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.retenueBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colNumero = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMontantRetenue = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -39,14 +40,13 @@ namespace Gestion_de_Stock.Forms
             this.colCommentaire = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.retenueBindingSource = new System.Windows.Forms.BindingSource();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.retenueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.retenueBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -71,6 +71,10 @@ namespace Gestion_de_Stock.Forms
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // retenueBindingSource
+            // 
+            this.retenueBindingSource.DataSource = typeof(Gestion_de_Stock.Model.Retenue);
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -89,6 +93,7 @@ namespace Gestion_de_Stock.Forms
             this.colNumero.Caption = "Numéro";
             this.colNumero.FieldName = "Numero";
             this.colNumero.Name = "colNumero";
+            this.colNumero.OptionsColumn.AllowEdit = false;
             this.colNumero.Visible = true;
             this.colNumero.VisibleIndex = 0;
             // 
@@ -97,10 +102,13 @@ namespace Gestion_de_Stock.Forms
             this.colMontantRetenue.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMontantRetenue.AppearanceHeader.Options.UseFont = true;
             this.colMontantRetenue.Caption = "Monatnt Retenu";
+            this.colMontantRetenue.DisplayFormat.FormatString = "n3";
+            this.colMontantRetenue.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colMontantRetenue.FieldName = "MontantRetenue";
             this.colMontantRetenue.Name = "colMontantRetenue";
+            this.colMontantRetenue.OptionsColumn.AllowEdit = false;
             this.colMontantRetenue.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "MontantRetenue", "SUM={0:0.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "MontantRetenue", "={0:0.##}")});
             this.colMontantRetenue.Visible = true;
             this.colMontantRetenue.VisibleIndex = 2;
             // 
@@ -109,8 +117,11 @@ namespace Gestion_de_Stock.Forms
             this.colMontantReglement.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMontantReglement.AppearanceHeader.Options.UseFont = true;
             this.colMontantReglement.Caption = "Montant Réglement";
+            this.colMontantReglement.DisplayFormat.FormatString = "n3";
+            this.colMontantReglement.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colMontantReglement.FieldName = "MontantReglement";
             this.colMontantReglement.Name = "colMontantReglement";
+            this.colMontantReglement.OptionsColumn.AllowEdit = false;
             this.colMontantReglement.Visible = true;
             this.colMontantReglement.VisibleIndex = 1;
             // 
@@ -121,6 +132,7 @@ namespace Gestion_de_Stock.Forms
             this.colCommentaire.Caption = "Commentaire";
             this.colCommentaire.FieldName = "Commentaire";
             this.colCommentaire.Name = "colCommentaire";
+            this.colCommentaire.OptionsColumn.AllowEdit = false;
             this.colCommentaire.Visible = true;
             this.colCommentaire.VisibleIndex = 3;
             // 
@@ -144,10 +156,6 @@ namespace Gestion_de_Stock.Forms
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // retenueBindingSource
-            // 
-            this.retenueBindingSource.DataSource = typeof(Gestion_de_Stock.Model.Retenue);
-            // 
             // FrmRetenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,10 +170,10 @@ namespace Gestion_de_Stock.Forms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.retenueBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.retenueBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
