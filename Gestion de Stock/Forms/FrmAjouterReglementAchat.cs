@@ -57,6 +57,9 @@ namespace Gestion_de_Stock.Forms
 
         private void BtnValider_Click(object sender, EventArgs e)
         {
+            List<PersonneListeAchat> ListePassagers = new List<PersonneListeAchat>();
+          
+          
             db = new Model.ApplicationContext();
             Caisse caisse = db.Caisse.FirstOrDefault();
             List<PersonneListeAchat> ListePersonneTicket = new List<PersonneListeAchat>();
@@ -105,6 +108,7 @@ namespace Gestion_de_Stock.Forms
             }
                 if (gridView1.RowCount == 0 && MontantEncaisse == Solde)
             {
+                
                 decimal initialMontantEncaisse = MontantEncaisse; // Save the initial value
 
 
@@ -121,6 +125,18 @@ namespace Gestion_de_Stock.Forms
 
                 if (MontantEncaisse >= 3000)
                 {
+                    var result = XtraMessageBox.Show(
+                       "Voulez vous répartir le montant du Règlement?",
+                       "Configuration de l'application",
+                       MessageBoxButtons.OKCancel,
+                       MessageBoxIcon.Exclamation);
+
+                    // Check which button was clicked
+                    if (result == DialogResult.OK)
+                    {
+                        return;
+                    }
+
                     D.Nature = NatureMouvement.ReglementImpo;
 
                     MtAdeduireAjouterREG = decimal.Divide(MontantEncaisse, 100);
@@ -134,6 +150,14 @@ namespace Gestion_de_Stock.Forms
                         CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MtAPayeAvecImpoAjouterREG);
 
                     }
+                    Retenue Retenu = new Retenue();
+                    Retenu.MontantReglement = MontantEncaisse;
+                    Retenu.MontantRetenue = MtAdeduireAjouterREG;
+                    Retenu.Commentaire = "Règlement Achat(s)"+ TxtCodeAchat.Text;
+                    db.retenus.Add(Retenu);
+                    db.SaveChanges();
+                    Retenu.Numero = "RTN" + (Retenu.Id).ToString("D8");
+                    db.SaveChanges();
                 }
                 else
                 {
@@ -210,7 +234,7 @@ namespace Gestion_de_Stock.Forms
 
             if (gridView1.RowCount == 0 && MontantEncaisse < Solde)
             { // Calculer 1% de MontantEncaisse
-
+                
 
                 decimal initialMontantEncaisse = MontantEncaisse; // Save the initial value
                 mtTicket = initialMontantEncaisse;
@@ -228,6 +252,17 @@ namespace Gestion_de_Stock.Forms
 
                 if (MontantEncaisse >= 3000)
                 {
+                    var result = XtraMessageBox.Show(
+                         "Voulez vous répartir le montant du Règlement?",
+                         "Configuration de l'application",
+                         MessageBoxButtons.OKCancel,
+                         MessageBoxIcon.Exclamation);
+
+                    // Check which button was clicked
+                    if (result == DialogResult.OK)
+                    {
+                        return;
+                    }
                     D.Nature = NatureMouvement.ReglementImpo;
 
                     MtAdeduireAjouterREG = decimal.Divide(MontantEncaisse, 100);
@@ -242,6 +277,14 @@ namespace Gestion_de_Stock.Forms
                         CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MtAPayeAvecImpoAjouterREG);
 
                     }
+                    Retenue Retenu = new Retenue();
+                    Retenu.MontantReglement = MontantEncaisse;
+                    Retenu.MontantRetenue = MtAdeduireAjouterREG;
+                    Retenu.Commentaire = "Règlement Achat(s)" + TxtCodeAchat.Text;
+                    db.retenus.Add(Retenu);
+                    db.SaveChanges();
+                    Retenu.Numero = "RTN" + (Retenu.Id).ToString("D8");
+                    db.SaveChanges();
                 }
                 else
                 {
@@ -368,7 +411,7 @@ namespace Gestion_de_Stock.Forms
 
             if (gridView1.RowCount != 0 && MontantEncaisse >= 3000)
             { // Depense 
-                List<PersonneListeAchat> ListePassagers = new List<PersonneListeAchat>();
+      
                 int row = 0;
                 bool isValid = true; // Pour vérifier la validité des lignes
 
@@ -402,7 +445,12 @@ namespace Gestion_de_Stock.Forms
                     row++;
                 }
 
-           
+                decimal totalGrid = ListePassagers.Sum(x => x.MontantReglement);
+                if (totalGrid != MontantEncaisse)
+                {
+                    XtraMessageBox.Show("Merci de vérifier les montants ajoutés!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    return;
+                }
 
                 for (int j = ListePassagers.Count - 1; j >= 0; j--)
                 {
@@ -411,10 +459,12 @@ namespace Gestion_de_Stock.Forms
 
                     D.Nature = NatureMouvement.ReglementImpo;
                     D.CodeTiers = Achat.Founisseur.Numero;
-                    D.Agriculteur = Achat.Founisseur;
+                    D.Agriculteur = null;
+                    D.CodeTiers = ListePassagers[j].cin;
                     D.Montant = ListePassagers[j].MontantReglement;
+                    D.DateCreation = DateTime.Now;
                     D.ModePaiement = "Espèce";
-                    D.Tiers = Achat.Founisseur.FullName;
+                    D.Tiers = ListePassagers[j].FullName;
                     D.Commentaire = "Règlement Achat N° " + TxtCodeAchat.Text;
                     db.Depenses.Add(D);
                     db.SaveChanges();
@@ -427,9 +477,9 @@ namespace Gestion_de_Stock.Forms
                     mvtCaisse.MontantSens = ListePassagers[j].MontantReglement * -1;
                     mvtCaisse.Sens = Sens.Depense;
                     mvtCaisse.Date = DateTime.Now;
-                    mvtCaisse.Agriculteur = Achat.Founisseur;
-                    mvtCaisse.CodeTiers = Achat.Founisseur.Numero;
-                    mvtCaisse.Source = "Agriculteur: " + Achat.Founisseur.FullName;
+                    mvtCaisse.Agriculteur = null;
+                    mvtCaisse.CodeTiers = ListePassagers[j].cin;
+                    mvtCaisse.Source = ListePassagers[j].FullName;
 
                     Caisse CaisseDb = db.Caisse.Find(1);
                     if (CaisseDb != null)
@@ -444,17 +494,13 @@ namespace Gestion_de_Stock.Forms
                     mvtCaisse.Achat = Achat;
                     mvtCaisse.Montant = CaisseDb.MontantTotal;
                     db.MouvementsCaisse.Add(mvtCaisse);
+                    db.SaveChanges();
                 }
               
 
             
 
-                decimal totalGrid = ListePassagers.Sum(x => x.MontantReglement);
-                if (totalGrid != MontantEncaisse)
-                {
-                    XtraMessageBox.Show("Merci de vérifier les montants ajoutés!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-                    return;
-                }
+            
                 decimal MontantRegleFinal = 0m;
                 MontantRegleFinal = MontantEncaisse;
                 var MtAdeduireAjouterREG =0;
@@ -602,7 +648,7 @@ namespace Gestion_de_Stock.Forms
 
 
             if (Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().FirstOrDefault() != null)
-                Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
+                Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile || x.Nature == NatureMouvement.ReglementImpo || x.Nature == NatureMouvement.RéglementAchats) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
 
             if (Application.OpenForms.OfType<FrmMouvementCaisse>().FirstOrDefault() != null)
             {
@@ -664,6 +710,10 @@ namespace Gestion_de_Stock.Forms
                 //waiting Form
                 if (Application.OpenForms.OfType<FrmAnnulationAvance>().FirstOrDefault() != null)
                     Application.OpenForms.OfType<FrmAnnulationAvance>().FirstOrDefault().agriculteurBindingSource.DataSource = ListAgriculteurs.AsEnumerable().Select(x => new { x.Id, x.Numero, x.FullName, x.Tel, TotalAchats = Math.Truncate(x.TotalAchats * 1000m) / 1000m, TotalAvances = Math.Truncate(x.TotalAvances * 1000m) / 1000m, x.SoldeAgriculteurAvecSens }).ToList();
+
+                //waiting Form
+                if (Application.OpenForms.OfType<FrmRetenu>().FirstOrDefault() != null)
+                    Application.OpenForms.OfType<FrmRetenu>().FirstOrDefault().retenueBindingSource.DataSource =db.retenus.ToList();
 
             }
 
