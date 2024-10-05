@@ -510,7 +510,7 @@ namespace Gestion_de_Stock.Forms
 
                 Achat AchatDb = db.Achats.FirstOrDefault(x => x.Id == codeAchat);
 
-                if (mvmCaisseDb.Commentaire.Equals("Avance Agriculteur"))
+                if (mvmCaisseDb.Achat.TypeAchat== TypeAchat.Avance )
                 {
                     xrAvance xrAvance = new xrAvance();
 
@@ -529,9 +529,11 @@ namespace Gestion_de_Stock.Forms
                     }
                 }
 
+                string num = "AVN" + (AchatDb.Id).ToString("D8");
+                Achat AvanceSurAchat = db.Achats.FirstOrDefault(x => x.Numero.Equals(num));
 
 
-                if (mvmCaisseDb.Commentaire.Contains("_"))
+                if (mvmCaisseDb.Commentaire.Contains("Avance Agriculteur_") && mvmCaisseDb.Achat.TypeAchat!= TypeAchat.Avance)
                 {
                     TickeAvanceAvecAchat xrAchatTicket = new TickeAvanceAvecAchat();
 
@@ -541,7 +543,14 @@ namespace Gestion_de_Stock.Forms
 
                     xrAchatTicket.Parameters["RsSte"].Value = RsSte;
 
-                   
+                    if (AvanceSurAchat != null)
+                    {
+                        xrAchatTicket.Parameters["montantAvance"].Value = AvanceSurAchat.MontantRegle.ToString();
+                    }
+                    else
+                    {
+                        xrAchatTicket.Parameters["montantAvance"].Value = "0";
+                    }
 
                     if (AchatDb.TypeAchat == TypeAchat.Base)
                     {
@@ -612,29 +621,7 @@ namespace Gestion_de_Stock.Forms
 
                 }
 
-                if (!mvmCaisseDb.Commentaire.Contains("_") && (AchatDb.TypeAchat == TypeAchat.Huile || AchatDb.TypeAchat == TypeAchat.Base || AchatDb.TypeAchat== TypeAchat.Olive))
-                {
-                    TicketMvtCaisse Ticket = new TicketMvtCaisse();
-
-                    Ticket.Parameters["RsSte"].Value = RsSte;
-
-                    Ticket.Parameters["NumAchat"].Value = AchatDb.Numero;
-
-                    Ticket.Parameters["Agriculteur"].Value = AchatDb.Founisseur.FullName;
-
-                    Ticket.Parameters["Montant"].Value = decimal.Multiply(mvmCaisseDb.MontantSens, -1);
-
-                    List<Achat> AchatListe = new List<Achat>();
-
-                    AchatListe.Add(AchatDb);
-
-                    Ticket.DataSource = AchatListe;
-                    using (ReportPrintTool printTool = new ReportPrintTool(Ticket))
-                    {
-                        printTool.ShowPreviewDialog();
-                   
-                    }
-                }
+               
             }
 
         }

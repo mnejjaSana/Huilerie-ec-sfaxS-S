@@ -1140,5 +1140,10 @@ namespace Gestion_de_Stock
         {
 
         }
+
+        private void barButtonItem13_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Formshow(Forms.FrmRetenu.InstanceFrmRetenu);
+        }
     }
 }

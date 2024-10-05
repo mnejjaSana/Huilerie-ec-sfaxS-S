@@ -132,8 +132,6 @@ namespace Gestion_de_Stock.Forms
 
             List<Achat> ListeAchats = new List<Achat>();
 
-            if (AchatDb.MontantRegle > 0 && AchatDb.Avance == true)
-            {
                 ListeAchats.Add(AchatDb);
 
                 xrAvance xrAvance = new xrAvance();
@@ -154,7 +152,7 @@ namespace Gestion_de_Stock.Forms
 
                     }
                 }
-            }
+            
 
 
         }

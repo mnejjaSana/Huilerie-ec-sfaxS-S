@@ -638,8 +638,7 @@ namespace Gestion_de_Stock.Forms
                     A.Emplacement = Emplace;
                     Qteinit = Emplace.Quantite;
                 }
-
-
+                
                 // sala7
                 decimal MontantRegleFinal = 0m;
 
@@ -655,6 +654,25 @@ namespace Gestion_de_Stock.Forms
                         ListePassagers.Add(data);
                         row++;
                     }
+
+                    if(ListePassagers.Count==0)
+                    {
+                       
+                        var result = XtraMessageBox.Show(
+                            "Voulez vous répartir le montant d'avance?",
+                            "Configuration de l'application",
+                            MessageBoxButtons.OKCancel,
+                            MessageBoxIcon.Exclamation);
+
+                        // Check which button was clicked
+                        if (result == DialogResult.OK)
+                        {
+                            return;
+                        }
+                       
+                    }
+                    
+
                     if (ListePassagers.Count > 0)
                     {
 
@@ -748,6 +766,8 @@ namespace Gestion_de_Stock.Forms
                     
                     if (MontantRegle >= 3000 && ListePassagers.Count == 0)
                     {
+                        decimal mtReg = MontantRegle;
+
                         decimal Deduit = decimal.Multiply(MontantRegle, 0.01m);
 
                         MontantRegleFinal = decimal.Subtract(MontantRegle, Deduit);
@@ -758,13 +778,24 @@ namespace Gestion_de_Stock.Forms
                         AvnaceSurAchat.AvanceAvecAchat = MontantRegleFinal;
                         AvnaceSurAchat.PersonnesPassagers = null;
                         MontantRegle = MontantRegleFinal;
+                        Retenue Retenu = new Retenue();
+                        Retenu.MontantReglement = mtReg;
+                        Retenu.MontantRetenue = Deduit;
+                        Retenu.Commentaire = AvnaceSurAchat.Numero;
+                        db.retenus.Add(Retenu);
+                        db.SaveChanges();
+                        Retenu.Numero = "RTN" + (Retenu.Id).ToString("D8");
+                        db.SaveChanges();
+
+
                     }
-                    else if(MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count >= 0))
+                    else if(MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count > 0))
                     {
                         AvnaceSurAchat.AvanceAvecAchat = MontantRegle;
                         AvnaceSurAchat.MontantRegle = MontantRegle;
                         F.Solde = Decimal.Add(F.Solde, MontantRegle);
-                        if (ListePassagers.Count >= 0)
+
+                        if (ListePassagers.Count > 0)
                         {
                             foreach (var item in ListePassagers)
                             {
@@ -777,11 +808,7 @@ namespace Gestion_de_Stock.Forms
                     }
                   
                     db.SaveChanges();
-
-                   
-
-                   
-
+                    
                 }
 
 
@@ -960,65 +987,116 @@ namespace Gestion_de_Stock.Forms
                 #region Depense type achat olive et mvt de caisse
                 if (MontantRegle > 0)
                 {
-                    Depense D = new Depense();
-                    D.Nature = NatureMouvement.AchatOlive;
-                    D.Agriculteur = A.Founisseur;
-                    D.CodeTiers = A.Founisseur.Numero;
-                    D.DateCreation = A.Date;
-                    if (A.ModeReglement == ModeReglement.Espèce)
+                    if(ListePassagers.Count > 0)
                     {
-                        D.ModePaiement = "Espèce";
-                    }
-                    else if (A.ModeReglement == ModeReglement.Chèque)
-                    {
-                        D.ModePaiement = "Chèque";
-                        D.Bank = A.Banque;
-                        D.DateEcheance = A.DateEcheance;
-                        D.NumCheque = A.NumeroCheque;
-                    }
-                    else if (A.ModeReglement == ModeReglement.Traite)
-                    {
-                        D.ModePaiement = "Traite";
-                        D.Bank = A.Banque;
-                        D.DateEcheance = A.DateEcheance;
-                        D.NumCheque = A.NumeroCheque;
-                    }
-
-                    D.Montant = MontantRegle;
-                    D.Tiers = A.Founisseur.FullName;
-
-                    D.Commentaire = "Avance Agriculteur_" + (A.Id).ToString("D8");
-
-                    db.Depenses.Add(D);
-                    db.SaveChanges();
-                    D.Numero = "D" + (D.Id).ToString("D8");
-                    db.SaveChanges();
-
-                    // mouvt caisse
-                    if (A.ModeReglement == ModeReglement.Espèce)
-                    {
-                        MouvementCaisse mvtCaisse = new MouvementCaisse();
-                        mvtCaisse.MontantSens = MontantRegle * -1;
-                        mvtCaisse.Sens = Sens.Depense;
-                        mvtCaisse.Agriculteur = A.Founisseur;
-                        mvtCaisse.CodeTiers = A.Founisseur.Numero;
-                        mvtCaisse.Date = A.Date;
-                        mvtCaisse.Source = "Agriculteur: " + A.Founisseur.FullName;
-                        mvtCaisse.Commentaire = "Avance Agriculteur_" + (A.Id).ToString("D8");
-
-                        if (CaisseDb != null)
+                        foreach (var item in ListePassagers)
                         {
-                            CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MontantRegle);
+                            Depense depensePer = new Depense();
+                            depensePer.Nature = NatureMouvement.AchatOlive;
+                            depensePer.Agriculteur = null;
+                            depensePer.CodeTiers = item.cin;
+                            depensePer.DateCreation = A.Date;
+                            depensePer.ModePaiement = "Espèce";
+                            depensePer.Montant = item.MontantReglement;
+                            depensePer.Tiers = item.FullName;
+                           depensePer.Commentaire = "Avance avec achat N° " + A.Numero;
+                            db.Depenses.Add(depensePer);
+                            db.SaveChanges();
+                            depensePer.Numero = "D" + (depensePer.Id).ToString("D8");
+                            db.SaveChanges();
 
+                            // mouvt caisse
+                            if (A.ModeReglement == ModeReglement.Espèce)
+                            {
+                                MouvementCaisse mvtCaisse = new MouvementCaisse();
+                                mvtCaisse.MontantSens = item.MontantReglement * -1;
+                                mvtCaisse.Sens = Sens.Depense;
+                                mvtCaisse.Agriculteur = null;
+                                mvtCaisse.CodeTiers = item.cin;
+                                mvtCaisse.Date = A.Date;
+                                mvtCaisse.Source = item.FullName;
+                                mvtCaisse.Commentaire ="Avance avec achat N° "+ A.Numero;
+
+                                if (CaisseDb != null)
+                                {
+                                    CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, item.MontantReglement);
+
+                                }
+
+                                int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
+                                mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
+                                mvtCaisse.Achat = A;
+                                mvtCaisse.Montant = CaisseDb.MontantTotal;
+                                db.MouvementsCaisse.Add(mvtCaisse);
+                                db.SaveChanges();
+
+                            }
+                            
+                        }
+                    }
+                    else
+                    {
+                        Depense D = new Depense();
+                        D.Nature = NatureMouvement.AchatOlive;
+                        D.Agriculteur = A.Founisseur;
+                        D.CodeTiers = A.Founisseur.Numero;
+                        D.DateCreation = A.Date;
+                        if (A.ModeReglement == ModeReglement.Espèce)
+                        {
+                            D.ModePaiement = "Espèce";
+                        }
+                        else if (A.ModeReglement == ModeReglement.Chèque)
+                        {
+                            D.ModePaiement = "Chèque";
+                            D.Bank = A.Banque;
+                            D.DateEcheance = A.DateEcheance;
+                            D.NumCheque = A.NumeroCheque;
+                        }
+                        else if (A.ModeReglement == ModeReglement.Traite)
+                        {
+                            D.ModePaiement = "Traite";
+                            D.Bank = A.Banque;
+                            D.DateEcheance = A.DateEcheance;
+                            D.NumCheque = A.NumeroCheque;
                         }
 
-                        int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
-                        mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
-                        mvtCaisse.Achat = A;
-                        mvtCaisse.Montant = CaisseDb.MontantTotal;
-                        db.MouvementsCaisse.Add(mvtCaisse);
+                        D.Montant = MontantRegle;
+                        D.Tiers = A.Founisseur.FullName;
+
+                        D.Commentaire = "Avance Agriculteur_" + (A.Id).ToString("D8");
+
+                        db.Depenses.Add(D);
+                        db.SaveChanges();
+                        D.Numero = "D" + (D.Id).ToString("D8");
                         db.SaveChanges();
 
+                        // mouvt caisse
+                        if (A.ModeReglement == ModeReglement.Espèce)
+                        {
+                            MouvementCaisse mvtCaisse = new MouvementCaisse();
+                            mvtCaisse.MontantSens = MontantRegle * -1;
+                            mvtCaisse.Sens = Sens.Depense;
+                            mvtCaisse.Agriculteur = A.Founisseur;
+                            mvtCaisse.CodeTiers = A.Founisseur.Numero;
+                            mvtCaisse.Date = A.Date;
+                            mvtCaisse.Source = "Agriculteur: " + A.Founisseur.FullName;
+                            mvtCaisse.Commentaire = "Avance Agriculteur_" + (A.Id).ToString("D8");
+
+                            if (CaisseDb != null)
+                            {
+                                CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MontantRegle);
+
+                            }
+
+                            int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
+                            mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
+                            mvtCaisse.Achat = A;
+                            mvtCaisse.Montant = CaisseDb.MontantTotal;
+                            db.MouvementsCaisse.Add(mvtCaisse);
+                            db.SaveChanges();
+
+                        }
+                        
                     }
 
 
@@ -1107,6 +1185,22 @@ namespace Gestion_de_Stock.Forms
                         var data = gridView4.GetRow(row) as Personne_Passager;
                         ListePassagers.Add(data);
                         row++;
+                    }
+                    if (ListePassagers.Count == 0)
+                    {
+
+                        var result = XtraMessageBox.Show(
+                            "Voulez vous répartir le montant d'avance?",
+                            "Configuration de l'application",
+                            MessageBoxButtons.OKCancel,
+                            MessageBoxIcon.Exclamation);
+
+                        // Check which button was clicked
+                        if (result == DialogResult.OK)
+                        {
+                            return;
+                        }
+
                     }
                     if (ListePassagers.Count > 0)
                     {
@@ -1202,7 +1296,7 @@ namespace Gestion_de_Stock.Forms
                     if (MontantRegle >= 3000 && ListePassagers.Count == 0)
                     {
                         decimal Deduit = decimal.Multiply(MontantRegle, 0.01m);
-
+                        decimal mtReg = MontantRegle;
                         MontantRegleFinal = decimal.Subtract(MontantRegle, Deduit);
 
                         F.Solde = decimal.Add(F.Solde, MontantRegleFinal);
@@ -1211,13 +1305,21 @@ namespace Gestion_de_Stock.Forms
                         AvnaceSurAchat.AvanceAvecAchat = MontantRegleFinal;
                         AvnaceSurAchat.PersonnesPassagers = null;
                         MontantRegle = MontantRegleFinal;
+                        Retenue Retenu = new Retenue();
+                        Retenu.MontantReglement = mtReg;
+                        Retenu.MontantRetenue = Deduit;
+                        Retenu.Commentaire = AvnaceSurAchat.Numero;
+                        db.retenus.Add(Retenu);
+                        db.SaveChanges();
+                        Retenu.Numero = "RTN" + (Retenu.Id).ToString("D8");
+                        db.SaveChanges();
                     }
-                    else if (MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count >= 0))
+                    else if (MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count > 0))
                     {
                         AvnaceSurAchat.AvanceAvecAchat = MontantRegle;
                         AvnaceSurAchat.MontantRegle = MontantRegle;
                         F.Solde = Decimal.Add(F.Solde, MontantRegle);
-                        if (ListePassagers.Count >= 0)
+                        if (ListePassagers.Count > 0)
                         {
                             foreach (var item in ListePassagers)
                             {
@@ -1348,67 +1450,118 @@ namespace Gestion_de_Stock.Forms
 
                     #region ajouter Depense type achat base
 
-                    Depense D = new Depense();
-                    D.DateCreation = A.Date;
-                    D.Nature = NatureMouvement.AchatOlive;
-                    D.Agriculteur = A.Founisseur;
-                    D.CodeTiers = A.Founisseur.Numero;
-                    D.Tiers = A.Founisseur.FullName;
-                    if (A.ModeReglement == ModeReglement.Espèce)
+                    if (ListePassagers.Count > 0)
                     {
-                        D.ModePaiement = "Espèce";
-                    }
-                    else if (A.ModeReglement == ModeReglement.Chèque)
-                    {
-                        D.ModePaiement = "Chèque";
-                        D.NumCheque = A.NumeroCheque;
-                        D.Bank = A.Banque;
-                        D.DateEcheance = A.DateEcheance;
-                    }
-                    else if (A.ModeReglement == ModeReglement.Traite)
-                    {
-                        D.ModePaiement = "Traite";
-                        D.NumCheque = A.NumeroCheque;
-                        D.Bank = A.Banque;
-                        D.DateEcheance = A.DateEcheance;
-                    }
-                    D.Montant = MontantRegle;
-                    D.Commentaire = "Avance Agriculteur_" + (A.Id).ToString("D8");
-                    db.Depenses.Add(D);
-                    db.SaveChanges();
-
-                    D.Numero = "D" + (D.Id).ToString("D8");
-                    db.SaveChanges();
-                    if (A.ModeReglement == ModeReglement.Espèce)
-                    {
-                        MouvementCaisse mvtCaisse = new MouvementCaisse();
-                        mvtCaisse.MontantSens = MontantRegle * -1;
-                        mvtCaisse.Sens = Sens.Depense;
-                        mvtCaisse.Agriculteur = A.Founisseur;
-                        mvtCaisse.CodeTiers = A.Founisseur.Numero;
-                        mvtCaisse.Date = A.Date;
-                        mvtCaisse.Source = "Agriculteur: " + A.Founisseur.FullName;
-                        mvtCaisse.Commentaire = "Avance Agriculteur_" + (A.Id).ToString("D8");
-
-                        //if (A.ResteApayer < 0)
-                        //{ mvtCaisse.Commentaire = "Avance sur Achat N° " + A.Numero; }
-
-                        //else if (A.ResteApayer == 0)
-                        //{ mvtCaisse.Commentaire = "Avance sur Achat N° " + A.Numero; }
-
-                        if (CaisseDb != null)
+                        foreach (var item in ListePassagers)
                         {
-                            CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MontantRegle);
+                            Depense depensePer = new Depense();
+                            depensePer.Nature = NatureMouvement.AchatOlive;
+                            depensePer.Agriculteur = null;
+                            depensePer.CodeTiers = item.cin;
+                            depensePer.DateCreation = A.Date;
+                            depensePer.ModePaiement = "Espèce";
+                            depensePer.Montant = item.MontantReglement;
+                            depensePer.Tiers = item.FullName;
+                           depensePer.Commentaire = "Avance avec achat N° " + A.Numero;
+                            db.Depenses.Add(depensePer);
+                            db.SaveChanges();
+                            depensePer.Numero = "D" + (depensePer.Id).ToString("D8");
+                            db.SaveChanges();
+
+                            // mouvt caisse
+                            if (A.ModeReglement == ModeReglement.Espèce)
+                            {
+                                MouvementCaisse mvtCaisse = new MouvementCaisse();
+                                mvtCaisse.MontantSens = item.MontantReglement * -1;
+                                mvtCaisse.Sens = Sens.Depense;
+                                mvtCaisse.Agriculteur = null;
+                                mvtCaisse.CodeTiers = item.cin;
+                                mvtCaisse.Date = A.Date;
+                                mvtCaisse.Source = item.FullName;
+                                mvtCaisse.Commentaire = "Avance avec achat N° " + A.Numero;
+
+                                if (CaisseDb != null)
+                                {
+                                    CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, item.MontantReglement);
+
+                                }
+
+                                int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
+                                mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
+                                mvtCaisse.Achat = A;
+                                mvtCaisse.Montant = CaisseDb.MontantTotal;
+                                db.MouvementsCaisse.Add(mvtCaisse);
+                                db.SaveChanges();
+
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        Depense D = new Depense();
+                        D.Nature = NatureMouvement.AchatOlive;
+                        D.Agriculteur = A.Founisseur;
+                        D.CodeTiers = A.Founisseur.Numero;
+                        D.DateCreation = A.Date;
+                        if (A.ModeReglement == ModeReglement.Espèce)
+                        {
+                            D.ModePaiement = "Espèce";
+                        }
+                        else if (A.ModeReglement == ModeReglement.Chèque)
+                        {
+                            D.ModePaiement = "Chèque";
+                            D.Bank = A.Banque;
+                            D.DateEcheance = A.DateEcheance;
+                            D.NumCheque = A.NumeroCheque;
+                        }
+                        else if (A.ModeReglement == ModeReglement.Traite)
+                        {
+                            D.ModePaiement = "Traite";
+                            D.Bank = A.Banque;
+                            D.DateEcheance = A.DateEcheance;
+                            D.NumCheque = A.NumeroCheque;
+                        }
+
+                        D.Montant = MontantRegle;
+                        D.Tiers = A.Founisseur.FullName;
+
+                        D.Commentaire = "Avance Agriculteur_" + (A.Id).ToString("D8");
+
+                        db.Depenses.Add(D);
+                        db.SaveChanges();
+                        D.Numero = "D" + (D.Id).ToString("D8");
+                        db.SaveChanges();
+
+                        // mouvt caisse
+                        if (A.ModeReglement == ModeReglement.Espèce)
+                        {
+                            MouvementCaisse mvtCaisse = new MouvementCaisse();
+                            mvtCaisse.MontantSens = MontantRegle * -1;
+                            mvtCaisse.Sens = Sens.Depense;
+                            mvtCaisse.Agriculteur = A.Founisseur;
+                            mvtCaisse.CodeTiers = A.Founisseur.Numero;
+                            mvtCaisse.Date = A.Date;
+                            mvtCaisse.Source = "Agriculteur: " + A.Founisseur.FullName;
+                            mvtCaisse.Commentaire = "Avance Agriculteur_" + (A.Id).ToString("D8");
+
+                            if (CaisseDb != null)
+                            {
+                                CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MontantRegle);
+
+                            }
+
+                            int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
+                            mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
+                            mvtCaisse.Achat = A;
+                            mvtCaisse.Montant = CaisseDb.MontantTotal;
+                            db.MouvementsCaisse.Add(mvtCaisse);
+                            db.SaveChanges();
 
                         }
 
-                        int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
-                        mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
-                        mvtCaisse.Montant = CaisseDb.MontantTotal;
-                        mvtCaisse.Achat = A;
-                        db.MouvementsCaisse.Add(mvtCaisse);
-                        db.SaveChanges();
                     }
+
                     if (Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().FirstOrDefault() != null)
                     {
                         Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
@@ -1486,6 +1639,22 @@ namespace Gestion_de_Stock.Forms
                         var data = gridView4.GetRow(row) as Personne_Passager;
                         ListePassagers.Add(data);
                         row++;
+                    }
+                    if (ListePassagers.Count == 0)
+                    {
+
+                        var result = XtraMessageBox.Show(
+                            "Voulez vous répartir le montant d'avance?",
+                            "Configuration de l'application",
+                            MessageBoxButtons.OKCancel,
+                            MessageBoxIcon.Exclamation);
+
+                        // Check which button was clicked
+                        if (result == DialogResult.OK)
+                        {
+                            return;
+                        }
+
                     }
                     if (ListePassagers.Count > 0)
                     {
@@ -1705,7 +1874,7 @@ namespace Gestion_de_Stock.Forms
                     if (MontantRegle >= 3000 && ListePassagers.Count == 0)
                     {
                         decimal Deduit = decimal.Multiply(MontantRegle, 0.01m);
-
+                        decimal mtReg = MontantRegle;
                         MontantRegleFinal = decimal.Subtract(MontantRegle, Deduit);
 
                         F.Solde = decimal.Add(F.Solde, MontantRegleFinal);
@@ -1714,13 +1883,21 @@ namespace Gestion_de_Stock.Forms
                         AvnaceSurAchat.AvanceAvecAchat = MontantRegleFinal;
                         AvnaceSurAchat.PersonnesPassagers = null;
                         MontantRegle = MontantRegleFinal;
+                        Retenue Retenu = new Retenue();
+                        Retenu.MontantReglement = mtReg;
+                        Retenu.MontantRetenue = Deduit;
+                        Retenu.Commentaire = AvnaceSurAchat.Numero;
+                        db.retenus.Add(Retenu);
+                        db.SaveChanges();
+                        Retenu.Numero = "RTN" + (Retenu.Id).ToString("D8");
+                        db.SaveChanges();
                     }
-                    else if (MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count >= 0))
+                    else if (MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count > 0))
                     {
                         AvnaceSurAchat.AvanceAvecAchat = MontantRegle;
                         AvnaceSurAchat.MontantRegle = MontantRegle;
                         F.Solde = Decimal.Add(F.Solde, MontantRegle);
-                        if (ListePassagers.Count >= 0)
+                        if (ListePassagers.Count > 0)
                         {
                             foreach (var item in ListePassagers)
                             {
@@ -1855,80 +2032,118 @@ namespace Gestion_de_Stock.Forms
                 #region Depense type achat huile et mvt de caisse
                 if (MontantRegle > 0)
                 {
-                    Depense D = new Depense();
-                    D.Nature = NatureMouvement.AchatHuile;
-                    D.Agriculteur = A.Founisseur;
-                    D.CodeTiers = A.Founisseur.Numero;
-                    D.DateCreation = A.Date;
-                    if (A.ModeReglement == ModeReglement.Espèce)
+                    if (ListePassagers.Count > 0)
                     {
-                        D.ModePaiement = "Espèce";
-                    }
-                    else if (A.ModeReglement == ModeReglement.Chèque)
-                    {
-                        D.ModePaiement = "Chèque";
-                        D.Bank = A.Banque;
-                        D.DateEcheance = A.DateEcheance;
-                        D.NumCheque = A.NumeroCheque;
-                    }
-                    else if (A.ModeReglement == ModeReglement.Traite)
-                    {
-                        D.ModePaiement = "Traite";
-                        D.Bank = A.Banque;
-                        D.DateEcheance = A.DateEcheance;
-                        D.NumCheque = A.NumeroCheque;
-                    }
-                    D.Montant = MontantRegle;
-                    D.Tiers = A.Founisseur.FullName;
-                    //if (MontantRegle == MontantReglement)
-                    //{
-                    //    D.Commentaire = "Règlement Achat Huile N° " + A.Numero;
-                    //}
-                    //else if (MontantRegle < MontantReglement)
-                    //{
-                    //    D.Commentaire = "Avance Agriculteur Sur Achat Huile N° " + A.Numero;
-                    //}
-                    D.Commentaire = "Avance Agriculteur_" + (A.Id).ToString("D8");
-                    db.Depenses.Add(D);
-                    db.SaveChanges();
-                    D.Numero = "D" + (D.Id).ToString("D8");
-                    db.SaveChanges();
-
-                    // mouvt caisse
-                    if (A.ModeReglement == ModeReglement.Espèce)
-                    {
-                        MouvementCaisse mvtCaisse = new MouvementCaisse();
-                        mvtCaisse.MontantSens = MontantRegle * -1;
-                        mvtCaisse.Sens = Sens.Depense;
-                        mvtCaisse.Agriculteur = A.Founisseur;
-                        mvtCaisse.CodeTiers = A.Founisseur.Numero;
-                        mvtCaisse.Date = A.Date;
-                        mvtCaisse.Source = "Agriculteur: " + A.Founisseur.FullName;
-                        mvtCaisse.Commentaire = "Avance Agriculteur_" + (A.Id).ToString("D8");
-
-                        //if (MontantRegle == MontantReglement)
-                        //{
-                        //    mvtCaisse.Commentaire ="Règlement Achat Huile N° " + A.Numero;
-                        //}
-                        //else if (MontantRegle < MontantReglement)
-                        //{
-                        //    mvtCaisse.Commentaire = "Avance Agriculteur Sur Achat Huile N° " + A.Numero;
-                        //}
-
-                        if (CaisseDb != null)
+                        foreach (var item in ListePassagers)
                         {
-                            CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MontantRegle);
+                            Depense depensePer = new Depense();
+                            depensePer.Nature = NatureMouvement.AchatOlive;
+                            depensePer.Agriculteur = null;
+                            depensePer.CodeTiers = item.cin;
+                            depensePer.DateCreation = A.Date;
+                            depensePer.ModePaiement = "Espèce";
+                            depensePer.Montant = item.MontantReglement;
+                            depensePer.Tiers = item.FullName;
+                            depensePer.Commentaire = "Avance avec achat N° " + A.Numero;
+                            db.Depenses.Add(depensePer);
+                            db.SaveChanges();
+                            depensePer.Numero = "D" + (depensePer.Id).ToString("D8");
+                            db.SaveChanges();
+
+                            // mouvt caisse
+                            if (A.ModeReglement == ModeReglement.Espèce)
+                            {
+                                MouvementCaisse mvtCaisse = new MouvementCaisse();
+                                mvtCaisse.MontantSens = item.MontantReglement * -1;
+                                mvtCaisse.Sens = Sens.Depense;
+                                mvtCaisse.Agriculteur = null;
+                                mvtCaisse.CodeTiers = item.cin;
+                                mvtCaisse.Date = A.Date;
+                                mvtCaisse.Source = item.FullName;
+                                mvtCaisse.Commentaire = "Avance avec achat N° " + A.Numero;
+
+                                if (CaisseDb != null)
+                                {
+                                    CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, item.MontantReglement);
+
+                                }
+
+                                int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
+                                mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
+                                mvtCaisse.Achat = A;
+                                mvtCaisse.Montant = CaisseDb.MontantTotal;
+                                db.MouvementsCaisse.Add(mvtCaisse);
+                                db.SaveChanges();
+
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        Depense D = new Depense();
+                        D.Nature = NatureMouvement.AchatHuile;
+                        D.Agriculteur = A.Founisseur;
+                        D.CodeTiers = A.Founisseur.Numero;
+                        D.DateCreation = A.Date;
+                        if (A.ModeReglement == ModeReglement.Espèce)
+                        {
+                            D.ModePaiement = "Espèce";
+                        }
+                        else if (A.ModeReglement == ModeReglement.Chèque)
+                        {
+                            D.ModePaiement = "Chèque";
+                            D.Bank = A.Banque;
+                            D.DateEcheance = A.DateEcheance;
+                            D.NumCheque = A.NumeroCheque;
+                        }
+                        else if (A.ModeReglement == ModeReglement.Traite)
+                        {
+                            D.ModePaiement = "Traite";
+                            D.Bank = A.Banque;
+                            D.DateEcheance = A.DateEcheance;
+                            D.NumCheque = A.NumeroCheque;
+                        }
+
+                        D.Montant = MontantRegle;
+                        D.Tiers = A.Founisseur.FullName;
+
+                        D.Commentaire = "Avance Agriculteur_" + (A.Id).ToString("D8");
+
+                        db.Depenses.Add(D);
+                        db.SaveChanges();
+                        D.Numero = "D" + (D.Id).ToString("D8");
+                        db.SaveChanges();
+
+                        // mouvt caisse
+                        if (A.ModeReglement == ModeReglement.Espèce)
+                        {
+                            MouvementCaisse mvtCaisse = new MouvementCaisse();
+                            mvtCaisse.MontantSens = MontantRegle * -1;
+                            mvtCaisse.Sens = Sens.Depense;
+                            mvtCaisse.Agriculteur = A.Founisseur;
+                            mvtCaisse.CodeTiers = A.Founisseur.Numero;
+                            mvtCaisse.Date = A.Date;
+                            mvtCaisse.Source = "Agriculteur: " + A.Founisseur.FullName;
+                            mvtCaisse.Commentaire = "Avance Agriculteur_" + (A.Id).ToString("D8");
+
+                            if (CaisseDb != null)
+                            {
+                                CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MontantRegle);
+
+                            }
+
+                            int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
+                            mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
+                            mvtCaisse.Achat = A;
+                            mvtCaisse.Montant = CaisseDb.MontantTotal;
+                            db.MouvementsCaisse.Add(mvtCaisse);
+                            db.SaveChanges();
 
                         }
 
-                        int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
-                        mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
-                        mvtCaisse.Achat = A;
-                        mvtCaisse.Montant = CaisseDb.MontantTotal;
-                        db.MouvementsCaisse.Add(mvtCaisse);
-                        db.SaveChanges();
-
                     }
+
                     if (Application.OpenForms.OfType<FrmListeDepenseSaison>().FirstOrDefault() != null)
                     {
                         Application.OpenForms.OfType<FrmListeDepenseSaison>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
@@ -2179,24 +2394,39 @@ namespace Gestion_de_Stock.Forms
                         ListePassagers.Add(data);
                         row++;
                     }
-                   
-             
 
+                if (ListePassagers.Count == 0)
+                {
+
+                    var result = XtraMessageBox.Show(
+                        "Voulez vous répartir le montant d'avance?",
+                        "Configuration de l'application",
+                        MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Exclamation);
+
+                    // Check which button was clicked
+                    if (result == DialogResult.OK)
+                    {
+                        return;
+                    }
+
+                }
+                decimal mtReg = MontantRegle;
+                decimal Deduit = decimal.Multiply(MontantRegle, 0.01m);
                 if (MontantRegle >= 3000 && ListePassagers.Count == 0)
                 {
-                    decimal Deduit = decimal.Multiply(MontantRegle, 0.01m);
-
                     MontantRegleFinal = decimal.Subtract(MontantRegle, Deduit);
 
                     F.Solde = decimal.Add(F.Solde, MontantRegleFinal);
                    
                     MontantRegle = MontantRegleFinal;
+                   
                 }
-                else if (MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count >= 0))
+                else if (MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count > 0))
                 {
                     
                     F.Solde = Decimal.Add(F.Solde, MontantRegle);
-                    if (ListePassagers.Count >= 0)
+                    if (ListePassagers.Count > 0)
                     {
                         foreach (var item in ListePassagers)
                         {
@@ -2222,6 +2452,21 @@ namespace Gestion_de_Stock.Forms
                 db.SaveChanges();
                 A.Numero = "AVN" + (A.Id).ToString("D8");
                 db.SaveChanges();
+
+                if (mtReg >= 3000 && ListePassagers.Count == 0)
+                {
+                    Retenue Retenu = new Retenue();
+                    Retenu.MontantReglement = mtReg;
+                    Retenu.MontantRetenue = Deduit;
+                    Retenu.Commentaire = A.Numero;
+                    db.retenus.Add(Retenu);
+                    db.SaveChanges();
+                    Retenu.Numero = "RTN" + (Retenu.Id).ToString("D8");
+                    db.SaveChanges();
+                }
+
+
+
 
                 if (A.PersonnesPassagers != null)
                 {
@@ -2350,65 +2595,118 @@ namespace Gestion_de_Stock.Forms
 
                 #region Depense et mouvement caisse type achat avance
 
-                Depense D = new Depense();
-                D.Nature = NatureMouvement.AvanceAgriculteur;
-                D.Agriculteur = A.Founisseur;
-                D.CodeTiers = A.Founisseur.Numero;
-                D.DateCreation = A.Date;
-                if (A.ModeReglement == ModeReglement.Espèce)
+                if (ListePassagers.Count > 0)
                 {
-                    D.ModePaiement = "Espèce";
-                }
-                else if (A.ModeReglement == ModeReglement.Chèque)
-                {
-                    D.ModePaiement = "Chèque";
-                    D.Bank = A.Banque;
-                    D.DateEcheance = A.DateEcheance;
-                    D.NumCheque = A.NumeroCheque;
-                }
-                else if (A.ModeReglement == ModeReglement.Traite)
-                {
-                    D.ModePaiement = "Traite";
-                    D.Bank = A.Banque;
-                    D.DateEcheance = A.DateEcheance;
-                    D.NumCheque = A.NumeroCheque;
-                }
-
-
-                D.Montant = MontantRegle;
-                D.Tiers = A.Founisseur.FullName;
-                D.Commentaire = "Avance Agriculteur";
-                db.Depenses.Add(D);
-                db.SaveChanges();
-                D.Numero = "D" + (D.Id).ToString("D8");
-                db.SaveChanges();
-
-                // mouvt caisse
-                if (A.ModeReglement == ModeReglement.Espèce)
-                {
-                    MouvementCaisse mvtCaisse = new MouvementCaisse();
-                    mvtCaisse.MontantSens = MontantRegle * -1;
-                    mvtCaisse.Sens = Sens.Depense;
-                    mvtCaisse.Agriculteur = A.Founisseur;
-                    mvtCaisse.CodeTiers = A.Founisseur.Numero;
-                    mvtCaisse.Date = A.Date;
-                    mvtCaisse.Source = "Agriculteur: " + A.Founisseur.FullName;
-                    mvtCaisse.Commentaire = "Avance Agriculteur";
-
-                    if (CaisseDb != null)
+                    foreach (var item in ListePassagers)
                     {
-                        CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MontantRegle);
+                        Depense depensePer = new Depense();
+                        depensePer.Nature = NatureMouvement.AvanceAgriculteur;
+                        depensePer.Agriculteur = null;
+                        depensePer.CodeTiers = item.cin;
+                        depensePer.DateCreation = A.Date;
+                        depensePer.ModePaiement = "Espèce";
+                        depensePer.Montant = item.MontantReglement;
+                        depensePer.Tiers = item.FullName;
+                       depensePer.Commentaire = "Avance avec achat N° " + A.Numero;
+                        db.Depenses.Add(depensePer);
+                        db.SaveChanges();
+                        depensePer.Numero = "D" + (depensePer.Id).ToString("D8");
+                        db.SaveChanges();
+
+                        // mouvt caisse
+                        if (A.ModeReglement == ModeReglement.Espèce)
+                        {
+                            MouvementCaisse mvtCaisse = new MouvementCaisse();
+                            mvtCaisse.MontantSens = item.MontantReglement * -1;
+                            mvtCaisse.Sens = Sens.Depense;
+                            mvtCaisse.Agriculteur = null;
+                            mvtCaisse.CodeTiers = item.cin;
+                            mvtCaisse.Date = A.Date;
+                            mvtCaisse.Source = item.FullName;
+                            mvtCaisse.Commentaire = A.Numero;
+
+                            if (CaisseDb != null)
+                            {
+                                CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, item.MontantReglement);
+
+                            }
+
+                            int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
+                            mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
+                            mvtCaisse.Achat = A;
+                            mvtCaisse.Montant = CaisseDb.MontantTotal;
+                            db.MouvementsCaisse.Add(mvtCaisse);
+                            db.SaveChanges();
+
+                        }
+
+                    }
+                }
+                else
+                {
+                    Depense D = new Depense();
+                    D.Nature = NatureMouvement.AvanceAgriculteur;
+                    D.Agriculteur = A.Founisseur;
+                    D.CodeTiers = A.Founisseur.Numero;
+                    D.DateCreation = A.Date;
+                    if (A.ModeReglement == ModeReglement.Espèce)
+                    {
+                        D.ModePaiement = "Espèce";
+                    }
+                    else if (A.ModeReglement == ModeReglement.Chèque)
+                    {
+                        D.ModePaiement = "Chèque";
+                        D.Bank = A.Banque;
+                        D.DateEcheance = A.DateEcheance;
+                        D.NumCheque = A.NumeroCheque;
+                    }
+                    else if (A.ModeReglement == ModeReglement.Traite)
+                    {
+                        D.ModePaiement = "Traite";
+                        D.Bank = A.Banque;
+                        D.DateEcheance = A.DateEcheance;
+                        D.NumCheque = A.NumeroCheque;
+                    }
+
+                    D.Montant = MontantRegle;
+                    D.Tiers = A.Founisseur.FullName;
+
+                    D.Commentaire = "Avance Agriculteur_" + (A.Id).ToString("D8");
+
+                    db.Depenses.Add(D);
+                    db.SaveChanges();
+                    D.Numero = "D" + (D.Id).ToString("D8");
+                    db.SaveChanges();
+
+                    // mouvt caisse
+                    if (A.ModeReglement == ModeReglement.Espèce)
+                    {
+                        MouvementCaisse mvtCaisse = new MouvementCaisse();
+                        mvtCaisse.MontantSens = MontantRegle * -1;
+                        mvtCaisse.Sens = Sens.Depense;
+                        mvtCaisse.Agriculteur = A.Founisseur;
+                        mvtCaisse.CodeTiers = A.Founisseur.Numero;
+                        mvtCaisse.Date = A.Date;
+                        mvtCaisse.Source = "Agriculteur: " + A.Founisseur.FullName;
+                        mvtCaisse.Commentaire = "Avance Agriculteur_" + (A.Id).ToString("D8");
+
+                        if (CaisseDb != null)
+                        {
+                            CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MontantRegle);
+
+                        }
+
+                        int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
+                        mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
+                        mvtCaisse.Achat = A;
+                        mvtCaisse.Montant = CaisseDb.MontantTotal;
+                        db.MouvementsCaisse.Add(mvtCaisse);
+                        db.SaveChanges();
 
                     }
 
-                    int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
-                    mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
-                    mvtCaisse.Achat = A;
-                    mvtCaisse.Montant = CaisseDb.MontantTotal;
-                    db.MouvementsCaisse.Add(mvtCaisse);
-                    db.SaveChanges();
-
                 }
+
                 if (Application.OpenForms.OfType<FrmMouvementCaisse>().FirstOrDefault() != null)
                 {
                     Application.OpenForms.OfType<FrmMouvementCaisse>().First().mouvementCaisseBindingSource.DataSource = db.MouvementsCaisse.ToList();
