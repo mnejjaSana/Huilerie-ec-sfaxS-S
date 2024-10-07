@@ -71,5 +71,10 @@ namespace Gestion_de_Stock.Forms
 
             }
         }
+
+        private void FrmDetailAvanceImpo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

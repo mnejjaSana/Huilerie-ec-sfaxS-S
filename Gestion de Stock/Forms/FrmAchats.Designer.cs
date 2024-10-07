@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAchats));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
@@ -47,14 +48,14 @@
             this.TxtPUOliveFinal = new DevExpress.XtraEditors.TextEdit();
             this.TxtQteOlive = new DevExpress.XtraEditors.TextEdit();
             this.searchLookUpEmplacement = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.emplacementBindingSource = new System.Windows.Forms.BindingSource();
+            this.emplacementBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.TxtMtOpPrev = new DevExpress.XtraEditors.TextEdit();
             this.TxtPUOlive = new DevExpress.XtraEditors.TextEdit();
             this.TxtRendement = new DevExpress.XtraEditors.TextEdit();
             this.TxtNuméroBon = new DevExpress.XtraEditors.TextEdit();
             this.searchLookUpPile = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.pileBindingSource = new System.Windows.Forms.BindingSource();
+            this.pileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.comboBoxQualité = new DevExpress.XtraEditors.ComboBoxEdit();
             this.TxtQteHuileAchetee = new DevExpress.XtraEditors.TextEdit();
@@ -67,7 +68,7 @@
             this.TxtNbSac = new DevExpress.XtraEditors.TextEdit();
             this.comboBoxTypeOlive = new DevExpress.XtraEditors.ComboBoxEdit();
             this.searchLookUpFournisseur = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.fournisseurBindingSource = new System.Windows.Forms.BindingSource();
+            this.fournisseurBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.BtnEnregister = new DevExpress.XtraEditors.SimpleButton();
             this.dateEditDateFacture = new DevExpress.XtraEditors.DateEdit();
@@ -100,7 +101,7 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.personnePassagerBindingSource = new System.Windows.Forms.BindingSource();
+            this.personnePassagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCIN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFullname = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -109,7 +110,7 @@
             this.BtnSupprimer = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.BtnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.achatBindingSource = new System.Windows.Forms.BindingSource();
+            this.achatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colImprimenteTicker = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BtnImprimerTicket = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -149,7 +150,7 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -390,6 +391,8 @@
             this.TxtQteOlive.Name = "TxtQteOlive";
             this.TxtQteOlive.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtQteOlive.Properties.Appearance.Options.UseFont = true;
+            this.TxtQteOlive.Properties.Mask.EditMask = "f0";
+            this.TxtQteOlive.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TxtQteOlive.Size = new System.Drawing.Size(229, 26);
             this.TxtQteOlive.StyleController = this.layoutControl3;
             this.TxtQteOlive.TabIndex = 42;
@@ -519,6 +522,8 @@
             this.TxtQteHuileAchetee.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtQteHuileAchetee.Properties.Appearance.Options.UseFont = true;
             this.TxtQteHuileAchetee.Properties.AutoHeight = false;
+            this.TxtQteHuileAchetee.Properties.Mask.EditMask = "f0";
+            this.TxtQteHuileAchetee.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TxtQteHuileAchetee.Size = new System.Drawing.Size(229, 24);
             this.TxtQteHuileAchetee.StyleController = this.layoutControl3;
             this.TxtQteHuileAchetee.TabIndex = 34;
@@ -567,6 +572,8 @@
             this.TxtPrixLitre.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPrixLitre.Properties.Appearance.Options.UseFont = true;
             this.TxtPrixLitre.Properties.AutoHeight = false;
+            this.TxtPrixLitre.Properties.Mask.EditMask = "n3";
+            this.TxtPrixLitre.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TxtPrixLitre.Size = new System.Drawing.Size(229, 24);
             this.TxtPrixLitre.StyleController = this.layoutControl3;
             this.TxtPrixLitre.TabIndex = 27;
@@ -594,6 +601,8 @@
             this.TxtPoids.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPoids.Properties.Appearance.Options.UseFont = true;
             this.TxtPoids.Properties.AutoHeight = false;
+            this.TxtPoids.Properties.Mask.EditMask = "f0";
+            this.TxtPoids.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TxtPoids.Size = new System.Drawing.Size(229, 24);
             this.TxtPoids.StyleController = this.layoutControl3;
             this.TxtPoids.TabIndex = 25;
@@ -606,6 +615,8 @@
             this.TxtNbSac.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNbSac.Properties.Appearance.Options.UseFont = true;
             this.TxtNbSac.Properties.AutoHeight = false;
+            this.TxtNbSac.Properties.Mask.EditMask = "f0";
+            this.TxtNbSac.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TxtNbSac.Size = new System.Drawing.Size(229, 24);
             this.TxtNbSac.StyleController = this.layoutControl3;
             this.TxtNbSac.TabIndex = 24;
@@ -1127,6 +1138,8 @@
             this.colCIN.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colCIN.AppearanceHeader.Options.UseFont = true;
             this.colCIN.Caption = "Cin";
+            this.colCIN.DisplayFormat.FormatString = "n0";
+            this.colCIN.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colCIN.FieldName = "cin";
             this.colCIN.MinWidth = 160;
             this.colCIN.Name = "colCIN";
@@ -1149,7 +1162,7 @@
             // 
             this.colMTReg.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMTReg.AppearanceHeader.Options.UseFont = true;
-            this.colMTReg.Caption = "Montant Règlement";
+            this.colMTReg.Caption = "Avance";
             this.colMTReg.FieldName = "MontantReglement";
             this.colMTReg.Name = "colMTReg";
             this.colMTReg.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {

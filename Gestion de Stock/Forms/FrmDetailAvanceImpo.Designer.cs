@@ -147,9 +147,9 @@
             this.colMontantReglement.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMontantReglement.AppearanceHeader.Options.UseFont = true;
             this.colMontantReglement.Caption = "Montant";
+            this.colMontantReglement.DisplayFormat.FormatString = "n3";
+            this.colMontantReglement.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colMontantReglement.FieldName = "MontantReglement";
-            this.colMontantReglement.GroupFormat.FormatString = "n3";
-            this.colMontantReglement.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colMontantReglement.Name = "colMontantReglement";
             this.colMontantReglement.OptionsColumn.AllowEdit = false;
             this.colMontantReglement.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -226,8 +226,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmDetailAvanceImpo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Détail Avance avec Impo";
+            this.Text = "Liste des avances réparties";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmDetailAvanceImpo_FormClosed);
+            this.Load += new System.EventHandler(this.FrmDetailAvanceImpo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

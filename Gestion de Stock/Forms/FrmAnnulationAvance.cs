@@ -296,6 +296,24 @@ namespace Gestion_de_Stock.Forms
             Avance.Annulle = "Oui";
             db.SaveChanges();
 
+            if(Avance.MontantInitialAvance>0)
+            { string num = Avance.Numero;
+                Retenue rt = db.retenus.FirstOrDefault(x => x.Commentaire.Equals(num));
+                if(rt!=null)
+                {
+                    Retenue Retenu = new Retenue();
+                    Retenu.MontantReglement = rt.MontantReglement;
+                    Retenu.MontantRetenue =decimal.Multiply(rt.MontantRetenue , -1);
+                    Retenu.Commentaire ="Annulation avance N° "+ num;
+                    db.retenus.Add(Retenu);
+                    db.SaveChanges();
+                    Retenu.Numero = "RTN" + (Retenu.Id).ToString("D8");
+                    db.SaveChanges();
+                }
+            }
+
+
+
             if (db.Agriculteurs.Count() > 0)
             {
 
@@ -317,7 +335,14 @@ namespace Gestion_de_Stock.Forms
             searchLookUpAgr.Text = string.Empty;
             searchLookUpAvance.Text = string.Empty;
             TxtMontant.Text = string.Empty;
-            achatBindingSource.DataSource = null;          
+            achatBindingSource.DataSource = null;
+
+            if (Application.OpenForms.OfType<FrmRetenu>().FirstOrDefault() != null)
+            {
+                Application.OpenForms.OfType<FrmRetenu>().First().retenueBindingSource.DataSource = db.retenus.ToList();
+            }
+
+
         }
 
         private void searchLookUpAvance_EditValueChanged(object sender, EventArgs e)

@@ -34,11 +34,13 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.searchLookUpAvance = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.achatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnValider = new DevExpress.XtraEditors.SimpleButton();
             this.TxtMontant = new DevExpress.XtraEditors.TextEdit();
             this.searchLookUpAgr = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.agriculteurBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -50,8 +52,6 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.achatBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.agriculteurBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -59,9 +59,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpAvance.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.achatBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMontant.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpAgr.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agriculteurBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -73,8 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.achatBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.agriculteurBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -130,6 +130,10 @@
             this.searchLookUpAvance.TabIndex = 9;
             this.searchLookUpAvance.EditValueChanged += new System.EventHandler(this.searchLookUpAvance_EditValueChanged);
             // 
+            // achatBindingSource
+            // 
+            this.achatBindingSource.DataSource = typeof(Gestion_de_Stock.Model.Achat);
+            // 
             // gridView2
             // 
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
@@ -165,6 +169,8 @@
             this.TxtMontant.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMontant.Properties.Appearance.Options.UseFont = true;
             this.TxtMontant.Properties.AutoHeight = false;
+            this.TxtMontant.Properties.Mask.EditMask = "n3";
+            this.TxtMontant.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TxtMontant.Properties.ReadOnly = true;
             this.TxtMontant.Size = new System.Drawing.Size(401, 33);
             this.TxtMontant.StyleController = this.layoutControl2;
@@ -189,6 +195,10 @@
             this.searchLookUpAgr.StyleController = this.layoutControl2;
             this.searchLookUpAgr.TabIndex = 4;
             this.searchLookUpAgr.EditValueChanged += new System.EventHandler(this.searchLookUpAgr_EditValueChanged);
+            // 
+            // agriculteurBindingSource
+            // 
+            this.agriculteurBindingSource.DataSource = typeof(Gestion_de_Stock.Model.Agriculteur);
             // 
             // searchLookUpEdit1View
             // 
@@ -307,14 +317,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // achatBindingSource
-            // 
-            this.achatBindingSource.DataSource = typeof(Gestion_de_Stock.Model.Achat);
-            // 
-            // agriculteurBindingSource
-            // 
-            this.agriculteurBindingSource.DataSource = typeof(Gestion_de_Stock.Model.Agriculteur);
-            // 
             // FrmAnnulationAvance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,9 +336,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpAvance.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.achatBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMontant.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpAgr.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agriculteurBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -348,8 +352,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.achatBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.agriculteurBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

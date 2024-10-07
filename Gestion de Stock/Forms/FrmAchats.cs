@@ -113,9 +113,10 @@ namespace Gestion_de_Stock.Forms
 
             if (ste.AchatOlive && ste.AchatHuile && ste.AchatBase && ste.Service)
             {
+                Types.Add(ListeTypeAchat[0]);// huile
                 Types.Add(ListeTypeAchat[4]); // olive
                 Types.Add(ListeTypeAchat[1]);// base
-                Types.Add(ListeTypeAchat[0]);// huile
+               
                 Types.Add(ListeTypeAchat[2]);//Avance
                 Types.Add(ListeTypeAchat[3]);// service
 
@@ -152,8 +153,9 @@ namespace Gestion_de_Stock.Forms
             }
             else if (ste.AchatOlive && ste.AchatHuile && !ste.AchatBase && !ste.Service)
             {
-                Types.Add(ListeTypeAchat[4]); // olive
                 Types.Add(ListeTypeAchat[0]);// huile
+                Types.Add(ListeTypeAchat[4]); // olive
+                
                 Types.Add(ListeTypeAchat[2]);//Avance
 
             }
@@ -497,9 +499,19 @@ namespace Gestion_de_Stock.Forms
 
             else if (comboBoxModeReglement.SelectedItem.ToString().Equals("Chèque") || comboBoxModeReglement.SelectedItem.ToString().Equals("Traite"))
             {
-                if (string.IsNullOrEmpty(TxtNumCheque.Text))
+                string msg= "";
+
+                if (comboBoxModeReglement.SelectedItem.ToString().Equals("Chèque"))
                 {
-                    TxtNumCheque.ErrorText = "N° Chéque est Obligatoire";
+                    msg = "N° Chéque est Obligatoire";
+                }
+                else if (comboBoxModeReglement.SelectedItem.ToString().Equals("Traite"))
+                {
+                    msg = "N° Traite est Obligatoire";
+                }
+                if (string.IsNullOrEmpty(TxtNumCheque.Text))
+                { 
+                    TxtNumCheque.ErrorText = msg;
                     return;
                 }
 
@@ -517,13 +529,13 @@ namespace Gestion_de_Stock.Forms
 
                 if (string.IsNullOrEmpty(TxtMontantRegle.Text))
                 {
-                    TxtMontantRegle.ErrorText = "Montant Règlement est Obligatoire";
+                    TxtMontantRegle.ErrorText = "Montant d'avance est obligatoire";
                     return;
                 }
 
-                if (MontantRegle <= 0 && !comboBoxModeReglement.SelectedItem.ToString().Equals("Chèque") && comboBoxModeReglement.SelectedItem.ToString().Equals("Traite"))
+                if (MontantRegle <= 0 )
                 {
-                    XtraMessageBox.Show("Montant Règlement est Invalid", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Montant d'avance est invalide", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     TxtMontantRegle.Text = "";
                     return;
                 }
@@ -547,7 +559,7 @@ namespace Gestion_de_Stock.Forms
                     row++;
                 }
                 
-                if (ListePersonnes.Count > 0 && MontantRegle >0)
+                if (ListePersonnes.Count > 0)
                 {
                     XtraMessageBox.Show("Le mode de paiement n'est pas espèce, il est impossible de répartir le montant d'avance!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                     return;
@@ -669,7 +681,7 @@ namespace Gestion_de_Stock.Forms
                     row++;
                 }
 
-                if (MontantRegle >= 3000)
+                if (MontantRegle >= 3000 && comboBoxModeReglement.SelectedItem.ToString().Equals("Espèce"))
                 {
                     if(ListePassagers.Count==0)
                     {
@@ -702,7 +714,7 @@ namespace Gestion_de_Stock.Forms
                             if (string.IsNullOrEmpty(cin) || string.IsNullOrEmpty(fullName) ||
                                 !montantReglement.HasValue || montantReglement.Value <= 0 || montantReglement.Value>=3000)
                             {
-                                XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item)} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom, et Montant de règlement.",
+                                XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item)+1} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom et Avance!",
                                     "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
                              
                                 return;
@@ -793,6 +805,7 @@ namespace Gestion_de_Stock.Forms
                 if (MontantRegle > 0)
                 {
                     Achat AvnaceSurAchat = new Achat();
+                    AvnaceSurAchat.Annulle = "Non";
                     AvnaceSurAchat.TypeAchat = TypeAchat.Avance;
                     AvnaceSurAchat.PrixLitre = 0;
                     AvnaceSurAchat.MontantReglement = 0;
@@ -804,7 +817,7 @@ namespace Gestion_de_Stock.Forms
                     db.SaveChanges();
 
                     
-                    if (MontantRegle >= 3000 && ListePassagers.Count == 0)
+                    if (MontantRegle >= 3000 && ListePassagers.Count == 0 && comboBoxModeReglement.SelectedItem.ToString().Equals("Espèce"))
                     {
                         decimal mtReg = MontantRegle;
 
@@ -829,7 +842,7 @@ namespace Gestion_de_Stock.Forms
 
 
                     }
-                    else if(MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count > 0))
+                    else if(MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count > 0) ||  !comboBoxModeReglement.SelectedItem.ToString().Equals("Espèce"))
                     {
                         AvnaceSurAchat.AvanceAvecAchat = MontantRegle;
                         AvnaceSurAchat.MontantRegle = MontantRegle;
@@ -1224,7 +1237,7 @@ namespace Gestion_de_Stock.Forms
                     ListePassagers.Add(data);
                     row++;
                 }
-                if (MontantRegle >= 3000)
+                if (MontantRegle >= 3000 && comboBoxModeReglement.SelectedItem.ToString().Equals("Espèce"))
                 {
                    
                     if (ListePassagers.Count == 0)
@@ -1256,7 +1269,7 @@ namespace Gestion_de_Stock.Forms
                             if (string.IsNullOrEmpty(cin) || string.IsNullOrEmpty(fullName) ||
                                 !montantReglement.HasValue || montantReglement.Value <= 0 || montantReglement.Value >= 3000)
                             {
-                                XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item)} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom, et Montant de règlement.",
+                                XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item)+1} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom, et Montant de règlement.",
                                     "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                                 return;
@@ -1338,7 +1351,7 @@ namespace Gestion_de_Stock.Forms
 
                     AvnaceSurAchat.TypeAchat = TypeAchat.Avance;
                     AvnaceSurAchat.Avance = false;
-
+                    AvnaceSurAchat.Annulle = "Non";
                     AvnaceSurAchat.PrixLitre = 0;
                     if (comboBoxTypeOlive.Text.Equals("OliveVif"))
                     {
@@ -1359,7 +1372,7 @@ namespace Gestion_de_Stock.Forms
                     db.SaveChanges();
                     AvnaceSurAchat.Numero = "AVN" + (A.Id).ToString("D8");
                     db.SaveChanges();
-                    if (MontantRegle >= 3000 && ListePassagers.Count == 0)
+                    if (MontantRegle >= 3000 && ListePassagers.Count == 0 && comboBoxModeReglement.SelectedItem.ToString().Equals("Espèce"))
                     {
                         decimal Deduit = decimal.Multiply(MontantRegle, 0.01m);
                         decimal mtReg = MontantRegle;
@@ -1380,7 +1393,7 @@ namespace Gestion_de_Stock.Forms
                         Retenu.Numero = "RTN" + (Retenu.Id).ToString("D8");
                         db.SaveChanges();
                     }
-                    else if (MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count > 0))
+                    else if (MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count > 0) || !comboBoxModeReglement.SelectedItem.ToString().Equals("Espèce"))
                     {
                         AvnaceSurAchat.AvanceAvecAchat = MontantRegle;
                         AvnaceSurAchat.MontantRegle = MontantRegle;
@@ -1703,7 +1716,7 @@ namespace Gestion_de_Stock.Forms
                     ListePassagers.Add(data);
                     row++;
                 }
-                if (MontantRegle >= 3000)
+                if (MontantRegle >= 3000 && comboBoxModeReglement.SelectedItem.ToString().Equals("Espèce"))
                 {
                     if (ListePassagers.Count == 0)
                     {
@@ -1733,7 +1746,7 @@ namespace Gestion_de_Stock.Forms
                             if (string.IsNullOrEmpty(cin) || string.IsNullOrEmpty(fullName) ||
                                 !montantReglement.HasValue || montantReglement.Value <= 0 || montantReglement.Value >= 3000)
                             {
-                                XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item)} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom, et Montant de règlement.",
+                                XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item)+1} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom, et Montant de règlement.",
                                     "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                                 return;
@@ -1949,6 +1962,7 @@ namespace Gestion_de_Stock.Forms
                 {
                     Achat AvnaceSurAchat = new Achat();
                     AvnaceSurAchat.TypeAchat = TypeAchat.Avance;
+                    AvnaceSurAchat.Annulle = "Non";
                     AvnaceSurAchat.Avance = false;
                     AvnaceSurAchat.PrixLitre = 0;
                 
@@ -1961,7 +1975,7 @@ namespace Gestion_de_Stock.Forms
                     AvnaceSurAchat.Numero = "AVN" + (A.Id).ToString("D8");
                     db.SaveChanges();
 
-                    if (MontantRegle >= 3000 && ListePassagers.Count == 0)
+                    if (MontantRegle >= 3000 && ListePassagers.Count == 0 && comboBoxModeReglement.SelectedItem.ToString().Equals("Espèce"))
                     {
                         decimal Deduit = decimal.Multiply(MontantRegle, 0.01m);
                         decimal mtReg = MontantRegle;
@@ -1982,7 +1996,7 @@ namespace Gestion_de_Stock.Forms
                         Retenu.Numero = "RTN" + (Retenu.Id).ToString("D8");
                         db.SaveChanges();
                     }
-                    else if (MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count > 0))
+                    else if (MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count > 0) || !comboBoxModeReglement.SelectedItem.ToString().Equals("Espèce"))
                     {
                         AvnaceSurAchat.AvanceAvecAchat = MontantRegle;
                         AvnaceSurAchat.MontantRegle = MontantRegle;
@@ -2488,11 +2502,11 @@ namespace Gestion_de_Stock.Forms
 
                     if(ListePassagers.Count > 0 && MontantRegle< 3000)
                 {
-                    XtraMessageBox.Show("Impossible de répartir de montant d'avance!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Impossible de répartir le montant d'avance!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     return;
                 }
 
-                if (ListePassagers.Count == 0 && MontantRegle >= 3000)
+                if (ListePassagers.Count == 0 && MontantRegle >= 3000 &&  comboBoxModeReglement.SelectedItem.ToString().Equals("Espèce"))
                 {
 
                     var result = XtraMessageBox.Show(
@@ -2522,7 +2536,7 @@ namespace Gestion_de_Stock.Forms
                         if (string.IsNullOrEmpty(cin) || string.IsNullOrEmpty(fullName) ||
                             !montantReglement.HasValue || montantReglement.Value <= 0 || montantReglement.Value >= 3000)
                         {
-                            XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item)} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom, et Montant de règlement.",
+                            XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item)+1} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom, et Montant de règlement.",
                                 "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                             return;
@@ -2543,16 +2557,16 @@ namespace Gestion_de_Stock.Forms
                 
                 decimal mtReg = MontantRegle;
                 decimal Deduit = decimal.Multiply(MontantRegle, 0.01m);
-                if (MontantRegle >= 3000 && ListePassagers.Count == 0)
+                if (MontantRegle >= 3000 && ListePassagers.Count == 0 && comboBoxModeReglement.SelectedItem.ToString().Equals("Espèce"))
                 {
                     MontantRegleFinal = decimal.Subtract(MontantRegle, Deduit);
-
+                    A.MontantInitialAvance = MontantRegle;
                     F.Solde = decimal.Add(F.Solde, MontantRegleFinal);
                    
                     MontantRegle = MontantRegleFinal;
                    
                 }
-                else if (MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count > 0))
+                else if (MontantRegle < 3000 || (MontantRegle >= 3000 && ListePassagers.Count > 0) || !comboBoxModeReglement.SelectedItem.ToString().Equals("Espèce"))
                 {
                     
                     F.Solde = Decimal.Add(F.Solde, MontantRegle);
@@ -4604,6 +4618,7 @@ namespace Gestion_de_Stock.Forms
                     if (newValue.Length != 8 || !newValue.All(char.IsDigit))
                     {
                         XtraMessageBox.Show("Le CIN doit contenir exactement 8 chiffres.", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        gridView4.SetRowCellValue(e.RowHandle, e.Column, "");
                         return;
                     }
 
@@ -4630,7 +4645,16 @@ namespace Gestion_de_Stock.Forms
                     {
                         isCellValueChanging = true; // Désactiver temporairement l'événement
 
-                        XtraMessageBox.Show("Le montant de règlement doit être inférieur à 3000!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        XtraMessageBox.Show("Le montant d'avance doit être inférieur à 3000!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        gridView4.SetRowCellValue(e.RowHandle, e.Column, 0);
+                        isCellValueChanging = false; // Réactiver l'événement
+                        return;
+                    }
+                    if (newValue.Value <=0)
+                    {
+                        isCellValueChanging = true; // Désactiver temporairement l'événement
+
+                        XtraMessageBox.Show("Le montant d'avance est invalide!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                         gridView4.SetRowCellValue(e.RowHandle, e.Column, 0);
                         isCellValueChanging = false; // Réactiver l'événement
                         return;

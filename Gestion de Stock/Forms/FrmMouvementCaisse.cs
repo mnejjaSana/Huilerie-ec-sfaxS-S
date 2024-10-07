@@ -498,10 +498,37 @@ namespace Gestion_de_Stock.Forms
 
             string RsSte = societe.RaisonSocial;
 
+            if (!mvmCaisseDb.Source.Contains("Agriculteur") && mvmCaisseDb.Commentaire.Contains("Avance avec achat"))
+            {
+                TicketPersonneMovCaisse Ticket = new TicketPersonneMovCaisse();
+                Ticket.Titre.Text = "Avance";
+                Ticket.Parameters["RsSte"].Value = RsSte;
+
+                Ticket.Parameters["RsSte"].Visible = false;
+
+                Ticket.Parameters["MtPaye"].Value = mvmCaisseDb.MontantSens * -1;
+
+                Ticket.Parameters["MtPaye"].Visible = false;
+                Ticket.Parameters["fullname"].Value = mvmCaisseDb.Source;
+                Ticket.Parameters["cin"].Value = mvmCaisseDb.CodeTiers;
+                Ticket.Parameters["commentaire"].Value = mvmCaisseDb.Commentaire;
+
+
+                using (ReportPrintTool printTool = new ReportPrintTool(Ticket))
+                {
+                    printTool.ShowPreviewDialog();
+
+                }
+
+
+            }
+
+
+
             if (!mvmCaisseDb.Source.Contains("Agriculteur") && !mvmCaisseDb.Commentaire.Contains("Avance avec achat"))
             {
                 TicketPersonneMovCaisse Ticket = new TicketPersonneMovCaisse();
-              
+                Ticket.Titre.Text = "Règlement Achat";
                 Ticket.Parameters["RsSte"].Value = RsSte;
 
                 Ticket.Parameters["RsSte"].Visible = false;
@@ -530,7 +557,7 @@ namespace Gestion_de_Stock.Forms
 
                 Achat AchatDb = db.Achats.FirstOrDefault(x => x.Id == codeAchat);
 
-                if (mvmCaisseDb.Achat.TypeAchat== TypeAchat.Avance )
+                if (mvmCaisseDb.Achat.TypeAchat== TypeAchat.Avance && mvmCaisseDb.Numero[0]=='D')
                 {
                     xrAvance xrAvance = new xrAvance();
 
