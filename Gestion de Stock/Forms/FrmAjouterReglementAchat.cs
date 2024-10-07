@@ -457,7 +457,7 @@ namespace Gestion_de_Stock.Forms
                     Depense D = new Depense();
 
 
-                    D.Nature = NatureMouvement.ReglementImpo;
+                    D.Nature = NatureMouvement.Personne;
                     D.CodeTiers = Achat.Founisseur.Numero;
                     D.Agriculteur = null;
                     D.CodeTiers = ListePassagers[j].cin;

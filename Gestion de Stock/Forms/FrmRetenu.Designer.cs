@@ -32,6 +32,7 @@ namespace Gestion_de_Stock.Forms
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.label1 = new System.Windows.Forms.Label();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.retenueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -41,7 +42,6 @@ namespace Gestion_de_Stock.Forms
             this.colCommentaire = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -64,6 +64,14 @@ namespace Gestion_de_Stock.Forms
             this.layoutControl1.Size = new System.Drawing.Size(846, 365);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // label1
+            // 
+            this.label1.Image = global::Gestion_de_Stock.Properties.Resources.EC;
+            this.label1.Location = new System.Drawing.Point(12, 333);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(822, 20);
+            this.label1.TabIndex = 5;
             // 
             // gridControl1
             // 
@@ -161,15 +169,6 @@ namespace Gestion_de_Stock.Forms
             this.layoutControlItem1.Size = new System.Drawing.Size(826, 321);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // label1
-            // 
-            this.label1.Image = global::Gestion_de_Stock.Properties.Resources.EC;
-            this.label1.Location = new System.Drawing.Point(12, 333);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(822, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
             // 
             // layoutControlItem2
             // 

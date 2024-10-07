@@ -299,7 +299,7 @@
             this.colTiers.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colTiers.AppearanceHeader.Options.UseFont = true;
             this.colTiers.Caption = "Agriculteur";
-            this.colTiers.FieldName = "Tiers";
+            this.colTiers.FieldName = "Agriculteur.FullName";
             this.colTiers.MinWidth = 100;
             this.colTiers.Name = "colTiers";
             this.colTiers.OptionsColumn.AllowEdit = false;

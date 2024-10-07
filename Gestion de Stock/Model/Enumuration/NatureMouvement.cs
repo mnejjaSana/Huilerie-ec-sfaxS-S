@@ -18,5 +18,6 @@ namespace Gestion_de_Stock.Model.Enumuration
         AchatHuile=8,
         ReglementImpo = 9,
         RéglementAchats=10,
+        Personne=11,
     }
 }

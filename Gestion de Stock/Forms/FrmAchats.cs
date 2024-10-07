@@ -1046,7 +1046,7 @@ namespace Gestion_de_Stock.Forms
                         foreach (var item in ListePassagers)
                         {
                             Depense depensePer = new Depense();
-                            depensePer.Nature = NatureMouvement.AchatOlive;
+                            depensePer.Nature = NatureMouvement.Personne;
                             depensePer.Agriculteur = null;
                             depensePer.CodeTiers = item.cin;
                             depensePer.DateCreation = A.Date;
@@ -1536,7 +1536,7 @@ namespace Gestion_de_Stock.Forms
                         foreach (var item in ListePassagers)
                         {
                             Depense depensePer = new Depense();
-                            depensePer.Nature = NatureMouvement.AchatOlive;
+                            depensePer.Nature = NatureMouvement.Personne;
                             depensePer.Agriculteur = null;
                             depensePer.CodeTiers = item.cin;
                             depensePer.DateCreation = A.Date;
@@ -2143,7 +2143,7 @@ namespace Gestion_de_Stock.Forms
                         foreach (var item in ListePassagers)
                         {
                             Depense depensePer = new Depense();
-                            depensePer.Nature = NatureMouvement.AchatOlive;
+                            depensePer.Nature = NatureMouvement.Personne;
                             depensePer.Agriculteur = null;
                             depensePer.CodeTiers = item.cin;
                             depensePer.DateCreation = A.Date;
@@ -2746,7 +2746,7 @@ namespace Gestion_de_Stock.Forms
                     foreach (var item in ListePassagers)
                     {
                         Depense depensePer = new Depense();
-                        depensePer.Nature = NatureMouvement.AvanceAgriculteur;
+                        depensePer.Nature = NatureMouvement.Personne;
                         depensePer.Agriculteur = null;
                         depensePer.CodeTiers = item.cin;
                         depensePer.DateCreation = A.Date;

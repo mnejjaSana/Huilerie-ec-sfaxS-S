@@ -58,11 +58,11 @@ namespace Gestion_de_Stock.Forms
 
             if (DateMaxJour.ToString("dd/MM/yyyy").Equals("01/01/0001"))
             {
-                depenseBindingSource.DataSource = db.Depenses.Where(x => x.DateCreation.CompareTo(DateMin) >= 0 && x.Nature != NatureMouvement.Autre && x.Nature != NatureMouvement.ClôtureCaisse && x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.Salarié && x.Nature != NatureMouvement.ModificationService).ToList();
+                depenseBindingSource.DataSource = db.Depenses.Where(x => x.DateCreation.CompareTo(DateMin) >= 0 && x.Nature != NatureMouvement.Autre && x.Nature != NatureMouvement.ClôtureCaisse && x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.Salarié && x.Nature != NatureMouvement.ModificationService && x.Nature != NatureMouvement.Personne).ToList();
             }
             else
             {
-                depenseBindingSource.DataSource = db.Depenses.Where(x => x.DateCreation.CompareTo(DateMin) >= 0 && x.DateCreation.CompareTo(DateMaxJour) <= 0 && x.Nature != NatureMouvement.Autre && x.Nature != NatureMouvement.ClôtureCaisse && x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.Salarié && x.Nature != NatureMouvement.ModificationService).ToList();
+                depenseBindingSource.DataSource = db.Depenses.Where(x => x.DateCreation.CompareTo(DateMin) >= 0 && x.DateCreation.CompareTo(DateMaxJour) <= 0 && x.Nature != NatureMouvement.Autre && x.Nature != NatureMouvement.ClôtureCaisse && x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.Salarié && x.Nature != NatureMouvement.ModificationService && x.Nature != NatureMouvement.Personne).ToList();
             }
 
         }
@@ -79,11 +79,11 @@ namespace Gestion_de_Stock.Forms
             }
             if (DateMaxJour.ToString("dd/MM/yyyy").Equals("01/01/0001"))
             {
-                depenseBindingSource.DataSource = db.Depenses.Where(x => x.DateCreation.CompareTo(DateMin) >= 0 && x.Nature != NatureMouvement.Autre && x.Nature != NatureMouvement.ClôtureCaisse && x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.Salarié && x.Nature != NatureMouvement.ModificationService && x.Montant > 0).ToList();
+                depenseBindingSource.DataSource = db.Depenses.Where(x => x.DateCreation.CompareTo(DateMin) >= 0 && x.Nature != NatureMouvement.Autre && x.Nature != NatureMouvement.ClôtureCaisse && x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.Salarié && x.Nature != NatureMouvement.ModificationService && x.Nature != NatureMouvement.Personne && x.Montant > 0).ToList();
             }
             else
             {
-                depenseBindingSource.DataSource = db.Depenses.Where(x => x.DateCreation.CompareTo(DateMin) >= 0 && x.DateCreation.CompareTo(DateMaxJour) <= 0 && x.Nature != NatureMouvement.Autre && x.Nature != NatureMouvement.ClôtureCaisse && x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.Salarié && x.Nature != NatureMouvement.ModificationService && x.Montant > 0).ToList();
+                depenseBindingSource.DataSource = db.Depenses.Where(x => x.DateCreation.CompareTo(DateMin) >= 0 && x.DateCreation.CompareTo(DateMaxJour) <= 0 && x.Nature != NatureMouvement.Autre && x.Nature != NatureMouvement.ClôtureCaisse && x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.Salarié && x.Nature != NatureMouvement.ModificationService && x.Nature != NatureMouvement.Personne && x.Montant > 0).ToList();
             }
 
         }
@@ -121,7 +121,7 @@ namespace Gestion_de_Stock.Forms
 
         private void BtnActualiser_Click(object sender, EventArgs e)
         {
-            db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
+            Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile || x.Nature == NatureMouvement.ReglementImpo || x.Nature == NatureMouvement.RéglementAchats) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
         }
     }
 }

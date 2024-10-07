@@ -899,7 +899,7 @@ namespace Gestion_de_Stock
 
                 if (Application.OpenForms.OfType<FrmListeDepenses>().FirstOrDefault() != null)
                 {
-                    Application.OpenForms.OfType<FrmListeDepenses>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.AchatOlive && x.Nature != NatureMouvement.AvanceAgriculteur && x.Nature != NatureMouvement.AchatHuile && x.Nature != NatureMouvement.ReglementImpo && x.Nature != NatureMouvement.RéglementAchats && x.ModePaiement.Equals("Espèce")).OrderByDescending(x => x.DateCreation).ToList();
+                    Application.OpenForms.OfType<FrmListeDepenses>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => x.Nature != NatureMouvement.Personne && x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.AchatOlive && x.Nature != NatureMouvement.AvanceAgriculteur && x.Nature != NatureMouvement.AchatHuile && x.Nature != NatureMouvement.ReglementImpo && x.Nature != NatureMouvement.RéglementAchats && x.ModePaiement.Equals("Espèce")).OrderByDescending(x => x.DateCreation).ToList();
                 }
 
                 if (Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().FirstOrDefault() != null)

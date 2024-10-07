@@ -39,7 +39,7 @@ namespace Gestion_de_Stock.Forms
         private void FrmListeDepenses_Load(object sender, EventArgs e)
         {
 
-            depenseBindingSource.DataSource = db.Depenses.Where(x => x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.AchatOlive && x.Nature != NatureMouvement.AvanceAgriculteur && x.Nature != NatureMouvement.AchatHuile && x.Nature != NatureMouvement.ReglementImpo && x.Nature != NatureMouvement.RéglementAchats && x.ModePaiement.Equals("Espèce")).OrderByDescending(x => x.DateCreation).ToList();
+            depenseBindingSource.DataSource = db.Depenses.Where(x => x.Nature != NatureMouvement.Personne && x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.AchatOlive && x.Nature != NatureMouvement.AvanceAgriculteur && x.Nature != NatureMouvement.AchatHuile && x.Nature != NatureMouvement.ReglementImpo && x.Nature != NatureMouvement.RéglementAchats && x.ModePaiement.Equals("Espèce")).OrderByDescending(x => x.DateCreation).ToList();
 
         }
 
@@ -146,7 +146,7 @@ namespace Gestion_de_Stock.Forms
 
         private void BtnActualiser_Click(object sender, EventArgs e)
         {
-            depenseBindingSource.DataSource = db.Depenses.Where(x => x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.AchatOlive && x.Nature != NatureMouvement.AvanceAgriculteur && x.Nature != NatureMouvement.AchatHuile && x.Nature != NatureMouvement.ReglementImpo && x.Nature != NatureMouvement.RéglementAchats && x.ModePaiement.Equals("Espèce")).OrderByDescending(x => x.DateCreation).ToList();
+            depenseBindingSource.DataSource = db.Depenses.Where(x => x.Nature != NatureMouvement.Personne && x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.AchatOlive && x.Nature != NatureMouvement.AvanceAgriculteur && x.Nature != NatureMouvement.AchatHuile && x.Nature != NatureMouvement.ReglementImpo && x.Nature != NatureMouvement.RéglementAchats && x.ModePaiement.Equals("Espèce")).OrderByDescending(x => x.DateCreation).ToList();
 
         }
     }
