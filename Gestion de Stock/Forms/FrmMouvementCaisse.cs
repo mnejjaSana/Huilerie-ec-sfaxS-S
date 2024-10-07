@@ -592,7 +592,7 @@ namespace Gestion_de_Stock.Forms
 
                     if (AvanceSurAchat != null)
                     {
-                        xrAchatTicket.Parameters["montantAvance"].Value = AvanceSurAchat.MontantRegle.ToString();
+                        xrAchatTicket.Parameters["montantAvance"].Value = AvanceSurAchat.MontantRegle;
                     }
                     else
                     {

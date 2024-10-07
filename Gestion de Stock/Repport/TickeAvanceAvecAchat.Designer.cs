@@ -34,6 +34,7 @@
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.montantAvance = new DevExpress.XtraReports.Parameters.Parameter();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
@@ -63,7 +64,6 @@
             this.PrixU = new DevExpress.XtraReports.UI.XRLabel();
             this.PU = new DevExpress.XtraReports.Parameters.Parameter();
             this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
-            this.montantAvance = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
@@ -115,6 +115,14 @@
             this.xrTableCell5.StylePriority.UseTextAlignment = false;
             this.xrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell5.Weight = 0.6032947300301218D;
+            // 
+            // montantAvance
+            // 
+            this.montantAvance.Description = "montantAvance";
+            this.montantAvance.Name = "montantAvance";
+            this.montantAvance.Type = typeof(decimal);
+            this.montantAvance.ValueInfo = "0";
+            this.montantAvance.Visible = false;
             // 
             // TopMargin
             // 
@@ -420,12 +428,6 @@
             // 
             this.objectDataSource1.DataSource = typeof(Gestion_de_Stock.Model.Achat);
             this.objectDataSource1.Name = "objectDataSource1";
-            // 
-            // montantAvance
-            // 
-            this.montantAvance.Description = "montantAvance";
-            this.montantAvance.Name = "montantAvance";
-            this.montantAvance.Visible = false;
             // 
             // TickeAvanceAvecAchat
             // 

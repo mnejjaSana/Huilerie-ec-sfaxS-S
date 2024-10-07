@@ -834,7 +834,7 @@ namespace Gestion_de_Stock.Forms
                 numCheque.Visibility = LayoutVisibility.Never;
                 bank.Visibility = LayoutVisibility.Never;
                 DateEcheance.Visibility = LayoutVisibility.Never;
-
+                layoutControlSoldeCaisse.Visibility = LayoutVisibility.Always;
 
             }
         }

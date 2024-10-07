@@ -3186,7 +3186,7 @@ namespace Gestion_de_Stock.Forms
                 xrAchatTicket.Parameters["PU"].Value = A.PrixLitre;
                 if (AvanceSurAchat != null)
                 {
-                    xrAchatTicket.Parameters["montantAvance"].Value = AvanceSurAchat.MontantRegle.ToString();
+                    xrAchatTicket.Parameters["montantAvance"].Value = AvanceSurAchat.MontantRegle;
                 }
                 else
                 {
@@ -3211,7 +3211,7 @@ namespace Gestion_de_Stock.Forms
                 xrAchatTicket.Parameters["PU"].Value = A.PrixLitre;
                 if (AvanceSurAchat != null)
                 {
-                    xrAchatTicket.Parameters["montantAvance"].Value = AvanceSurAchat.MontantRegle.ToString();
+                    xrAchatTicket.Parameters["montantAvance"].Value = AvanceSurAchat.MontantRegle;
                 }
                 else
                 {
@@ -3266,7 +3266,7 @@ namespace Gestion_de_Stock.Forms
                 xrAchatTicket.Parameters["PU"].Visible = false;
                if(AvanceSurAchat!=null)
                 {
-                    xrAchatTicket.Parameters["montantAvance"].Value = AvanceSurAchat.MontantRegle.ToString();
+                    xrAchatTicket.Parameters["montantAvance"].Value = AvanceSurAchat.MontantRegle;
                 }
                 else
                 {
