@@ -699,11 +699,11 @@ namespace Gestion_de_Stock.Forms
             //SplashScreenManager.CloseForm();
             //waiting Form 
             if (Application.OpenForms.OfType<FrmListeDepenses>().FirstOrDefault() != null)
-                Application.OpenForms.OfType<FrmListeDepenses>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.AchatOlive && x.Nature != NatureMouvement.AvanceAgriculteur && x.Nature != NatureMouvement.AchatHuile && x.ModePaiement.Equals("Espèce")).OrderByDescending(x => x.DateCreation).ToList();
+                Application.OpenForms.OfType<FrmListeDepenses>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => x.Nature != NatureMouvement.Prélèvement && x.Nature != NatureMouvement.AchatOlive && x.Nature != NatureMouvement.AvanceAgriculteur && x.Nature != NatureMouvement.AchatHuile && x.Nature != NatureMouvement.ReglementImpo && x.Nature != NatureMouvement.RéglementAchats && x.ModePaiement.Equals("Espèce")).OrderByDescending(x => x.DateCreation).ToList();
 
 
             if (Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().FirstOrDefault() != null)
-                Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
+                Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile || x.Nature == NatureMouvement.ReglementImpo || x.Nature == NatureMouvement.RéglementAchats) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
 
 
 

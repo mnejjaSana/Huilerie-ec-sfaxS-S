@@ -498,7 +498,7 @@ namespace Gestion_de_Stock.Forms
 
             string RsSte = societe.RaisonSocial;
 
-            if (!mvmCaisseDb.Source.Contains("Agriculteur") && mvmCaisseDb.Commentaire.Contains("Avance avec achat"))
+            if (!mvmCaisseDb.Source.Contains("Agriculteur") && (mvmCaisseDb.Commentaire.Contains("Avance avec achat") || mvmCaisseDb.Commentaire.StartsWith("AVN")))
             {
                 TicketPersonneMovCaisse Ticket = new TicketPersonneMovCaisse();
                 Ticket.Titre.Text = "Avance";
@@ -525,7 +525,7 @@ namespace Gestion_de_Stock.Forms
 
 
 
-            if (!mvmCaisseDb.Source.Contains("Agriculteur") && !mvmCaisseDb.Commentaire.Contains("Avance avec achat"))
+            if (!mvmCaisseDb.Source.Contains("Agriculteur") && !mvmCaisseDb.Commentaire.Contains("Avance avec achat") && !mvmCaisseDb.Commentaire.StartsWith("AVN"))
             {
                 TicketPersonneMovCaisse Ticket = new TicketPersonneMovCaisse();
                 Ticket.Titre.Text = "Règlement Achat";

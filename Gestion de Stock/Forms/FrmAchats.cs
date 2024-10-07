@@ -561,7 +561,7 @@ namespace Gestion_de_Stock.Forms
                 
                 if (ListePersonnes.Count > 0)
                 {
-                    XtraMessageBox.Show("Le mode de paiement n'est pas espèce, il est impossible de répartir le montant d'avance!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    XtraMessageBox.Show("Le mode de paiement n'est pas espèce, il est impossible de répartir le montant d'avance!", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 
@@ -689,11 +689,12 @@ namespace Gestion_de_Stock.Forms
                         var result = XtraMessageBox.Show(
                             "Voulez vous répartir le montant d'avance?",
                             "Configuration de l'application",
-                            MessageBoxButtons.OKCancel,
+                            MessageBoxButtons.YesNo,
                             MessageBoxIcon.Exclamation);
 
+                        
                         // Check which button was clicked
-                        if (result == DialogResult.OK)
+                        if (result == DialogResult.Yes)
                         {
                             return;
                         }
@@ -736,7 +737,7 @@ namespace Gestion_de_Stock.Forms
                 }
                 else if (MontantRegle<3000 && ListePassagers.Count>0)
                 {
-                    XtraMessageBox.Show("Impossible de répartir de montant d'avance!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Impossible de répartir de montant d'avance!", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
 
                 }
@@ -1165,7 +1166,7 @@ namespace Gestion_de_Stock.Forms
 
                     if (Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().FirstOrDefault() != null)
                     {
-                        Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
+                        Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile || x.Nature == NatureMouvement.ReglementImpo || x.Nature == NatureMouvement.RéglementAchats) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
                     }
 
                     if (Application.OpenForms.OfType<FrmMouvementCaisse>().FirstOrDefault() != null)
@@ -1246,11 +1247,11 @@ namespace Gestion_de_Stock.Forms
                         var result = XtraMessageBox.Show(
                             "Voulez vous répartir le montant d'avance?",
                             "Configuration de l'application",
-                            MessageBoxButtons.OKCancel,
+                            MessageBoxButtons.YesNo,
                             MessageBoxIcon.Exclamation);
 
                         // Check which button was clicked
-                        if (result == DialogResult.OK)
+                        if (result == DialogResult.Yes)
                         {
                             return;
                         }
@@ -1286,11 +1287,12 @@ namespace Gestion_de_Stock.Forms
                         }
 
 
+
                     }
                 }
                 else if (MontantRegle < 3000 && ListePassagers.Count > 0)
                 {
-                    XtraMessageBox.Show("Impossible de répartir de montant d'avance!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Impossible de répartir de montant d'avance!", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
 
                 }
@@ -1643,7 +1645,7 @@ namespace Gestion_de_Stock.Forms
 
                     if (Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().FirstOrDefault() != null)
                     {
-                        Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
+                        Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile || x.Nature == NatureMouvement.ReglementImpo || x.Nature == NatureMouvement.RéglementAchats) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
                     }
 
                     if (Application.OpenForms.OfType<FrmListeDepenseSaison>().FirstOrDefault() != null)
@@ -1723,11 +1725,11 @@ namespace Gestion_de_Stock.Forms
                         var result = XtraMessageBox.Show(
                             "Voulez vous répartir le montant d'avance?",
                             "Configuration de l'application",
-                            MessageBoxButtons.OKCancel,
+                            MessageBoxButtons.YesNo,
                             MessageBoxIcon.Exclamation);
 
                         // Check which button was clicked
-                        if (result == DialogResult.OK)
+                        if (result == DialogResult.Yes)
                         {
                             return;
                         }
@@ -1768,7 +1770,7 @@ namespace Gestion_de_Stock.Forms
                 }
                 else if (MontantRegle < 3000 && ListePassagers.Count > 0)
                 {
-                    XtraMessageBox.Show("Impossible de répartir de montant d'avance!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Impossible de répartir de montant d'avance!", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
 
                 }
@@ -2255,7 +2257,7 @@ namespace Gestion_de_Stock.Forms
 
                     if (Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().FirstOrDefault() != null)
                     {
-                        Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
+                        Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile || x.Nature == NatureMouvement.ReglementImpo || x.Nature == NatureMouvement.RéglementAchats) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
                     }
 
                     if (Application.OpenForms.OfType<FrmMouvementCaisse>().FirstOrDefault() != null)
@@ -2502,7 +2504,7 @@ namespace Gestion_de_Stock.Forms
 
                     if(ListePassagers.Count > 0 && MontantRegle< 3000)
                 {
-                    XtraMessageBox.Show("Impossible de répartir le montant d'avance!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Impossible de répartir le montant d'avance!", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -2512,11 +2514,11 @@ namespace Gestion_de_Stock.Forms
                     var result = XtraMessageBox.Show(
                         "Voulez vous répartir le montant d'avance?",
                         "Configuration de l'application",
-                        MessageBoxButtons.OKCancel,
+                        MessageBoxButtons.YesNo,
                         MessageBoxIcon.Exclamation);
 
                     // Check which button was clicked
-                    if (result == DialogResult.OK)
+                    if (result == DialogResult.Yes)
                     {
                         return;
                     }
@@ -2777,7 +2779,7 @@ namespace Gestion_de_Stock.Forms
 
                             int lastMouvement = db.MouvementsCaisse.ToList().Count() + 1;
                             mvtCaisse.Numero = "D" + (lastMouvement).ToString("D8");
-                            mvtCaisse.Achat = A;
+                            mvtCaisse.Achat =null;
                             mvtCaisse.Montant = CaisseDb.MontantTotal;
                             db.MouvementsCaisse.Add(mvtCaisse);
                             db.SaveChanges();
@@ -2886,7 +2888,7 @@ namespace Gestion_de_Stock.Forms
 
                 if (Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().FirstOrDefault() != null)
                 {
-                    Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
+                    Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile || x.Nature == NatureMouvement.ReglementImpo || x.Nature == NatureMouvement.RéglementAchats) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
                 }
 
                 if (Application.OpenForms.OfType<FrmListedesAvances>().FirstOrDefault() != null)
@@ -2962,7 +2964,7 @@ namespace Gestion_de_Stock.Forms
 
                 if (Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().FirstOrDefault() != null)
                 {
-                    Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
+                    Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile || x.Nature == NatureMouvement.ReglementImpo || x.Nature == NatureMouvement.RéglementAchats) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
                 }
 
                 if (Application.OpenForms.OfType<FrmListeDepenseSaison>().FirstOrDefault() != null)

@@ -102,7 +102,7 @@ namespace Gestion_de_Stock.Forms
 
             if (gridView1.RowCount != 0 && MontantEncaisse <3000)
             {
-                XtraMessageBox.Show("Impossible d'ajouter des personnes!", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Impossible de répartir le montant de règlement!", "Configuration de l'application", MessageBoxButtons.OK, MessageBoxIcon.Error);
               
                 return;
             }

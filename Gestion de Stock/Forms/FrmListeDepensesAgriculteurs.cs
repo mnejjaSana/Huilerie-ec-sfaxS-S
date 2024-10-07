@@ -46,8 +46,9 @@ namespace Gestion_de_Stock.Forms
 
         private void FrmListeDepensesAgriculteurs_Load(object sender, EventArgs e)
         {
-            depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile || x.Nature== NatureMouvement.ReglementImpo) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
+            Application.OpenForms.OfType<FrmListeDepensesAgriculteurs>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => (x.Nature == NatureMouvement.AchatOlive || x.Nature == NatureMouvement.AvanceAgriculteur || x.Nature == NatureMouvement.AchatHuile || x.Nature == NatureMouvement.ReglementImpo || x.Nature == NatureMouvement.RéglementAchats) && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
         }
+        
 
         private void dateDebut_EditValueChanged(object sender, EventArgs e)
         {

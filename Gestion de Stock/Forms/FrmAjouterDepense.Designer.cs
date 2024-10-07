@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAjouterDepense));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -39,7 +40,7 @@
             this.comboBoxModePaie = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.searchLookUpOuvrier = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.salarierBindingSource = new System.Windows.Forms.BindingSource();
+            this.salarierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.BtnEnregistrer = new DevExpress.XtraEditors.SimpleButton();
             this.TxtCommentaire = new DevExpress.XtraEditors.TextEdit();
@@ -110,17 +111,17 @@
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(753, 497);
+            this.layoutControl1.Size = new System.Drawing.Size(645, 404);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.layoutControl2);
-            this.groupControl1.Location = new System.Drawing.Point(16, 16);
+            this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(721, 465);
+            this.groupControl1.Size = new System.Drawing.Size(621, 380);
             this.groupControl1.TabIndex = 4;
             // 
             // layoutControl2
@@ -138,17 +139,18 @@
             this.layoutControl2.Controls.Add(this.TxtMontant);
             this.layoutControl2.Controls.Add(this.comboBoxNature);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(2, 25);
+            this.layoutControl2.Location = new System.Drawing.Point(2, 20);
             this.layoutControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(717, 438);
+            this.layoutControl2.Size = new System.Drawing.Size(617, 358);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
             // comboBoxBank
             // 
-            this.comboBoxBank.Location = new System.Drawing.Point(171, 195);
+            this.comboBoxBank.Location = new System.Drawing.Point(137, 134);
+            this.comboBoxBank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxBank.Name = "comboBoxBank";
             this.comboBoxBank.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxBank.Properties.Appearance.Options.UseFont = true;
@@ -156,15 +158,14 @@
             this.comboBoxBank.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxBank.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxBank.Size = new System.Drawing.Size(530, 29);
+            this.comboBoxBank.Size = new System.Drawing.Size(468, 24);
             this.comboBoxBank.StyleController = this.layoutControl2;
             this.comboBoxBank.TabIndex = 18;
             // 
             // datePrélèvements
             // 
             this.datePrélèvements.EditValue = null;
-            this.datePrélèvements.Location = new System.Drawing.Point(171, 52);
-            this.datePrélèvements.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.datePrélèvements.Location = new System.Drawing.Point(137, 48);
             this.datePrélèvements.Name = "datePrélèvements";
             this.datePrélèvements.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePrélèvements.Properties.Appearance.Options.UseFont = true;
@@ -173,28 +174,28 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.datePrélèvements.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.datePrélèvements.Size = new System.Drawing.Size(530, 30);
+            this.datePrélèvements.Size = new System.Drawing.Size(468, 24);
             this.datePrélèvements.StyleController = this.layoutControl2;
             this.datePrélèvements.TabIndex = 17;
             // 
             // TxtNumCheque
             // 
             this.TxtNumCheque.EditValue = "";
-            this.TxtNumCheque.Location = new System.Drawing.Point(171, 160);
+            this.TxtNumCheque.Location = new System.Drawing.Point(137, 106);
             this.TxtNumCheque.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtNumCheque.Name = "TxtNumCheque";
             this.TxtNumCheque.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNumCheque.Properties.Appearance.Options.UseFont = true;
             this.TxtNumCheque.Properties.AutoHeight = false;
             this.TxtNumCheque.Properties.MaxLength = 7;
-            this.TxtNumCheque.Size = new System.Drawing.Size(530, 29);
+            this.TxtNumCheque.Size = new System.Drawing.Size(468, 24);
             this.TxtNumCheque.StyleController = this.layoutControl2;
             this.TxtNumCheque.TabIndex = 16;
             // 
             // dateEchance
             // 
             this.dateEchance.EditValue = null;
-            this.dateEchance.Location = new System.Drawing.Point(171, 230);
+            this.dateEchance.Location = new System.Drawing.Point(137, 162);
             this.dateEchance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateEchance.Name = "dateEchance";
             this.dateEchance.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -204,13 +205,13 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEchance.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEchance.Size = new System.Drawing.Size(530, 29);
+            this.dateEchance.Size = new System.Drawing.Size(468, 31);
             this.dateEchance.StyleController = this.layoutControl2;
             this.dateEchance.TabIndex = 15;
             // 
             // comboBoxModePaie
             // 
-            this.comboBoxModePaie.Location = new System.Drawing.Point(171, 124);
+            this.comboBoxModePaie.Location = new System.Drawing.Point(137, 78);
             this.comboBoxModePaie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxModePaie.Name = "comboBoxModePaie";
             this.comboBoxModePaie.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -219,7 +220,7 @@
             this.comboBoxModePaie.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxModePaie.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxModePaie.Size = new System.Drawing.Size(530, 30);
+            this.comboBoxModePaie.Size = new System.Drawing.Size(468, 24);
             this.comboBoxModePaie.StyleController = this.layoutControl2;
             this.comboBoxModePaie.TabIndex = 13;
             this.comboBoxModePaie.SelectedIndexChanged += new System.EventHandler(this.comboBoxModePaie_SelectedIndexChanged);
@@ -227,15 +228,15 @@
             // label1
             // 
             this.label1.Image = global::Gestion_de_Stock.Properties.Resources.EC;
-            this.label1.Location = new System.Drawing.Point(16, 394);
+            this.label1.Location = new System.Drawing.Point(12, 309);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(685, 28);
+            this.label1.Size = new System.Drawing.Size(593, 37);
             this.label1.TabIndex = 12;
             // 
             // searchLookUpOuvrier
             // 
             this.searchLookUpOuvrier.EditValue = "";
-            this.searchLookUpOuvrier.Location = new System.Drawing.Point(171, 88);
+            this.searchLookUpOuvrier.Location = new System.Drawing.Point(137, 76);
             this.searchLookUpOuvrier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchLookUpOuvrier.Name = "searchLookUpOuvrier";
             this.searchLookUpOuvrier.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -247,7 +248,7 @@
             this.searchLookUpOuvrier.Properties.DisplayMember = "Intitule";
             this.searchLookUpOuvrier.Properties.ValueMember = "Id";
             this.searchLookUpOuvrier.Properties.View = this.searchLookUpEdit1View;
-            this.searchLookUpOuvrier.Size = new System.Drawing.Size(530, 30);
+            this.searchLookUpOuvrier.Size = new System.Drawing.Size(468, 0);
             this.searchLookUpOuvrier.StyleController = this.layoutControl2;
             this.searchLookUpOuvrier.TabIndex = 11;
             // 
@@ -267,10 +268,10 @@
             this.BtnEnregistrer.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEnregistrer.Appearance.Options.UseFont = true;
             this.BtnEnregistrer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnEnregistrer.ImageOptions.Image")));
-            this.BtnEnregistrer.Location = new System.Drawing.Point(409, 356);
+            this.BtnEnregistrer.Location = new System.Drawing.Point(352, 279);
             this.BtnEnregistrer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnEnregistrer.Name = "BtnEnregistrer";
-            this.BtnEnregistrer.Size = new System.Drawing.Size(292, 32);
+            this.BtnEnregistrer.Size = new System.Drawing.Size(253, 26);
             this.BtnEnregistrer.StyleController = this.layoutControl2;
             this.BtnEnregistrer.TabIndex = 10;
             this.BtnEnregistrer.Text = "Valider";
@@ -278,45 +279,45 @@
             // 
             // TxtCommentaire
             // 
-            this.TxtCommentaire.Location = new System.Drawing.Point(171, 301);
+            this.TxtCommentaire.Location = new System.Drawing.Point(137, 233);
             this.TxtCommentaire.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtCommentaire.Name = "TxtCommentaire";
             this.TxtCommentaire.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCommentaire.Properties.Appearance.Options.UseFont = true;
             this.TxtCommentaire.Properties.AutoHeight = false;
-            this.TxtCommentaire.Size = new System.Drawing.Size(530, 30);
+            this.TxtCommentaire.Size = new System.Drawing.Size(468, 32);
             this.TxtCommentaire.StyleController = this.layoutControl2;
             this.TxtCommentaire.TabIndex = 9;
             // 
             // TxtSoldeCaisse
             // 
-            this.TxtSoldeCaisse.Location = new System.Drawing.Point(495, 265);
+            this.TxtSoldeCaisse.Location = new System.Drawing.Point(421, 197);
             this.TxtSoldeCaisse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtSoldeCaisse.Name = "TxtSoldeCaisse";
             this.TxtSoldeCaisse.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtSoldeCaisse.Properties.Appearance.Options.UseFont = true;
             this.TxtSoldeCaisse.Properties.AutoHeight = false;
             this.TxtSoldeCaisse.Properties.ReadOnly = true;
-            this.TxtSoldeCaisse.Size = new System.Drawing.Size(206, 30);
+            this.TxtSoldeCaisse.Size = new System.Drawing.Size(184, 32);
             this.TxtSoldeCaisse.StyleController = this.layoutControl2;
             this.TxtSoldeCaisse.TabIndex = 8;
             // 
             // TxtMontant
             // 
-            this.TxtMontant.Location = new System.Drawing.Point(171, 265);
+            this.TxtMontant.Location = new System.Drawing.Point(137, 197);
             this.TxtMontant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtMontant.Name = "TxtMontant";
             this.TxtMontant.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMontant.Properties.Appearance.Options.UseFont = true;
             this.TxtMontant.Properties.AutoHeight = false;
-            this.TxtMontant.Size = new System.Drawing.Size(207, 30);
+            this.TxtMontant.Size = new System.Drawing.Size(189, 32);
             this.TxtMontant.StyleController = this.layoutControl2;
             this.TxtMontant.TabIndex = 7;
             this.TxtMontant.EditValueChanged += new System.EventHandler(this.TxtMontant_EditValueChanged);
             // 
             // comboBoxNature
             // 
-            this.comboBoxNature.Location = new System.Drawing.Point(171, 16);
+            this.comboBoxNature.Location = new System.Drawing.Point(137, 12);
             this.comboBoxNature.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxNature.Name = "comboBoxNature";
             this.comboBoxNature.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -325,7 +326,7 @@
             this.comboBoxNature.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxNature.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxNature.Size = new System.Drawing.Size(530, 30);
+            this.comboBoxNature.Size = new System.Drawing.Size(468, 32);
             this.comboBoxNature.StyleController = this.layoutControl2;
             this.comboBoxNature.TabIndex = 4;
             this.comboBoxNature.SelectedIndexChanged += new System.EventHandler(this.comboBoxNature_SelectedIndexChanged);
@@ -352,7 +353,7 @@
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup2.Size = new System.Drawing.Size(717, 438);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(617, 358);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem2
@@ -364,17 +365,17 @@
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(691, 36);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(174, 36);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(691, 36);
+            this.layoutControlItem2.Size = new System.Drawing.Size(597, 36);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "Nature";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(151, 23);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(121, 19);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 321);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 257);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(691, 19);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(597, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
@@ -382,30 +383,30 @@
             this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem5.Control = this.TxtMontant;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 249);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 185);
             this.layoutControlItem5.MaxSize = new System.Drawing.Size(691, 36);
             this.layoutControlItem5.MinSize = new System.Drawing.Size(174, 36);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(368, 36);
+            this.layoutControlItem5.Size = new System.Drawing.Size(318, 36);
             this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.Text = "Montant";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(151, 23);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(121, 19);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.BtnEnregistrer;
-            this.layoutControlItem8.Location = new System.Drawing.Point(393, 340);
+            this.layoutControlItem8.Location = new System.Drawing.Point(340, 267);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(298, 38);
+            this.layoutControlItem8.Size = new System.Drawing.Size(257, 30);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 340);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 267);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(393, 38);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(340, 30);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem7
@@ -413,37 +414,37 @@
             this.layoutControlItem7.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem7.Control = this.TxtCommentaire;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 285);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 221);
             this.layoutControlItem7.MaxSize = new System.Drawing.Size(691, 36);
             this.layoutControlItem7.MinSize = new System.Drawing.Size(174, 36);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(691, 36);
+            this.layoutControlItem7.Size = new System.Drawing.Size(597, 36);
             this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem7.Text = "Commentaire";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(151, 23);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(121, 19);
             // 
             // layoutControlOuvrier
             // 
             this.layoutControlOuvrier.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlOuvrier.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlOuvrier.Control = this.searchLookUpOuvrier;
-            this.layoutControlOuvrier.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlOuvrier.Location = new System.Drawing.Point(0, 64);
             this.layoutControlOuvrier.MaxSize = new System.Drawing.Size(691, 36);
             this.layoutControlOuvrier.MinSize = new System.Drawing.Size(174, 2);
             this.layoutControlOuvrier.Name = "layoutControlOuvrier";
             this.layoutControlOuvrier.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlOuvrier.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlOuvrier.Size = new System.Drawing.Size(691, 36);
+            this.layoutControlOuvrier.Size = new System.Drawing.Size(597, 2);
             this.layoutControlOuvrier.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlOuvrier.Text = "Salarié";
-            this.layoutControlOuvrier.TextSize = new System.Drawing.Size(151, 23);
+            this.layoutControlOuvrier.TextSize = new System.Drawing.Size(121, 19);
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.label1;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 378);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 297);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(691, 34);
+            this.layoutControlItem9.Size = new System.Drawing.Size(597, 41);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -452,42 +453,42 @@
             this.layoutControlItemPaiement.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItemPaiement.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItemPaiement.Control = this.comboBoxModePaie;
-            this.layoutControlItemPaiement.Location = new System.Drawing.Point(0, 108);
+            this.layoutControlItemPaiement.Location = new System.Drawing.Point(0, 66);
             this.layoutControlItemPaiement.MaxSize = new System.Drawing.Size(691, 36);
             this.layoutControlItemPaiement.MinSize = new System.Drawing.Size(175, 28);
             this.layoutControlItemPaiement.Name = "layoutControlItemPaiement";
-            this.layoutControlItemPaiement.Size = new System.Drawing.Size(691, 36);
+            this.layoutControlItemPaiement.Size = new System.Drawing.Size(597, 28);
             this.layoutControlItemPaiement.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemPaiement.Text = "Mode Paiement";
-            this.layoutControlItemPaiement.TextSize = new System.Drawing.Size(151, 23);
+            this.layoutControlItemPaiement.TextSize = new System.Drawing.Size(121, 19);
             // 
             // DateEcheance
             // 
             this.DateEcheance.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateEcheance.AppearanceItemCaption.Options.UseFont = true;
             this.DateEcheance.Control = this.dateEchance;
-            this.DateEcheance.Location = new System.Drawing.Point(0, 214);
+            this.DateEcheance.Location = new System.Drawing.Point(0, 150);
             this.DateEcheance.MaxSize = new System.Drawing.Size(691, 36);
             this.DateEcheance.MinSize = new System.Drawing.Size(534, 35);
             this.DateEcheance.Name = "DateEcheance";
-            this.DateEcheance.Size = new System.Drawing.Size(691, 35);
+            this.DateEcheance.Size = new System.Drawing.Size(597, 35);
             this.DateEcheance.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.DateEcheance.Text = "Date Echeance";
-            this.DateEcheance.TextSize = new System.Drawing.Size(151, 23);
+            this.DateEcheance.TextSize = new System.Drawing.Size(121, 19);
             // 
             // numCheque
             // 
             this.numCheque.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numCheque.AppearanceItemCaption.Options.UseFont = true;
             this.numCheque.Control = this.TxtNumCheque;
-            this.numCheque.Location = new System.Drawing.Point(0, 144);
+            this.numCheque.Location = new System.Drawing.Point(0, 94);
             this.numCheque.MaxSize = new System.Drawing.Size(691, 36);
             this.numCheque.MinSize = new System.Drawing.Size(192, 28);
             this.numCheque.Name = "numCheque";
-            this.numCheque.Size = new System.Drawing.Size(691, 35);
+            this.numCheque.Size = new System.Drawing.Size(597, 28);
             this.numCheque.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.numCheque.Text = "Num Chèque";
-            this.numCheque.TextSize = new System.Drawing.Size(151, 23);
+            this.numCheque.TextSize = new System.Drawing.Size(121, 19);
             // 
             // Prelevement
             // 
@@ -498,24 +499,24 @@
             this.Prelevement.MaxSize = new System.Drawing.Size(691, 36);
             this.Prelevement.MinSize = new System.Drawing.Size(164, 28);
             this.Prelevement.Name = "Prelevement";
-            this.Prelevement.Size = new System.Drawing.Size(691, 36);
+            this.Prelevement.Size = new System.Drawing.Size(597, 28);
             this.Prelevement.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.Prelevement.Text = "Date Prélèvement";
-            this.Prelevement.TextSize = new System.Drawing.Size(151, 23);
+            this.Prelevement.TextSize = new System.Drawing.Size(121, 19);
             // 
             // layoutControlSoldeCaisse
             // 
             this.layoutControlSoldeCaisse.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlSoldeCaisse.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlSoldeCaisse.Control = this.TxtSoldeCaisse;
-            this.layoutControlSoldeCaisse.Location = new System.Drawing.Point(368, 249);
+            this.layoutControlSoldeCaisse.Location = new System.Drawing.Point(318, 185);
             this.layoutControlSoldeCaisse.MinSize = new System.Drawing.Size(211, 36);
             this.layoutControlSoldeCaisse.Name = "layoutControlSoldeCaisse";
-            this.layoutControlSoldeCaisse.Size = new System.Drawing.Size(323, 36);
+            this.layoutControlSoldeCaisse.Size = new System.Drawing.Size(279, 36);
             this.layoutControlSoldeCaisse.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlSoldeCaisse.Text = "Solde Caisse";
             this.layoutControlSoldeCaisse.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlSoldeCaisse.TextSize = new System.Drawing.Size(106, 23);
+            this.layoutControlSoldeCaisse.TextSize = new System.Drawing.Size(86, 19);
             this.layoutControlSoldeCaisse.TextToControlDistance = 5;
             // 
             // bank
@@ -524,14 +525,14 @@
             this.bank.AppearanceItemCaption.Options.UseFont = true;
             this.bank.Control = this.comboBoxBank;
             this.bank.CustomizationFormText = "Banque";
-            this.bank.Location = new System.Drawing.Point(0, 179);
+            this.bank.Location = new System.Drawing.Point(0, 122);
             this.bank.MaxSize = new System.Drawing.Size(691, 36);
             this.bank.MinSize = new System.Drawing.Size(211, 28);
             this.bank.Name = "bank";
-            this.bank.Size = new System.Drawing.Size(691, 35);
+            this.bank.Size = new System.Drawing.Size(597, 28);
             this.bank.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.bank.Text = "Banque";
-            this.bank.TextSize = new System.Drawing.Size(151, 23);
+            this.bank.TextSize = new System.Drawing.Size(121, 19);
             // 
             // layoutControlGroup1
             // 
@@ -542,7 +543,7 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(753, 497);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(645, 404);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -550,15 +551,15 @@
             this.layoutControlItem1.Control = this.groupControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(727, 471);
+            this.layoutControlItem1.Size = new System.Drawing.Size(625, 384);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // FrmAjouterDepense
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 497);
+            this.ClientSize = new System.Drawing.Size(645, 404);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
