@@ -1145,5 +1145,10 @@ namespace Gestion_de_Stock
         {
             Formshow(Forms.FrmRetenu.InstanceFrmRetenu);
         }
+
+        private void BtnListeDepensesPersonnesPassagers_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Formshow(Forms.FrmListeDepencesPersonne.InstanceFrmListeDepencesPersonne);
+        }
     }
 }

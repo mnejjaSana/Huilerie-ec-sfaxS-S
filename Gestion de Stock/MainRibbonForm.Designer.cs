@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainRibbonForm));
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barSociete = new DevExpress.XtraBars.BarButtonItem();
@@ -143,14 +144,15 @@
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup24 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager();
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.BtnListeDepensesPersonnesPassagers = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -251,9 +253,10 @@
             this.BtnListeChaines,
             this.BtnTransfetEmplacement,
             this.barListePointageSalarier,
-            this.barButtonItem13});
+            this.barButtonItem13,
+            this.BtnListeDepensesPersonnesPassagers});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 99;
+            this.ribbon.MaxItemId = 100;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.AccueilPage,
@@ -1265,6 +1268,7 @@
             // 
             this.ribbonPageGroup21.ItemLinks.Add(this.barButtonDeponse);
             this.ribbonPageGroup21.ItemLinks.Add(this.barBtnListeDepensesAgriculteurs);
+            this.ribbonPageGroup21.ItemLinks.Add(this.BtnListeDepensesPersonnesPassagers);
             this.ribbonPageGroup21.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup21.Name = "ribbonPageGroup21";
             this.ribbonPageGroup21.Text = "Listes des Dépenses Par Nature";
@@ -1312,12 +1316,12 @@
             this.ribbonPageGroup6.Glyph = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup6.Glyph")));
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItemListeSalaries);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            toolTipTitleItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipTitleItem1.Appearance.Options.UseImage = true;
-            toolTipTitleItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem1.Image")));
-            toolTipTitleItem1.Text = "Ajouter Salarié";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            this.ribbonPageGroup6.SuperTip = superToolTip1;
+            toolTipTitleItem2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipTitleItem2.Appearance.Options.UseImage = true;
+            toolTipTitleItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem2.Image")));
+            toolTipTitleItem2.Text = "Ajouter Salarié";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            this.ribbonPageGroup6.SuperTip = superToolTip2;
             this.ribbonPageGroup6.Text = "Salariés";
             // 
             // ribbonPageGroup24
@@ -1361,6 +1365,17 @@
             // 
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Pile";
+            // 
+            // BtnListeDepensesPersonnesPassagers
+            // 
+            this.BtnListeDepensesPersonnesPassagers.Caption = "Liste des Dépenses Persoones Passagers";
+            this.BtnListeDepensesPersonnesPassagers.Id = 99;
+            this.BtnListeDepensesPersonnesPassagers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
+            this.BtnListeDepensesPersonnesPassagers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
+            this.BtnListeDepensesPersonnesPassagers.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnListeDepensesPersonnesPassagers.ItemAppearance.Normal.Options.UseFont = true;
+            this.BtnListeDepensesPersonnesPassagers.Name = "BtnListeDepensesPersonnesPassagers";
+            this.BtnListeDepensesPersonnesPassagers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListeDepensesPersonnesPassagers_ItemClick);
             // 
             // MainRibbonForm
             // 
@@ -1512,5 +1527,6 @@
         private DevExpress.XtraBars.BarButtonItem barListePointageSalarier;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup24;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
+        private DevExpress.XtraBars.BarButtonItem BtnListeDepensesPersonnesPassagers;
     }
 }

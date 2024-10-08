@@ -3333,6 +3333,10 @@ namespace Gestion_de_Stock.Forms
             }
 
 
+            if (Application.OpenForms.OfType<FrmListeDepencesPersonne>().FirstOrDefault() != null)
+            {
+                Application.OpenForms.OfType<FrmListeDepencesPersonne>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => x.Nature== NatureMouvement.Personne && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
+            }
 
         }
 
