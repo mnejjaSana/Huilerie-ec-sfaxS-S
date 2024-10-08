@@ -544,7 +544,7 @@ namespace Gestion_de_Stock.Forms
             {
                 if (ListeGrid.Any(a => a.EtatAchat== EtatAchat.Reglee))
                 {
-                    XtraMessageBox.Show("Une ou plusieurs lignes sont déjà réglées.", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("Une ou plusieurs lignes sont déjà réglées!", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return; // Stop further processing
                 }
                 if (ListeGrid.Any(a => a.TypeAchat == TypeAchat.Base && a.MontantReglement == 0))
@@ -561,7 +561,7 @@ namespace Gestion_de_Stock.Forms
 
                 if (ListeGrid.Any(a => a.Founisseur != firstAgriculteur))
                 {
-                    XtraMessageBox.Show("Veuillez sélectionner des achats du même agriculteur", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("Veuillez sélectionner des achats du même agriculteur!", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else
@@ -570,13 +570,7 @@ namespace Gestion_de_Stock.Forms
 
                     if (Application.OpenForms.OfType<FrmAjouterReglementAchat>().FirstOrDefault() != null)
                     {
-                        foreach (var Empolyeur in ListeGrid)
-                        {
-                            if (Empolyeur.TypeAchat == TypeAchat.Base || Empolyeur.TypeAchat == TypeAchat.Huile)
-                            {
-                                Application.OpenForms.OfType<FrmAjouterReglementAchat>().First().layoutControlMtAPayer.Text = "Montant à Payer";
-                            }
-
+                         
                             var achatIds = ListeGrid.Select(a => a.Numero.ToString()).ToArray();
 
                             Application.OpenForms.OfType<FrmAjouterReglementAchat>().First().TxtCodeAchat.Text = string.Join(", ", achatIds);
@@ -593,7 +587,7 @@ namespace Gestion_de_Stock.Forms
                             Application.OpenForms.OfType<FrmAjouterReglementAchat>().First().TxtMontantEncaisse.Text = (Math.Truncate(totalMontantEncaisse * 1000m) / 1000m).ToString();
 
 
-                        }
+                       
                     }
 
                 }

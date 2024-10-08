@@ -358,7 +358,12 @@ namespace Gestion_de_Stock.Forms
             {
                 int IdAchat = Convert.ToInt32(Achatselected);
                 Avance = db.Achats.Find(IdAchat);
-                TxtMontant.Text = Avance.MontantRegle.ToString();
+                if(Avance!=null)
+                {
+                    TxtMontant.Text = (Math.Truncate(Avance.MontantRegle * 1000m) / 1000m).ToString();
+
+                }
+
             }
 
            

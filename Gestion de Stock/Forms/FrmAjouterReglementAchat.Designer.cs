@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAjouterReglementAchat));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -202,7 +202,7 @@
             // 
             this.colMTReg.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colMTReg.AppearanceHeader.Options.UseFont = true;
-            this.colMTReg.Caption = "Montant Règlement";
+            this.colMTReg.Caption = "Montant à payer";
             this.colMTReg.FieldName = "MontantReglement";
             this.colMTReg.Name = "colMTReg";
             this.colMTReg.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -224,87 +224,87 @@
             // BtnSupprimer
             // 
             this.BtnSupprimer.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.BtnSupprimer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.BtnSupprimer.Name = "BtnSupprimer";
             this.BtnSupprimer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.BtnSupprimer.Click += new System.EventHandler(this.BtnSupprimer_Click_1);
             // 
             // TxtAvance
             // 
-            this.TxtAvance.Location = new System.Drawing.Point(151, 117);
+            this.TxtAvance.Location = new System.Drawing.Point(139, 117);
             this.TxtAvance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtAvance.Name = "TxtAvance";
             this.TxtAvance.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtAvance.Properties.Appearance.Options.UseFont = true;
             this.TxtAvance.Properties.AutoHeight = false;
             this.TxtAvance.Properties.ReadOnly = true;
-            this.TxtAvance.Size = new System.Drawing.Size(518, 31);
+            this.TxtAvance.Size = new System.Drawing.Size(530, 31);
             this.TxtAvance.StyleController = this.layoutControl2;
             this.TxtAvance.TabIndex = 12;
             // 
             // TxtMontantOperation
             // 
-            this.TxtMontantOperation.Location = new System.Drawing.Point(151, 82);
+            this.TxtMontantOperation.Location = new System.Drawing.Point(139, 82);
             this.TxtMontantOperation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtMontantOperation.Name = "TxtMontantOperation";
             this.TxtMontantOperation.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMontantOperation.Properties.Appearance.Options.UseFont = true;
             this.TxtMontantOperation.Properties.AutoHeight = false;
             this.TxtMontantOperation.Properties.ReadOnly = true;
-            this.TxtMontantOperation.Size = new System.Drawing.Size(518, 31);
+            this.TxtMontantOperation.Size = new System.Drawing.Size(530, 31);
             this.TxtMontantOperation.StyleController = this.layoutControl2;
             this.TxtMontantOperation.TabIndex = 11;
             // 
             // TxtMontantEncaisse
             // 
-            this.TxtMontantEncaisse.Location = new System.Drawing.Point(151, 187);
+            this.TxtMontantEncaisse.Location = new System.Drawing.Point(139, 187);
             this.TxtMontantEncaisse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtMontantEncaisse.Name = "TxtMontantEncaisse";
             this.TxtMontantEncaisse.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMontantEncaisse.Properties.Appearance.Options.UseFont = true;
             this.TxtMontantEncaisse.Properties.AutoHeight = false;
-            this.TxtMontantEncaisse.Size = new System.Drawing.Size(518, 31);
+            this.TxtMontantEncaisse.Size = new System.Drawing.Size(530, 31);
             this.TxtMontantEncaisse.StyleController = this.layoutControl2;
             this.TxtMontantEncaisse.TabIndex = 8;
             // 
             // TxtSolde
             // 
-            this.TxtSolde.Location = new System.Drawing.Point(151, 152);
+            this.TxtSolde.Location = new System.Drawing.Point(139, 152);
             this.TxtSolde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtSolde.Name = "TxtSolde";
             this.TxtSolde.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtSolde.Properties.Appearance.Options.UseFont = true;
             this.TxtSolde.Properties.AutoHeight = false;
             this.TxtSolde.Properties.ReadOnly = true;
-            this.TxtSolde.Size = new System.Drawing.Size(518, 31);
+            this.TxtSolde.Size = new System.Drawing.Size(530, 31);
             this.TxtSolde.StyleController = this.layoutControl2;
             this.TxtSolde.TabIndex = 7;
             // 
             // TxtAgriculteur
             // 
-            this.TxtAgriculteur.Location = new System.Drawing.Point(151, 47);
+            this.TxtAgriculteur.Location = new System.Drawing.Point(139, 47);
             this.TxtAgriculteur.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtAgriculteur.Name = "TxtAgriculteur";
             this.TxtAgriculteur.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtAgriculteur.Properties.Appearance.Options.UseFont = true;
             this.TxtAgriculteur.Properties.AutoHeight = false;
             this.TxtAgriculteur.Properties.ReadOnly = true;
-            this.TxtAgriculteur.Size = new System.Drawing.Size(518, 31);
+            this.TxtAgriculteur.Size = new System.Drawing.Size(530, 31);
             this.TxtAgriculteur.StyleController = this.layoutControl2;
             this.TxtAgriculteur.TabIndex = 5;
             // 
             // TxtCodeAchat
             // 
-            this.TxtCodeAchat.Location = new System.Drawing.Point(151, 12);
+            this.TxtCodeAchat.Location = new System.Drawing.Point(139, 12);
             this.TxtCodeAchat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtCodeAchat.Name = "TxtCodeAchat";
             this.TxtCodeAchat.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCodeAchat.Properties.Appearance.Options.UseFont = true;
             this.TxtCodeAchat.Properties.AutoHeight = false;
             this.TxtCodeAchat.Properties.ReadOnly = true;
-            this.TxtCodeAchat.Size = new System.Drawing.Size(518, 31);
+            this.TxtCodeAchat.Size = new System.Drawing.Size(530, 31);
             this.TxtCodeAchat.StyleController = this.layoutControl2;
             this.TxtCodeAchat.TabIndex = 4;
             // 
@@ -337,7 +337,7 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(661, 35);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "Code Achat(s)";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(135, 19);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(123, 19);
             // 
             // layoutControlItem3
             // 
@@ -350,7 +350,7 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(661, 35);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.Text = "Agriculteur";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(135, 19);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(123, 19);
             // 
             // layoutControlItem5
             // 
@@ -363,7 +363,7 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(661, 35);
             this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.Text = "Solde";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(135, 19);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(123, 19);
             // 
             // layoutControlMtAPayer
             // 
@@ -375,8 +375,8 @@
             this.layoutControlMtAPayer.Name = "layoutControlMtAPayer";
             this.layoutControlMtAPayer.Size = new System.Drawing.Size(661, 35);
             this.layoutControlMtAPayer.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlMtAPayer.Text = "Montant Règlement";
-            this.layoutControlMtAPayer.TextSize = new System.Drawing.Size(135, 19);
+            this.layoutControlMtAPayer.Text = "Montant à payer";
+            this.layoutControlMtAPayer.TextSize = new System.Drawing.Size(123, 19);
             // 
             // TxtMontatntTotalService
             // 
@@ -388,8 +388,8 @@
             this.TxtMontatntTotalService.Name = "TxtMontatntTotalService";
             this.TxtMontatntTotalService.Size = new System.Drawing.Size(661, 35);
             this.TxtMontatntTotalService.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.TxtMontatntTotalService.Text = "Montant Opération";
-            this.TxtMontatntTotalService.TextSize = new System.Drawing.Size(135, 19);
+            this.TxtMontatntTotalService.Text = "Total Opération(s)";
+            this.TxtMontatntTotalService.TextSize = new System.Drawing.Size(123, 19);
             // 
             // layoutControlItem9
             // 
@@ -402,7 +402,7 @@
             this.layoutControlItem9.Size = new System.Drawing.Size(661, 35);
             this.layoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem9.Text = "Avance";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(135, 19);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(123, 19);
             // 
             // layoutControlItem4
             // 

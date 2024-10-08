@@ -125,17 +125,25 @@ namespace Gestion_de_Stock.Forms
 
                 if (MontantEncaisse >= 3000)
                 {
-                    var result = XtraMessageBox.Show(
-                       "Voulez vous répartir le montant du Règlement?",
-                       "Configuration de l'application",
-                       MessageBoxButtons.YesNoCancel,
-                       MessageBoxIcon.Exclamation);
+                    var customMessageBox = new Message("Voulez-vous répartir le montant à payer?");
+                    var result = customMessageBox.ShowDialog();
 
                     // Check which button was clicked
                     if (result == DialogResult.Yes || result == DialogResult.Cancel)
                     {
                         return;
                     }
+                    //var result = XtraMessageBox.Show(
+                    //   "Voulez vous répartir le montant du Règlement?",
+                    //   "Configuration de l'application",
+                    //   MessageBoxButtons.YesNoCancel,
+                    //   MessageBoxIcon.Exclamation);
+
+                    //// Check which button was clicked
+                    //if (result == DialogResult.Yes || result == DialogResult.Cancel)
+                    //{
+                    //    return;
+                    //}
 
                     D.Nature = NatureMouvement.ReglementImpo;
 
@@ -252,17 +260,25 @@ namespace Gestion_de_Stock.Forms
 
                 if (MontantEncaisse >= 3000)
                 {
-                    var result = XtraMessageBox.Show(
-                         "Voulez vous répartir le montant du Règlement?",
-                         "Configuration de l'application",
-                         MessageBoxButtons.YesNoCancel,
-                         MessageBoxIcon.Exclamation);
+                    var customMessageBox = new Message("Voulez-vous répartir le montant à payer?");
+                    var result = customMessageBox.ShowDialog();
 
                     // Check which button was clicked
                     if (result == DialogResult.Yes || result == DialogResult.Cancel)
                     {
                         return;
                     }
+                    //var result = XtraMessageBox.Show(
+                    //     "Voulez vous répartir le montant du Règlement?",
+                    //     "Configuration de l'application",
+                    //     MessageBoxButtons.YesNoCancel,
+                    //     MessageBoxIcon.Exclamation);
+
+                    //// Check which button was clicked
+                    //if (result == DialogResult.Yes || result == DialogResult.Cancel)
+                    //{
+                    //    return;
+                    //}
                     D.Nature = NatureMouvement.ReglementImpo;
 
                     MtAdeduireAjouterREG = decimal.Divide(MontantEncaisse, 100);

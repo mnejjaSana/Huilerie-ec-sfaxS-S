@@ -685,19 +685,22 @@ namespace Gestion_de_Stock.Forms
                 {
                     if(ListePassagers.Count==0)
                     {
-                       
-                        var result = XtraMessageBox.Show(
-                            "Voulez vous répartir le montant d'avance?",
-                            "Configuration de l'application",
-                            MessageBoxButtons.YesNoCancel,
-                            MessageBoxIcon.Exclamation);
+                        var customMessageBox = new Message("Voulez vous répartir le montant d'avance?");
+                        var result = customMessageBox.ShowDialog();
 
-                        
-                        // Check which button was clicked
+                       
                         if (result == DialogResult.Yes || result == DialogResult.Cancel)
                         {
                             return;
                         }
+                        //var result = XtraMessageBox.Show(
+                        //    "Voulez vous répartir le montant d'avance?",
+                        //    "Configuration de l'application",
+                        //    MessageBoxButtons.YesNoCancel,
+                        //    MessageBoxIcon.Exclamation);
+
+                        
+                      
                        
                     }
                     
@@ -1243,18 +1246,22 @@ namespace Gestion_de_Stock.Forms
                    
                     if (ListePassagers.Count == 0)
                     {
+                        var customMessageBox = new Message("Voulez vous répartir le montant d'avance?");
+                        var result = customMessageBox.ShowDialog();
 
-                        var result = XtraMessageBox.Show(
-                            "Voulez vous répartir le montant d'avance?",
-                            "Configuration de l'application",
-                            MessageBoxButtons.YesNoCancel,
-                            MessageBoxIcon.Exclamation);
 
-                        // Check which button was clicked
                         if (result == DialogResult.Yes || result == DialogResult.Cancel)
                         {
                             return;
                         }
+
+                        //var result = XtraMessageBox.Show(
+                        //    "Voulez vous répartir le montant d'avance?",
+                        //    "Configuration de l'application",
+                        //    MessageBoxButtons.YesNoCancel,
+                        //    MessageBoxIcon.Exclamation);
+
+                       
 
                     }
                     if (ListePassagers.Count > 0)
@@ -1722,17 +1729,21 @@ namespace Gestion_de_Stock.Forms
                 {
                     if (ListePassagers.Count == 0)
                     {
-                        var result = XtraMessageBox.Show(
-                            "Voulez vous répartir le montant d'avance?",
-                            "Configuration de l'application",
-                            MessageBoxButtons.YesNoCancel,
-                            MessageBoxIcon.Exclamation);
+                        var customMessageBox = new Message("Voulez vous répartir le montant d'avance?");
+                        var result = customMessageBox.ShowDialog();
 
-                        // Check which button was clicked
+
                         if (result == DialogResult.Yes || result == DialogResult.Cancel)
                         {
                             return;
                         }
+                        //var result = XtraMessageBox.Show(
+                        //    "Voulez vous répartir le montant d'avance?",
+                        //    "Configuration de l'application",
+                        //    MessageBoxButtons.YesNoCancel,
+                        //    MessageBoxIcon.Exclamation);
+
+                       
 
                     }
                     if (ListePassagers.Count > 0)
@@ -2510,18 +2521,21 @@ namespace Gestion_de_Stock.Forms
 
                 if (ListePassagers.Count == 0 && MontantRegle >= 3000 &&  comboBoxModeReglement.SelectedItem.ToString().Equals("Espèce"))
                 {
+                    var customMessageBox = new Message("Voulez vous répartir le montant d'avance?");
+                    var result = customMessageBox.ShowDialog();
 
-                    var result = XtraMessageBox.Show(
-                        "Voulez vous répartir le montant d'avance?",
-                        "Configuration de l'application",
-                        MessageBoxButtons.YesNoCancel,
-                        MessageBoxIcon.Exclamation);
 
-                    // Check which button was clicked
                     if (result == DialogResult.Yes || result == DialogResult.Cancel)
                     {
                         return;
                     }
+                    //var result = XtraMessageBox.Show(
+                    //    "Voulez vous répartir le montant d'avance?",
+                    //    "Configuration de l'application",
+                    //    MessageBoxButtons.YesNoCancel,
+                    //    MessageBoxIcon.Exclamation);
+
+                 
 
                 }
 
