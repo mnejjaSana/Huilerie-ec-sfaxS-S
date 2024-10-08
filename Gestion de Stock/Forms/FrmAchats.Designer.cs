@@ -317,7 +317,7 @@
             // 
             // checkImpo
             // 
-            this.checkImpo.Location = new System.Drawing.Point(12, 251);
+            this.checkImpo.Location = new System.Drawing.Point(12, 281);
             this.checkImpo.Name = "checkImpo";
             this.checkImpo.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkImpo.Properties.Appearance.Options.UseFont = true;
@@ -329,7 +329,7 @@
             // dateEcheance
             // 
             this.dateEcheance.EditValue = null;
-            this.dateEcheance.Location = new System.Drawing.Point(159, 368);
+            this.dateEcheance.Location = new System.Drawing.Point(159, 398);
             this.dateEcheance.Name = "dateEcheance";
             this.dateEcheance.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEcheance.Properties.Appearance.Options.UseFont = true;
@@ -343,7 +343,7 @@
             // 
             // TxtBank
             // 
-            this.TxtBank.Location = new System.Drawing.Point(159, 338);
+            this.TxtBank.Location = new System.Drawing.Point(159, 368);
             this.TxtBank.Name = "TxtBank";
             this.TxtBank.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtBank.Properties.Appearance.Options.UseFont = true;
@@ -353,7 +353,7 @@
             // 
             // TxtNumCheque
             // 
-            this.TxtNumCheque.Location = new System.Drawing.Point(159, 308);
+            this.TxtNumCheque.Location = new System.Drawing.Point(159, 338);
             this.TxtNumCheque.Name = "TxtNumCheque";
             this.TxtNumCheque.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNumCheque.Properties.Appearance.Options.UseFont = true;
@@ -363,7 +363,7 @@
             // 
             // comboBoxModeReglement
             // 
-            this.comboBoxModeReglement.Location = new System.Drawing.Point(159, 278);
+            this.comboBoxModeReglement.Location = new System.Drawing.Point(159, 308);
             this.comboBoxModeReglement.Name = "comboBoxModeReglement";
             this.comboBoxModeReglement.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxModeReglement.Properties.Appearance.Options.UseFont = true;
@@ -401,7 +401,7 @@
             // searchLookUpEmplacement
             // 
             this.searchLookUpEmplacement.EditValue = "";
-            this.searchLookUpEmplacement.Location = new System.Drawing.Point(159, 454);
+            this.searchLookUpEmplacement.Location = new System.Drawing.Point(159, 193);
             this.searchLookUpEmplacement.Name = "searchLookUpEmplacement";
             this.searchLookUpEmplacement.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchLookUpEmplacement.Properties.Appearance.Options.UseFont = true;
@@ -428,7 +428,7 @@
             // 
             // TxtMtOpPrev
             // 
-            this.TxtMtOpPrev.Location = new System.Drawing.Point(159, 193);
+            this.TxtMtOpPrev.Location = new System.Drawing.Point(159, 223);
             this.TxtMtOpPrev.Name = "TxtMtOpPrev";
             this.TxtMtOpPrev.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMtOpPrev.Properties.Appearance.Options.UseFont = true;
@@ -531,7 +531,7 @@
             // 
             // TxtResteApayer
             // 
-            this.TxtResteApayer.Location = new System.Drawing.Point(159, 426);
+            this.TxtResteApayer.Location = new System.Drawing.Point(159, 456);
             this.TxtResteApayer.Name = "TxtResteApayer";
             this.TxtResteApayer.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtResteApayer.Properties.Appearance.Options.UseFont = true;
@@ -543,7 +543,7 @@
             // 
             // TxtMontantRegle
             // 
-            this.TxtMontantRegle.Location = new System.Drawing.Point(159, 398);
+            this.TxtMontantRegle.Location = new System.Drawing.Point(159, 428);
             this.TxtMontantRegle.Name = "TxtMontantRegle";
             this.TxtMontantRegle.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMontantRegle.Properties.Appearance.Options.UseFont = true;
@@ -555,7 +555,7 @@
             // 
             // TxtMontantReglement
             // 
-            this.TxtMontantReglement.Location = new System.Drawing.Point(159, 223);
+            this.TxtMontantReglement.Location = new System.Drawing.Point(159, 253);
             this.TxtMontantReglement.Name = "TxtMontantReglement";
             this.TxtMontantReglement.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMontantReglement.Properties.Appearance.Options.UseFont = true;
@@ -734,7 +734,6 @@
             this.PUOlive,
             this.layoutControlPile,
             this.MontantPrev,
-            this.Emplacement,
             this.QteOlive,
             this.PUOliveFinal,
             this.layoutNuméroBon,
@@ -742,7 +741,8 @@
             this.numcheque,
             this.bank,
             this.layoutControlItem12,
-            this.layoutControlItem8});
+            this.layoutControlItem8,
+            this.Emplacement});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, -249);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(400, 779);
@@ -839,7 +839,7 @@
             this.layoutControlMontantReglement.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlMontantReglement.Control = this.TxtMontantReglement;
             this.layoutControlMontantReglement.CustomizationFormText = "Montant Opération";
-            this.layoutControlMontantReglement.Location = new System.Drawing.Point(0, 460);
+            this.layoutControlMontantReglement.Location = new System.Drawing.Point(0, 490);
             this.layoutControlMontantReglement.MaxSize = new System.Drawing.Size(400, 30);
             this.layoutControlMontantReglement.MinSize = new System.Drawing.Size(203, 28);
             this.layoutControlMontantReglement.Name = "layoutControlMontantReglement";
@@ -853,7 +853,7 @@
             this.layoutControlAvance.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlAvance.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlAvance.Control = this.TxtMontantRegle;
-            this.layoutControlAvance.Location = new System.Drawing.Point(0, 635);
+            this.layoutControlAvance.Location = new System.Drawing.Point(0, 665);
             this.layoutControlAvance.MaxSize = new System.Drawing.Size(400, 30);
             this.layoutControlAvance.MinSize = new System.Drawing.Size(238, 28);
             this.layoutControlAvance.Name = "layoutControlAvance";
@@ -867,7 +867,7 @@
             this.layoutControlResteAPayer.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlResteAPayer.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlResteAPayer.Control = this.TxtResteApayer;
-            this.layoutControlResteAPayer.Location = new System.Drawing.Point(0, 663);
+            this.layoutControlResteAPayer.Location = new System.Drawing.Point(0, 693);
             this.layoutControlResteAPayer.MaxSize = new System.Drawing.Size(400, 30);
             this.layoutControlResteAPayer.MinSize = new System.Drawing.Size(238, 28);
             this.layoutControlResteAPayer.Name = "layoutControlResteAPayer";
@@ -975,7 +975,7 @@
             this.MontantPrev.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MontantPrev.AppearanceItemCaption.Options.UseFont = true;
             this.MontantPrev.Control = this.TxtMtOpPrev;
-            this.MontantPrev.Location = new System.Drawing.Point(0, 430);
+            this.MontantPrev.Location = new System.Drawing.Point(0, 460);
             this.MontantPrev.Name = "MontantPrev";
             this.MontantPrev.Size = new System.Drawing.Size(380, 30);
             this.MontantPrev.Text = "Montant Prévisionnel";
@@ -986,7 +986,7 @@
             this.Emplacement.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Emplacement.AppearanceItemCaption.Options.UseFont = true;
             this.Emplacement.Control = this.searchLookUpEmplacement;
-            this.Emplacement.Location = new System.Drawing.Point(0, 691);
+            this.Emplacement.Location = new System.Drawing.Point(0, 430);
             this.Emplacement.Name = "Emplacement";
             this.Emplacement.Size = new System.Drawing.Size(380, 30);
             this.Emplacement.TextSize = new System.Drawing.Size(144, 19);
@@ -1032,7 +1032,7 @@
             this.layoutControlItem7.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem7.Control = this.comboBoxModeReglement;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 515);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 545);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(380, 30);
             this.layoutControlItem7.Text = "Mode Paiement";
@@ -1043,7 +1043,7 @@
             this.numcheque.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numcheque.AppearanceItemCaption.Options.UseFont = true;
             this.numcheque.Control = this.TxtNumCheque;
-            this.numcheque.Location = new System.Drawing.Point(0, 545);
+            this.numcheque.Location = new System.Drawing.Point(0, 575);
             this.numcheque.Name = "numcheque";
             this.numcheque.Size = new System.Drawing.Size(380, 30);
             this.numcheque.Text = "N° Chèque/Traite ";
@@ -1054,7 +1054,7 @@
             this.bank.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bank.AppearanceItemCaption.Options.UseFont = true;
             this.bank.Control = this.TxtBank;
-            this.bank.Location = new System.Drawing.Point(0, 575);
+            this.bank.Location = new System.Drawing.Point(0, 605);
             this.bank.Name = "bank";
             this.bank.Size = new System.Drawing.Size(380, 30);
             this.bank.Text = "Banque";
@@ -1065,7 +1065,7 @@
             this.layoutControlItem12.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem12.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem12.Control = this.dateEcheance;
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 605);
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 635);
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.Size = new System.Drawing.Size(380, 30);
             this.layoutControlItem12.Text = "Date Echeance";
@@ -1074,7 +1074,7 @@
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.checkImpo;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 488);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 518);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(380, 27);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);

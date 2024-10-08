@@ -689,12 +689,12 @@ namespace Gestion_de_Stock.Forms
                         var result = XtraMessageBox.Show(
                             "Voulez vous répartir le montant d'avance?",
                             "Configuration de l'application",
-                            MessageBoxButtons.YesNo,
+                            MessageBoxButtons.YesNoCancel,
                             MessageBoxIcon.Exclamation);
 
                         
                         // Check which button was clicked
-                        if (result == DialogResult.Yes)
+                        if (result == DialogResult.Yes || result == DialogResult.Cancel)
                         {
                             return;
                         }
@@ -1247,11 +1247,11 @@ namespace Gestion_de_Stock.Forms
                         var result = XtraMessageBox.Show(
                             "Voulez vous répartir le montant d'avance?",
                             "Configuration de l'application",
-                            MessageBoxButtons.YesNo,
+                            MessageBoxButtons.YesNoCancel,
                             MessageBoxIcon.Exclamation);
 
                         // Check which button was clicked
-                        if (result == DialogResult.Yes)
+                        if (result == DialogResult.Yes || result == DialogResult.Cancel)
                         {
                             return;
                         }
@@ -1725,11 +1725,11 @@ namespace Gestion_de_Stock.Forms
                         var result = XtraMessageBox.Show(
                             "Voulez vous répartir le montant d'avance?",
                             "Configuration de l'application",
-                            MessageBoxButtons.YesNo,
+                            MessageBoxButtons.YesNoCancel,
                             MessageBoxIcon.Exclamation);
 
                         // Check which button was clicked
-                        if (result == DialogResult.Yes)
+                        if (result == DialogResult.Yes || result == DialogResult.Cancel)
                         {
                             return;
                         }
@@ -2514,11 +2514,11 @@ namespace Gestion_de_Stock.Forms
                     var result = XtraMessageBox.Show(
                         "Voulez vous répartir le montant d'avance?",
                         "Configuration de l'application",
-                        MessageBoxButtons.YesNo,
+                        MessageBoxButtons.YesNoCancel,
                         MessageBoxIcon.Exclamation);
 
                     // Check which button was clicked
-                    if (result == DialogResult.Yes)
+                    if (result == DialogResult.Yes || result == DialogResult.Cancel)
                     {
                         return;
                     }

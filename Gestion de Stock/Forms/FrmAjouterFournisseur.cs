@@ -158,7 +158,7 @@ namespace Gestion_de_Stock.Forms
                 }
                 //waiting Form
                 if (Application.OpenForms.OfType<FrmFournisseur>().FirstOrDefault() != null)
-                    Application.OpenForms.OfType<FrmFournisseur>().FirstOrDefault().fournisseurBindingSource.DataSource = ListAgriculteurs.Select(x => new { x.Id, x.Numero, x.Nom, x.Prenom, x.cin, x.Tel, x.TotalAchats, x.TotalAvances, x.SoldeAgriculteurAvecSens }).ToList();
+                    Application.OpenForms.OfType<FrmFournisseur>().FirstOrDefault().fournisseurBindingSource.DataSource = ListAgriculteurs.Select(x => new { x.Id, x.Numero, x.Nom, x.Prenom, x.cin, x.Tel,x.Vehicule, x.TotalAchats, x.TotalAvances, x.SoldeAgriculteurAvecSens }).ToList();
 
                 //waiting Form
                 if (Application.OpenForms.OfType<FrmAchats>().FirstOrDefault() != null)

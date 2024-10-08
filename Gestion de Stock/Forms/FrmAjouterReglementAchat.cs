@@ -128,11 +128,11 @@ namespace Gestion_de_Stock.Forms
                     var result = XtraMessageBox.Show(
                        "Voulez vous répartir le montant du Règlement?",
                        "Configuration de l'application",
-                       MessageBoxButtons.OKCancel,
+                       MessageBoxButtons.YesNoCancel,
                        MessageBoxIcon.Exclamation);
 
                     // Check which button was clicked
-                    if (result == DialogResult.OK)
+                    if (result == DialogResult.Yes || result == DialogResult.Cancel)
                     {
                         return;
                     }
@@ -255,11 +255,11 @@ namespace Gestion_de_Stock.Forms
                     var result = XtraMessageBox.Show(
                          "Voulez vous répartir le montant du Règlement?",
                          "Configuration de l'application",
-                         MessageBoxButtons.OKCancel,
+                         MessageBoxButtons.YesNoCancel,
                          MessageBoxIcon.Exclamation);
 
                     // Check which button was clicked
-                    if (result == DialogResult.OK)
+                    if (result == DialogResult.Yes || result == DialogResult.Cancel)
                     {
                         return;
                     }
