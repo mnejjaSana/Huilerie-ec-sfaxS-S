@@ -64,6 +64,7 @@
             // 
             // gridControl2
             // 
+            this.gridControl2.DataSource = this.depenseBindingSource;
             this.gridControl2.Location = new System.Drawing.Point(12, 12);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";

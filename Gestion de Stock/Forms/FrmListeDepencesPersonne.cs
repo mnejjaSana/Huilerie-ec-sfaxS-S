@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Gestion_de_Stock.Model.Enumuration;
+using Gestion_de_Stock.Model;
 
 namespace Gestion_de_Stock.Forms
 {
@@ -42,7 +43,8 @@ namespace Gestion_de_Stock.Forms
 
         private void FrmListeDepencesPersonne_Load(object sender, EventArgs e)
         {
-            Application.OpenForms.OfType<FrmListeDepencesPersonne>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => x.Nature == NatureMouvement.Personne && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
+            List<Depense> dep =  db.Depenses.Where(x => x.Nature == NatureMouvement.Personne && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
+            depenseBindingSource.DataSource = dep;
         }
     }
 }
