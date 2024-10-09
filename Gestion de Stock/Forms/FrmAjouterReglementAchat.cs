@@ -106,7 +106,8 @@ namespace Gestion_de_Stock.Forms
               
                 return;
             }
-                if (gridView1.RowCount == 0 && MontantEncaisse == Solde)
+
+            if (gridView1.RowCount == 0 && MontantEncaisse == Solde)
             {
                 
                 decimal initialMontantEncaisse = MontantEncaisse; // Save the initial value
@@ -125,65 +126,73 @@ namespace Gestion_de_Stock.Forms
 
                 if (MontantEncaisse >= 3000)
                 {
-                    var customMessageBox = new Message("Voulez-vous répartir le montant à payer?");
-                    var result = customMessageBox.ShowDialog();
 
-                    // Check which button was clicked
-                    if (result == DialogResult.Yes || result == DialogResult.Cancel)
+                    bool executer = false;
+                    var customMessageBox1 = new Message("Voulez vous exécuter le retenu 1%?");
+
+                    var result = customMessageBox1.ShowDialog();
+
+                    if (result == DialogResult.Cancel)
                     {
                         return;
                     }
-                    //var result = XtraMessageBox.Show(
-                    //   "Voulez vous répartir le montant du Règlement?",
-                    //   "Configuration de l'application",
-                    //   MessageBoxButtons.YesNoCancel,
-                    //   MessageBoxIcon.Exclamation);
-
-                    //// Check which button was clicked
-                    //if (result == DialogResult.Yes || result == DialogResult.Cancel)
-                    //{
-                    //    return;
-                    //}
-
-                    D.Nature = NatureMouvement.ReglementImpo;
-
-                    MtAdeduireAjouterREG = decimal.Divide(MontantEncaisse, 100);
-                    MtAPayeAvecImpoAjouterREG = decimal.Subtract(MontantEncaisse, MtAdeduireAjouterREG);
-                    D.Montant = MtAPayeAvecImpoAjouterREG;
-                    HP.AvecAmpoAjouterREG = true;
-                    mvtCaisse.MontantSens = MtAPayeAvecImpoAjouterREG * -1;
-                    mtTicket = MtAPayeAvecImpoAjouterREG;
-                    if (CaisseDb != null)
+                    else if (result == DialogResult.Yes)
                     {
-                        CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MtAPayeAvecImpoAjouterREG);
-
-                    }
-                    Retenue Retenu = new Retenue();
-                    Retenu.MontantReglement = MontantEncaisse;
-                    Retenu.MontantRetenue = MtAdeduireAjouterREG;
-                    Retenu.Commentaire = "Règlement Achat(s)"+ TxtCodeAchat.Text;
-                    db.retenus.Add(Retenu);
-                    db.SaveChanges();
-                    Retenu.Numero = "RTN" + (Retenu.Id).ToString("D8");
-                    db.SaveChanges();
-                }
-                else
-                {
-                    mtTicket = initialMontantEncaisse;
-                    D.Nature = NatureMouvement.RéglementAchats;
-                    HP.AvecAmpoAjouterREG = false;
-                    D.Montant = MontantEncaisse;
-                    mvtCaisse.MontantSens = MontantEncaisse * -1;
-                    if (CaisseDb != null)
-                    {
-                        CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MontantEncaisse);
-
+                        executer = true;
                     }
 
+                    if (executer == false)
+                    {
+                        var customMessageBox = new Message("Voulez vous répartir le montant d'avance?");
+                        var result1 = customMessageBox.ShowDialog();
+                        if (result1 == DialogResult.Cancel || result1 == DialogResult.Yes)
+                        {
+                            return;
+                        }
+
+
+                    }
+                    if (executer == true)
+                    {
+                        D.Nature = NatureMouvement.ReglementImpo;
+
+                        MtAdeduireAjouterREG = decimal.Divide(MontantEncaisse, 100);
+                        MtAPayeAvecImpoAjouterREG = decimal.Subtract(MontantEncaisse, MtAdeduireAjouterREG);
+                        D.Montant = MtAPayeAvecImpoAjouterREG;
+                        HP.AvecAmpoAjouterREG = true;
+                        mvtCaisse.MontantSens = MtAPayeAvecImpoAjouterREG * -1;
+                        mtTicket = MtAPayeAvecImpoAjouterREG;
+                        if (CaisseDb != null)
+                        {
+                            CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MtAPayeAvecImpoAjouterREG);
+
+                        }
+                        Retenue Retenu = new Retenue();
+                        Retenu.MontantReglement = MontantEncaisse;
+                        Retenu.MontantRetenue = MtAdeduireAjouterREG;
+                        Retenu.Commentaire = "Règlement Achat(s)" + TxtCodeAchat.Text;
+                        db.retenus.Add(Retenu);
+                        db.SaveChanges();
+                        Retenu.Numero = "RTN" + (Retenu.Id).ToString("D8");
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        mtTicket = initialMontantEncaisse;
+                        D.Nature = NatureMouvement.RéglementAchats;
+                        HP.AvecAmpoAjouterREG = false;
+                        D.Montant = MontantEncaisse;
+                        mvtCaisse.MontantSens = MontantEncaisse * -1;
+                        if (CaisseDb != null)
+                        {
+                            CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MontantEncaisse);
+
+                        }
+
+                    }
+
+
                 }
-
-
-
                 foreach (var code in codesAchats)
                 {
 
@@ -260,14 +269,41 @@ namespace Gestion_de_Stock.Forms
 
                 if (MontantEncaisse >= 3000)
                 {
-                    var customMessageBox = new Message("Voulez-vous répartir le montant à payer?");
-                    var result = customMessageBox.ShowDialog();
+                    bool executer = false;
+                    var customMessageBox1 = new Message("Voulez vous exécuter le retenu 1%?");
 
-                    // Check which button was clicked
-                    if (result == DialogResult.Yes || result == DialogResult.Cancel)
+                    var result = customMessageBox1.ShowDialog();
+
+                    if (result == DialogResult.Cancel)
                     {
                         return;
                     }
+                    else if (result == DialogResult.Yes)
+                    {
+                        executer = true;
+                    }
+
+                    if (executer == false )
+                    {
+                        var customMessageBox = new Message("Voulez vous répartir le montant d'avance?");
+                        var result1 = customMessageBox.ShowDialog();
+                        if (result1 == DialogResult.Cancel || result1 == DialogResult.Yes)
+                        {
+                            return;
+                        }
+
+
+                    }
+
+
+                    //var customMessageBox = new Message("Voulez-vous répartir le montant à payer?");
+                    //var result = customMessageBox.ShowDialog();
+
+                    // Check which button was clicked
+                    //if (result == DialogResult.Yes || result == DialogResult.Cancel)
+                    //{
+                    //    return;
+                    //}
                     //var result = XtraMessageBox.Show(
                     //     "Voulez vous répartir le montant du Règlement?",
                     //     "Configuration de l'application",
@@ -279,28 +315,34 @@ namespace Gestion_de_Stock.Forms
                     //{
                     //    return;
                     //}
-                    D.Nature = NatureMouvement.ReglementImpo;
 
-                    MtAdeduireAjouterREG = decimal.Divide(MontantEncaisse, 100);
-                    MtAPayeAvecImpoAjouterREG = decimal.Subtract(MontantEncaisse, MtAdeduireAjouterREG);
-                    D.Montant = MtAPayeAvecImpoAjouterREG;
-                    mtTicket = MtAPayeAvecImpoAjouterREG;
-                    HP.AvecAmpoAjouterREG = true;
-                    mvtCaisse.MontantSens = MtAPayeAvecImpoAjouterREG * -1;
-
-                    if (CaisseDb != null)
+                    if (executer==true)
                     {
-                        CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MtAPayeAvecImpoAjouterREG);
+                        D.Nature = NatureMouvement.ReglementImpo;
 
+                        MtAdeduireAjouterREG = decimal.Divide(MontantEncaisse, 100);
+                        MtAPayeAvecImpoAjouterREG = decimal.Subtract(MontantEncaisse, MtAdeduireAjouterREG);
+                        D.Montant = MtAPayeAvecImpoAjouterREG;
+                        mtTicket = MtAPayeAvecImpoAjouterREG;
+                        HP.AvecAmpoAjouterREG = true;
+                        MontantEncaisse = MtAPayeAvecImpoAjouterREG;
+                        mvtCaisse.MontantSens = MtAPayeAvecImpoAjouterREG * -1;
+
+                        if (CaisseDb != null)
+                        {
+                            CaisseDb.MontantTotal = decimal.Subtract(CaisseDb.MontantTotal, MtAPayeAvecImpoAjouterREG);
+
+                        }
+                        Retenue Retenu = new Retenue();
+                        Retenu.MontantReglement = MontantEncaisse;
+                        Retenu.MontantRetenue = MtAdeduireAjouterREG;
+                        Retenu.Commentaire = "Règlement Achat(s)" + TxtCodeAchat.Text;
+                        db.retenus.Add(Retenu);
+                        db.SaveChanges();
+                        Retenu.Numero = "RTN" + (Retenu.Id).ToString("D8");
+                        db.SaveChanges();
                     }
-                    Retenue Retenu = new Retenue();
-                    Retenu.MontantReglement = MontantEncaisse;
-                    Retenu.MontantRetenue = MtAdeduireAjouterREG;
-                    Retenu.Commentaire = "Règlement Achat(s)" + TxtCodeAchat.Text;
-                    db.retenus.Add(Retenu);
-                    db.SaveChanges();
-                    Retenu.Numero = "RTN" + (Retenu.Id).ToString("D8");
-                    db.SaveChanges();
+                   
                 }
                 else
                 {
@@ -442,7 +484,7 @@ namespace Gestion_de_Stock.Forms
                     var montantReglement = gridView1.GetRowCellValue(row, "MontantReglement") as decimal?;
 
                     // Vérifiez si tous les champs requis sont remplis
-                    if (string.IsNullOrEmpty(cin) || string.IsNullOrEmpty(fullName) ||
+                    if (string.IsNullOrEmpty(cin) || (!string.IsNullOrEmpty(cin) && cin.Length!=8) || string.IsNullOrEmpty(fullName) ||
                         !montantReglement.HasValue || montantReglement.Value <= 0)
                     {
                         XtraMessageBox.Show($"La ligne {row + 1} n'est pas valide. Vérifiez les champs CIN, Nom complet, et Montant de règlement.",
@@ -827,7 +869,7 @@ namespace Gestion_de_Stock.Forms
                         XtraMessageBox.Show("Le CIN doit contenir exactement 8 chiffres.", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                         // Effacer le champ de saisie
                         isCellValueChanging = true; // Désactiver temporairement l'événement
-                        gridView1.SetRowCellValue(e.RowHandle, e.Column, null); // Effacer la valeur
+                      
                         isCellValueChanging = false; // Réactiver l'événement
 
                         return; // Sortir

@@ -704,7 +704,7 @@ namespace Gestion_de_Stock.Forms
                         var montantReglement = item.MontantReglement as decimal?;
 
                         // Vérifiez si tous les champs requis sont remplis
-                        if (string.IsNullOrEmpty(cin) || string.IsNullOrEmpty(fullName) ||
+                        if (string.IsNullOrEmpty(cin) || (!string.IsNullOrEmpty(cin) && cin.Length != 8) || string.IsNullOrEmpty(fullName) ||
                             !montantReglement.HasValue || montantReglement.Value <= 0 || montantReglement.Value >= 3000)
                         {
                             XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item) + 1} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom et Avance!",
@@ -1274,7 +1274,7 @@ namespace Gestion_de_Stock.Forms
                         var montantReglement = item.MontantReglement as decimal?;
 
                         // Vérifiez si tous les champs requis sont remplis
-                        if (string.IsNullOrEmpty(cin) || string.IsNullOrEmpty(fullName) ||
+                        if (string.IsNullOrEmpty(cin) || (!string.IsNullOrEmpty(cin) && cin.Length != 8) || string.IsNullOrEmpty(fullName) || 
                             !montantReglement.HasValue || montantReglement.Value <= 0 || montantReglement.Value >= 3000)
                         {
                             XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item) + 1} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom et Avance!",
@@ -1768,7 +1768,7 @@ namespace Gestion_de_Stock.Forms
                         var montantReglement = item.MontantReglement as decimal?;
 
                         // Vérifiez si tous les champs requis sont remplis
-                        if (string.IsNullOrEmpty(cin) || string.IsNullOrEmpty(fullName) ||
+                        if (string.IsNullOrEmpty(cin) || (!string.IsNullOrEmpty(cin) && cin.Length != 8) || string.IsNullOrEmpty(fullName) ||
                             !montantReglement.HasValue || montantReglement.Value <= 0 || montantReglement.Value >= 3000)
                         {
                             XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item) + 1} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom et Avance!",
@@ -2570,7 +2570,7 @@ namespace Gestion_de_Stock.Forms
                         var montantReglement = item.MontantReglement as decimal?;
 
                         // Vérifiez si tous les champs requis sont remplis
-                        if (string.IsNullOrEmpty(cin) || string.IsNullOrEmpty(fullName) ||
+                        if (string.IsNullOrEmpty(cin) || (!string.IsNullOrEmpty(cin) && cin.Length != 8) || string.IsNullOrEmpty(fullName) ||
                             !montantReglement.HasValue || montantReglement.Value <= 0 || montantReglement.Value >= 3000)
                         {
                             XtraMessageBox.Show($"La ligne {ListePassagers.IndexOf(item) + 1} n'est pas valide. Vérifiez les champs CIN, Nom & Prénom et Avance!",
@@ -3401,6 +3401,12 @@ namespace Gestion_de_Stock.Forms
             {
                 Application.OpenForms.OfType<FrmListeDepencesPersonne>().First().depenseBindingSource.DataSource = db.Depenses.Where(x => x.Nature== NatureMouvement.Personne && x.Montant > 0).OrderByDescending(x => x.DateCreation).ToList();
             }
+
+            nblignesBase = 0;
+            nblignesHuile = 0;
+            nblignesOlive = 0;
+            nblignesAvance = 0;
+
 
         }
 

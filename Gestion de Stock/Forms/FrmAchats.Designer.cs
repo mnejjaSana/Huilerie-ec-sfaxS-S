@@ -1125,8 +1125,8 @@
             this.gridView4.GridControl = this.gridControl2;
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView4.OptionsFilter.AllowFilterIncrementalSearch = false;
             this.gridView4.OptionsFind.AllowFindPanel = false;
-            this.gridView4.OptionsFind.AlwaysVisible = true;
             this.gridView4.OptionsFind.ClearFindOnClose = false;
             this.gridView4.OptionsFind.ShowClearButton = false;
             this.gridView4.OptionsFind.ShowCloseButton = false;
