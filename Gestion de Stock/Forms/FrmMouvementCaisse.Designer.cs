@@ -37,7 +37,6 @@
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.Actualiser = new DevExpress.XtraEditors.SimpleButton();
             this.TxtSoldeCaisse = new DevExpress.XtraEditors.TextEdit();
-            this.label1 = new System.Windows.Forms.Label();
             this.BtnExportExcel = new DevExpress.XtraEditors.SimpleButton();
             this.BtnExportPDF = new DevExpress.XtraEditors.SimpleButton();
             this.dateDebut = new DevExpress.XtraEditors.DateEdit();
@@ -64,7 +63,6 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -94,7 +92,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
@@ -128,7 +125,6 @@
             // 
             this.layoutControl2.Controls.Add(this.Actualiser);
             this.layoutControl2.Controls.Add(this.TxtSoldeCaisse);
-            this.layoutControl2.Controls.Add(this.label1);
             this.layoutControl2.Controls.Add(this.BtnExportExcel);
             this.layoutControl2.Controls.Add(this.BtnExportPDF);
             this.layoutControl2.Controls.Add(this.dateDebut);
@@ -158,7 +154,7 @@
             // 
             // TxtSoldeCaisse
             // 
-            this.TxtSoldeCaisse.Location = new System.Drawing.Point(997, 338);
+            this.TxtSoldeCaisse.Location = new System.Drawing.Point(920, 359);
             this.TxtSoldeCaisse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtSoldeCaisse.Name = "TxtSoldeCaisse";
             this.TxtSoldeCaisse.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -167,17 +163,9 @@
             this.TxtSoldeCaisse.Properties.Mask.EditMask = "n3";
             this.TxtSoldeCaisse.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TxtSoldeCaisse.Properties.ReadOnly = true;
-            this.TxtSoldeCaisse.Size = new System.Drawing.Size(108, 24);
+            this.TxtSoldeCaisse.Size = new System.Drawing.Size(185, 27);
             this.TxtSoldeCaisse.StyleController = this.layoutControl2;
             this.TxtSoldeCaisse.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.Image = global::Gestion_de_Stock.Properties.Resources.EC;
-            this.label1.Location = new System.Drawing.Point(12, 366);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1093, 20);
-            this.label1.TabIndex = 9;
             // 
             // BtnExportExcel
             // 
@@ -248,7 +236,7 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryDetailMvmCaisse,
             this.repositoryImprimerTicket});
-            this.gridControl1.Size = new System.Drawing.Size(1093, 246);
+            this.gridControl1.Size = new System.Drawing.Size(1093, 267);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -440,7 +428,6 @@
             this.layoutControlItem5,
             this.emptySpaceItem1,
             this.layoutControlItem6,
-            this.layoutControlItem7,
             this.layoutControlItem8,
             this.emptySpaceItem2,
             this.layoutControlItem9,
@@ -456,7 +443,7 @@
             this.layoutControlItem2.Control = this.gridControl1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 76);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1097, 250);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1097, 271);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -508,24 +495,15 @@
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.label1;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 354);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(1097, 24);
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem7.TextVisible = false;
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem8.Control = this.TxtSoldeCaisse;
-            this.layoutControlItem8.Location = new System.Drawing.Point(900, 326);
+            this.layoutControlItem8.Location = new System.Drawing.Point(823, 347);
             this.layoutControlItem8.MinSize = new System.Drawing.Size(148, 28);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(197, 28);
+            this.layoutControlItem8.Size = new System.Drawing.Size(274, 31);
             this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.Text = " Solde Caisse";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(81, 17);
@@ -533,9 +511,9 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 326);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 347);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(900, 28);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(823, 31);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem9
@@ -611,7 +589,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
@@ -650,8 +627,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         public System.Windows.Forms.BindingSource mouvementCaisseBindingSource;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         public DevExpress.XtraEditors.TextEdit TxtSoldeCaisse;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;

@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainRibbonForm));
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barSociete = new DevExpress.XtraBars.BarButtonItem();
@@ -117,6 +117,7 @@
             this.BtnTransfetEmplacement = new DevExpress.XtraBars.BarButtonItem();
             this.barListePointageSalarier = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnListeDepensesPersonnesPassagers = new DevExpress.XtraBars.BarButtonItem();
             this.AccueilPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.AchatPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -152,7 +153,6 @@
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.BtnListeDepensesPersonnesPassagers = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -290,8 +290,7 @@
             this.Utilisateurs.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Utilisateurs.ImageOptions.Image")));
             this.Utilisateurs.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Utilisateurs.ImageOptions.LargeImage")));
             this.Utilisateurs.Name = "Utilisateurs";
-            this.Utilisateurs.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Utilisateurs_ItemClick);
-            // 
+             
             // barAchat
             // 
             this.barAchat.Caption = "Ajouter Achat";
@@ -322,8 +321,7 @@
             this.AjouterUtilisateur.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("AjouterUtilisateur.ImageOptions.Image")));
             this.AjouterUtilisateur.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("AjouterUtilisateur.ImageOptions.LargeImage")));
             this.AjouterUtilisateur.Name = "AjouterUtilisateur";
-            this.AjouterUtilisateur.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AjouterUtilisateur_ItemClick);
-            // 
+           
             // barAjouterServices
             // 
             this.barAjouterServices.Caption = "Ajouter Services";
@@ -615,8 +613,7 @@
             this.barButtonMatriculeVerification.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonMatriculeVerification.ImageOptions.Image")));
             this.barButtonMatriculeVerification.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonMatriculeVerification.ImageOptions.LargeImage")));
             this.barButtonMatriculeVerification.Name = "barButtonMatriculeVerification";
-            this.barButtonMatriculeVerification.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonMatriculeVerification_ItemClick);
-            // 
+             
             // barButtonConfigurationAppareil
             // 
             this.barButtonConfigurationAppareil.Caption = "Appareil";
@@ -959,8 +956,7 @@
             this.barBtnModifierProduction.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnModifierProduction.ImageOptions.Image")));
             this.barBtnModifierProduction.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnModifierProduction.ImageOptions.LargeImage")));
             this.barBtnModifierProduction.Name = "barBtnModifierProduction";
-            this.barBtnModifierProduction.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnModifierProduction_ItemClick);
-            // 
+           
             // btnEntreeDivers
             // 
             this.btnEntreeDivers.Caption = "Entrée Divers";
@@ -1097,6 +1093,17 @@
             this.barButtonItem13.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem13.Name = "barButtonItem13";
             this.barButtonItem13.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem13_ItemClick);
+            // 
+            // BtnListeDepensesPersonnesPassagers
+            // 
+            this.BtnListeDepensesPersonnesPassagers.Caption = "Liste des Dépenses Persoones Passagers";
+            this.BtnListeDepensesPersonnesPassagers.Id = 99;
+            this.BtnListeDepensesPersonnesPassagers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnListeDepensesPersonnesPassagers.ImageOptions.Image")));
+            this.BtnListeDepensesPersonnesPassagers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnListeDepensesPersonnesPassagers.ImageOptions.LargeImage")));
+            this.BtnListeDepensesPersonnesPassagers.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnListeDepensesPersonnesPassagers.ItemAppearance.Normal.Options.UseFont = true;
+            this.BtnListeDepensesPersonnesPassagers.Name = "BtnListeDepensesPersonnesPassagers";
+            this.BtnListeDepensesPersonnesPassagers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListeDepensesPersonnesPassagers_ItemClick);
             // 
             // AccueilPage
             // 
@@ -1316,12 +1323,12 @@
             this.ribbonPageGroup6.Glyph = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup6.Glyph")));
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItemListeSalaries);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            toolTipTitleItem2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipTitleItem2.Appearance.Options.UseImage = true;
-            toolTipTitleItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem2.Image")));
-            toolTipTitleItem2.Text = "Ajouter Salarié";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            this.ribbonPageGroup6.SuperTip = superToolTip2;
+            toolTipTitleItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipTitleItem1.Appearance.Options.UseImage = true;
+            toolTipTitleItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem1.Image")));
+            toolTipTitleItem1.Text = "Ajouter Salarié";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            this.ribbonPageGroup6.SuperTip = superToolTip1;
             this.ribbonPageGroup6.Text = "Salariés";
             // 
             // ribbonPageGroup24
@@ -1366,17 +1373,6 @@
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Pile";
             // 
-            // BtnListeDepensesPersonnesPassagers
-            // 
-            this.BtnListeDepensesPersonnesPassagers.Caption = "Liste des Dépenses Persoones Passagers";
-            this.BtnListeDepensesPersonnesPassagers.Id = 99;
-            this.BtnListeDepensesPersonnesPassagers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
-            this.BtnListeDepensesPersonnesPassagers.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
-            this.BtnListeDepensesPersonnesPassagers.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnListeDepensesPersonnesPassagers.ItemAppearance.Normal.Options.UseFont = true;
-            this.BtnListeDepensesPersonnesPassagers.Name = "BtnListeDepensesPersonnesPassagers";
-            this.BtnListeDepensesPersonnesPassagers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListeDepensesPersonnesPassagers_ItemClick);
-            // 
             // MainRibbonForm
             // 
             this.Appearance.Options.UseFont = true;
@@ -1391,13 +1387,14 @@
             this.KeyPreview = true;
             this.Name = "MainRibbonForm";
             this.Ribbon = this.ribbon;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "Huilerie EC";
+            this.Text = "Gestion Huilerie";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainRibbonForm_FormClosed);
             this.Load += new System.EventHandler(this.MainRibbonForm_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainRibbonForm_KeyDown);
+            
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();

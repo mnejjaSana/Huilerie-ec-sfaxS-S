@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAjouterAlimentation));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.BtnEnregistrer = new DevExpress.XtraEditors.SimpleButton();
@@ -46,7 +45,6 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -65,12 +63,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.label1);
             this.layoutControl1.Controls.Add(this.groupControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -81,21 +77,13 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // label1
-            // 
-            this.label1.Image = global::Gestion_de_Stock.Properties.Resources.EC;
-            this.label1.Location = new System.Drawing.Point(12, 207);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(464, 21);
-            this.label1.TabIndex = 5;
-            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.layoutControl2);
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(464, 191);
+            this.groupControl1.Size = new System.Drawing.Size(464, 216);
             this.groupControl1.TabIndex = 4;
             // 
             // layoutControl2
@@ -109,7 +97,7 @@
             this.layoutControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(460, 169);
+            this.layoutControl2.Size = new System.Drawing.Size(460, 194);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -118,7 +106,7 @@
             this.BtnEnregistrer.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEnregistrer.Appearance.Options.UseFont = true;
             this.BtnEnregistrer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnEnregistrer.ImageOptions.Image")));
-            this.BtnEnregistrer.Location = new System.Drawing.Point(286, 131);
+            this.BtnEnregistrer.Location = new System.Drawing.Point(286, 156);
             this.BtnEnregistrer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnEnregistrer.Name = "BtnEnregistrer";
             this.BtnEnregistrer.Size = new System.Drawing.Size(162, 26);
@@ -129,26 +117,28 @@
             // 
             // TxtCommentaire
             // 
-            this.TxtCommentaire.Location = new System.Drawing.Point(110, 84);
+            this.TxtCommentaire.Location = new System.Drawing.Point(110, 96);
             this.TxtCommentaire.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtCommentaire.Name = "TxtCommentaire";
             this.TxtCommentaire.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtCommentaire.Properties.Appearance.Options.UseFont = true;
             this.TxtCommentaire.Properties.AutoHeight = false;
-            this.TxtCommentaire.Size = new System.Drawing.Size(338, 32);
+            this.TxtCommentaire.Size = new System.Drawing.Size(338, 38);
             this.TxtCommentaire.StyleController = this.layoutControl2;
             this.TxtCommentaire.TabIndex = 6;
             // 
             // TxtMontant
             // 
-            this.TxtMontant.Location = new System.Drawing.Point(110, 48);
+            this.TxtMontant.Location = new System.Drawing.Point(110, 54);
             this.TxtMontant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtMontant.Name = "TxtMontant";
             this.TxtMontant.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMontant.Properties.Appearance.Options.UseFont = true;
             this.TxtMontant.Properties.AutoHeight = false;
+            this.TxtMontant.Properties.Mask.EditMask = "n3";
+            this.TxtMontant.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TxtMontant.Properties.Name = "TxtMontant";
-            this.TxtMontant.Size = new System.Drawing.Size(338, 32);
+            this.TxtMontant.Size = new System.Drawing.Size(338, 38);
             this.TxtMontant.StyleController = this.layoutControl2;
             this.TxtMontant.TabIndex = 5;
             // 
@@ -163,7 +153,7 @@
             this.comboBoxSource.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxSource.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxSource.Size = new System.Drawing.Size(338, 32);
+            this.comboBoxSource.Size = new System.Drawing.Size(338, 38);
             this.comboBoxSource.StyleController = this.layoutControl2;
             this.comboBoxSource.TabIndex = 4;
             this.comboBoxSource.SelectedIndexChanged += new System.EventHandler(this.comboBoxSource_SelectedIndexChanged);
@@ -182,7 +172,7 @@
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup2.Size = new System.Drawing.Size(460, 169);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(460, 194);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem2
@@ -193,7 +183,7 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(179, 36);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(440, 36);
+            this.layoutControlItem2.Size = new System.Drawing.Size(440, 42);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "Source ";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(94, 19);
@@ -201,9 +191,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 108);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 126);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(440, 11);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(440, 18);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
@@ -211,10 +201,10 @@
             this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem3.Control = this.TxtMontant;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 36);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 42);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(179, 36);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(440, 36);
+            this.layoutControlItem3.Size = new System.Drawing.Size(440, 42);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.Text = "Montant ";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(94, 19);
@@ -224,10 +214,10 @@
             this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem4.Control = this.TxtCommentaire;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 84);
             this.layoutControlItem4.MinSize = new System.Drawing.Size(179, 36);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(440, 36);
+            this.layoutControlItem4.Size = new System.Drawing.Size(440, 42);
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.Text = "Commentaire ";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(94, 19);
@@ -235,7 +225,7 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.BtnEnregistrer;
-            this.layoutControlItem5.Location = new System.Drawing.Point(274, 119);
+            this.layoutControlItem5.Location = new System.Drawing.Point(274, 144);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(166, 30);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
@@ -244,7 +234,7 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 119);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 144);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(274, 30);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -254,8 +244,7 @@
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem6});
+            this.layoutControlItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
@@ -267,18 +256,9 @@
             this.layoutControlItem1.Control = this.groupControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(468, 195);
+            this.layoutControlItem1.Size = new System.Drawing.Size(468, 220);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.label1;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 195);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(468, 25);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
             // 
             // FrmAjouterAlimentation
             // 
@@ -311,7 +291,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -334,7 +313,5 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

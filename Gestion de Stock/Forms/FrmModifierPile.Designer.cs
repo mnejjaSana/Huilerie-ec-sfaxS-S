@@ -32,7 +32,6 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.label1 = new System.Windows.Forms.Label();
             this.comboBoxTypeHuile = new DevExpress.XtraEditors.ComboBoxEdit();
             this.BtnEnregistrer = new DevExpress.XtraEditors.SimpleButton();
             this.TxtCapaciteMax = new DevExpress.XtraEditors.TextEdit();
@@ -45,7 +44,6 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -66,7 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -80,7 +77,7 @@
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(421, 302);
+            this.layoutControl1.Size = new System.Drawing.Size(421, 268);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -90,12 +87,11 @@
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(397, 278);
+            this.groupControl1.Size = new System.Drawing.Size(397, 244);
             this.groupControl1.TabIndex = 4;
             // 
             // layoutControl2
             // 
-            this.layoutControl2.Controls.Add(this.label1);
             this.layoutControl2.Controls.Add(this.comboBoxTypeHuile);
             this.layoutControl2.Controls.Add(this.BtnEnregistrer);
             this.layoutControl2.Controls.Add(this.TxtCapaciteMax);
@@ -106,17 +102,9 @@
             this.layoutControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(393, 256);
+            this.layoutControl2.Size = new System.Drawing.Size(393, 222);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
-            // 
-            // label1
-            // 
-            this.label1.Image = global::Gestion_de_Stock.Properties.Resources.EC;
-            this.label1.Location = new System.Drawing.Point(12, 194);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(369, 50);
-            this.label1.TabIndex = 10;
             // 
             // comboBoxTypeHuile
             // 
@@ -139,7 +127,7 @@
             this.BtnEnregistrer.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEnregistrer.Appearance.Options.UseFont = true;
             this.BtnEnregistrer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnEnregistrer.ImageOptions.Image")));
-            this.BtnEnregistrer.Location = new System.Drawing.Point(229, 164);
+            this.BtnEnregistrer.Location = new System.Drawing.Point(229, 184);
             this.BtnEnregistrer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnEnregistrer.Name = "BtnEnregistrer";
             this.BtnEnregistrer.Size = new System.Drawing.Size(152, 26);
@@ -196,12 +184,11 @@
             this.layoutControlItem6,
             this.emptySpaceItem2,
             this.layoutControlItem7,
-            this.layoutControlItem8,
             this.layoutControlItem4});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup2.Size = new System.Drawing.Size(393, 256);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(393, 222);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem2
@@ -222,7 +209,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 136);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(373, 16);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(373, 36);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
@@ -241,7 +228,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.BtnEnregistrer;
-            this.layoutControlItem6.Location = new System.Drawing.Point(217, 152);
+            this.layoutControlItem6.Location = new System.Drawing.Point(217, 172);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(156, 30);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
@@ -250,7 +237,7 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 152);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 172);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(217, 30);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -267,15 +254,6 @@
             this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem7.Text = "Type Huile";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(99, 19);
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.label1;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 182);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(373, 54);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem4
             // 
@@ -299,7 +277,7 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(421, 302);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(421, 268);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -307,7 +285,7 @@
             this.layoutControlItem1.Control = this.groupControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(401, 282);
+            this.layoutControlItem1.Size = new System.Drawing.Size(401, 248);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -315,7 +293,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 302);
+            this.ClientSize = new System.Drawing.Size(421, 268);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -341,7 +319,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -369,7 +346,5 @@
         public DevExpress.XtraEditors.TextEdit TxtIntitule;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         public DevExpress.XtraEditors.ComboBoxEdit comboBoxTypeHuile;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
     }
 }

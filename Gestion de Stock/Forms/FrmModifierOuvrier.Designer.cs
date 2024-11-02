@@ -44,8 +44,6 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -63,7 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -71,45 +68,48 @@
             this.layoutControl1.Controls.Add(this.groupControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(492, 292);
+            this.layoutControl1.Size = new System.Drawing.Size(422, 224);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.layoutControl2);
-            this.groupControl1.Location = new System.Drawing.Point(16, 16);
+            this.groupControl1.Location = new System.Drawing.Point(12, 12);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(460, 260);
+            this.groupControl1.Size = new System.Drawing.Size(398, 200);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // layoutControl2
             // 
-            this.layoutControl2.Controls.Add(this.label1);
             this.layoutControl2.Controls.Add(this.TxtNumero);
             this.layoutControl2.Controls.Add(this.simpleButton1);
             this.layoutControl2.Controls.Add(this.TxtTel);
             this.layoutControl2.Controls.Add(this.TxtIntitule);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(2, 25);
+            this.layoutControl2.Location = new System.Drawing.Point(2, 20);
+            this.layoutControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(456, 233);
+            this.layoutControl2.Size = new System.Drawing.Size(394, 178);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
             // TxtNumero
             // 
-            this.TxtNumero.Location = new System.Drawing.Point(106, 16);
+            this.TxtNumero.Location = new System.Drawing.Point(86, 12);
+            this.TxtNumero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtNumero.Name = "TxtNumero";
             this.TxtNumero.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNumero.Properties.Appearance.Options.UseFont = true;
             this.TxtNumero.Properties.AutoHeight = false;
             this.TxtNumero.Properties.ReadOnly = true;
-            this.TxtNumero.Size = new System.Drawing.Size(334, 40);
+            this.TxtNumero.Size = new System.Drawing.Size(296, 36);
             this.TxtNumero.StyleController = this.layoutControl2;
             this.TxtNumero.TabIndex = 10;
             // 
@@ -118,9 +118,10 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(271, 154);
+            this.simpleButton1.Location = new System.Drawing.Point(234, 132);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(169, 32);
+            this.simpleButton1.Size = new System.Drawing.Size(148, 26);
             this.simpleButton1.StyleController = this.layoutControl2;
             this.simpleButton1.TabIndex = 9;
             this.simpleButton1.Text = "Valider";
@@ -128,25 +129,27 @@
             // 
             // TxtTel
             // 
-            this.TxtTel.Location = new System.Drawing.Point(106, 108);
+            this.TxtTel.Location = new System.Drawing.Point(86, 92);
+            this.TxtTel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtTel.Name = "TxtTel";
             this.TxtTel.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtTel.Properties.Appearance.Options.UseFont = true;
             this.TxtTel.Properties.AutoHeight = false;
             this.TxtTel.Properties.Mask.EditMask = "\\d\\d\\d\\d\\d\\d\\d\\d";
             this.TxtTel.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            this.TxtTel.Size = new System.Drawing.Size(334, 40);
+            this.TxtTel.Size = new System.Drawing.Size(296, 36);
             this.TxtTel.StyleController = this.layoutControl2;
             this.TxtTel.TabIndex = 5;
             // 
             // TxtIntitule
             // 
-            this.TxtIntitule.Location = new System.Drawing.Point(106, 62);
+            this.TxtIntitule.Location = new System.Drawing.Point(86, 52);
+            this.TxtIntitule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtIntitule.Name = "TxtIntitule";
             this.TxtIntitule.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtIntitule.Properties.Appearance.Options.UseFont = true;
             this.TxtIntitule.Properties.AutoHeight = false;
-            this.TxtIntitule.Size = new System.Drawing.Size(334, 40);
+            this.TxtIntitule.Size = new System.Drawing.Size(296, 36);
             this.TxtIntitule.StyleController = this.layoutControl2;
             this.TxtIntitule.TabIndex = 4;
             // 
@@ -159,12 +162,11 @@
             this.layoutControlItem3,
             this.emptySpaceItem2,
             this.layoutControlItem5,
-            this.layoutControlItem6,
-            this.layoutControlItem4});
+            this.layoutControlItem6});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup2.Size = new System.Drawing.Size(456, 233);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(394, 178);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem2
@@ -172,41 +174,43 @@
             this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem2.Control = this.TxtIntitule;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 46);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 40);
+            this.layoutControlItem2.MaxSize = new System.Drawing.Size(374, 40);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(235, 34);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(430, 46);
+            this.layoutControlItem2.Size = new System.Drawing.Size(374, 40);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "Intitulé";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(86, 23);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(70, 19);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem3.Control = this.TxtTel;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 92);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 80);
+            this.layoutControlItem3.MaxSize = new System.Drawing.Size(374, 40);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(235, 34);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(430, 46);
+            this.layoutControlItem3.Size = new System.Drawing.Size(374, 40);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.Text = "Téléphone";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(86, 23);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(70, 19);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 138);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 120);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(255, 38);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(222, 38);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.simpleButton1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(255, 138);
+            this.layoutControlItem5.Location = new System.Drawing.Point(222, 120);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(175, 38);
+            this.layoutControlItem5.Size = new System.Drawing.Size(152, 38);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -216,12 +220,13 @@
             this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem6.Control = this.TxtNumero;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem6.MaxSize = new System.Drawing.Size(374, 40);
             this.layoutControlItem6.MinSize = new System.Drawing.Size(235, 34);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(430, 46);
+            this.layoutControlItem6.Size = new System.Drawing.Size(374, 40);
             this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem6.Text = "Code";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(86, 23);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(70, 19);
             // 
             // layoutControlGroup1
             // 
@@ -232,7 +237,7 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(492, 292);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(422, 224);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -240,34 +245,18 @@
             this.layoutControlItem1.Control = this.groupControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(466, 266);
+            this.layoutControlItem1.Size = new System.Drawing.Size(402, 204);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // label1
-            // 
-            this.label1.Image = global::Gestion_de_Stock.Properties.Resources.EC;
-            this.label1.Location = new System.Drawing.Point(16, 192);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(424, 25);
-            this.label1.TabIndex = 11;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.label1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 176);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(430, 31);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
             // FrmModifierOuvrier
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 292);
+            this.ClientSize = new System.Drawing.Size(422, 224);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmModifierOuvrier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modifier Salarié";
@@ -290,7 +279,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -312,7 +300,5 @@
         public DevExpress.XtraEditors.TextEdit TxtNumero;
         public DevExpress.XtraEditors.TextEdit TxtTel;
         public DevExpress.XtraEditors.TextEdit TxtIntitule;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

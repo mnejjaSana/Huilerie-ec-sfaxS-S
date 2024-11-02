@@ -284,6 +284,12 @@ namespace Gestion_de_Stock.Forms
         {
             db = new Model.ApplicationContext();
 
+            if (dateEditDateFacture.EditValue == null)
+            {
+                dateEditDateFacture.ErrorText = "Date Achat est Obligatoire";
+                return;
+            }
+
             if (string.IsNullOrEmpty(searchLookUpFournisseur.Text))
             {
                 XtraMessageBox.Show("Choisir un Agriculteur ", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
@@ -301,7 +307,7 @@ namespace Gestion_de_Stock.Forms
 
                 if (string.IsNullOrEmpty(TxtQteHuileAchetee.Text))
                 {
-                    TxtQteHuileAchetee.ErrorText = "Quantité Huile Acheetée est obligatoire";
+                    TxtQteHuileAchetee.ErrorText = "Quantité Huile Achetée est obligatoire";
                     return;
 
                 }
@@ -1023,7 +1029,7 @@ namespace Gestion_de_Stock.Forms
                 }
                 if (Application.OpenForms.OfType<FrmFournisseur>().FirstOrDefault() != null)
                 {
-                    Application.OpenForms.OfType<FrmFournisseur>().First().fournisseurBindingSource.DataSource = ListAgriculteurs.Select(x => new { x.Id, x.Numero, x.Nom, x.Prenom, x.Tel, x.cin, x.TotalAchats, x.TotalAvances, x.SoldeAgriculteurAvecSens }).ToList();
+                    Application.OpenForms.OfType<FrmFournisseur>().First().fournisseurBindingSource.DataSource = ListAgriculteurs.Select(x => new { x.Id, x.Numero, x.Nom, x.Prenom, x.Tel, x.cin,x.Vehicule, x.TotalAchats, x.TotalAvances, x.SoldeAgriculteurAvecSens }).ToList();
                 }
 
                 if (Application.OpenForms.OfType<FrmAchats>().FirstOrDefault() != null)
@@ -1540,7 +1546,7 @@ namespace Gestion_de_Stock.Forms
                     }
                     if (Application.OpenForms.OfType<FrmFournisseur>().FirstOrDefault() != null)
                     {
-                        Application.OpenForms.OfType<FrmFournisseur>().First().fournisseurBindingSource.DataSource = ListAgriculteurs.Select(x => new { x.Id, x.Nom, x.Numero, x.cin, x.Prenom, x.Tel, x.TotalAchats, x.TotalAvances, x.SoldeAgriculteurAvecSens }).ToList();
+                        Application.OpenForms.OfType<FrmFournisseur>().First().fournisseurBindingSource.DataSource = ListAgriculteurs.Select(x => new { x.Id, x.Nom, x.Numero, x.cin,x.Vehicule, x.Prenom, x.Tel, x.TotalAchats, x.TotalAvances, x.SoldeAgriculteurAvecSens }).ToList();
                     }
 
                     if (Application.OpenForms.OfType<FrmAchats>().FirstOrDefault() != null)
@@ -1840,6 +1846,13 @@ namespace Gestion_de_Stock.Forms
                 A.Pile = PileDb;
 
                 int QteHuile = Convert.ToInt32(TxtQteHuileAchetee.Text);
+
+                if(QteHuile<=0)
+                {
+                    TxtQteHuileAchetee.ErrorText = "Quantité est invalide";
+
+                    return;
+                }
 
                 if (PileDb.Capacite + QteHuile > PileDb.CapaciteMax)
                 {
@@ -2164,7 +2177,7 @@ namespace Gestion_de_Stock.Forms
                 }
                 if (Application.OpenForms.OfType<FrmFournisseur>().FirstOrDefault() != null)
                 {
-                    Application.OpenForms.OfType<FrmFournisseur>().First().fournisseurBindingSource.DataSource = ListAgriculteurs.Select(x => new { x.Id, x.Nom, x.Numero, x.Prenom, x.Tel, x.cin, x.TotalAchats, x.TotalAvances, x.SoldeAgriculteurAvecSens }).ToList();
+                    Application.OpenForms.OfType<FrmFournisseur>().First().fournisseurBindingSource.DataSource = ListAgriculteurs.Select(x => new { x.Id, x.Nom, x.Numero, x.Prenom, x.Tel, x.cin,x.Vehicule, x.TotalAchats, x.TotalAvances, x.SoldeAgriculteurAvecSens }).ToList();
                 }
 
                 if (Application.OpenForms.OfType<FrmAnnulationAvance>().FirstOrDefault() != null)
@@ -2789,7 +2802,7 @@ namespace Gestion_de_Stock.Forms
 
                 if (Application.OpenForms.OfType<FrmFournisseur>().FirstOrDefault() != null)
                 {
-                    Application.OpenForms.OfType<FrmFournisseur>().First().fournisseurBindingSource.DataSource = ListAgriculteurs.Select(x => new { x.Id, x.Nom, x.Numero, x.Prenom, x.cin, x.Tel, x.TotalAchats, x.TotalAvances, x.SoldeAgriculteurAvecSens }).ToList();
+                    Application.OpenForms.OfType<FrmFournisseur>().First().fournisseurBindingSource.DataSource = ListAgriculteurs.Select(x => new { x.Id, x.Nom, x.Numero, x.Prenom, x.cin, x.Vehicule, x.Tel, x.TotalAchats, x.TotalAvances, x.SoldeAgriculteurAvecSens }).ToList();
                 }
 
                 if (Application.OpenForms.OfType<FrmAchats>().FirstOrDefault() != null)
@@ -3552,7 +3565,7 @@ namespace Gestion_de_Stock.Forms
                 {
                     TxtNuméroBon.Text = string.Empty;
                 }
-                if (!(string.IsNullOrEmpty(TxtQteHuileAchetee.Text)))
+                if (!string.IsNullOrEmpty(TxtQteHuileAchetee.Text))
                 {
                     TxtQteHuileAchetee.Text = string.Empty;
                 }

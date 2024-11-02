@@ -141,6 +141,7 @@ namespace Gestion_de_Stock.Forms
                 MvtStock.QteEntrante = Qte;
                 MvtStock.PrixMouvement = Prix;
                 MvtStock.QuantitePileInitial = P.Capacite;
+                MvtStock.Commentaire = TxtCommentaire.Text;
                 db.MouvementsStock.Add(MvtStock);
                 db.SaveChanges();
                 #endregion

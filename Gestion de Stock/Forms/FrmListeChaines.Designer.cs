@@ -30,11 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListeChaines));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.label1 = new System.Windows.Forms.Label();
             this.BtnAjouterChaine = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.chaineBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -47,7 +46,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -64,7 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
@@ -90,7 +87,6 @@
             // 
             // layoutControl2
             // 
-            this.layoutControl2.Controls.Add(this.label1);
             this.layoutControl2.Controls.Add(this.BtnAjouterChaine);
             this.layoutControl2.Controls.Add(this.gridControl1);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -101,20 +97,12 @@
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
-            // label1
-            // 
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(12, 294);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(691, 64);
-            this.label1.TabIndex = 6;
-            // 
             // BtnAjouterChaine
             // 
             this.BtnAjouterChaine.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAjouterChaine.Appearance.Options.UseFont = true;
             this.BtnAjouterChaine.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnAjouterChaine.ImageOptions.Image")));
-            this.BtnAjouterChaine.Location = new System.Drawing.Point(553, 264);
+            this.BtnAjouterChaine.Location = new System.Drawing.Point(553, 332);
             this.BtnAjouterChaine.Name = "BtnAjouterChaine";
             this.BtnAjouterChaine.Size = new System.Drawing.Size(150, 26);
             this.BtnAjouterChaine.StyleController = this.layoutControl2;
@@ -130,7 +118,7 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryBtnSupprimer});
-            this.gridControl1.Size = new System.Drawing.Size(691, 248);
+            this.gridControl1.Size = new System.Drawing.Size(691, 316);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -178,6 +166,8 @@
             // 
             // Supprimer
             // 
+            this.Supprimer.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Supprimer.AppearanceHeader.Options.UseFont = true;
             this.Supprimer.Caption = "Supprimer";
             this.Supprimer.ColumnEdit = this.repositoryBtnSupprimer;
             this.Supprimer.Name = "Supprimer";
@@ -187,9 +177,9 @@
             // repositoryBtnSupprimer
             // 
             this.repositoryBtnSupprimer.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.repositoryBtnSupprimer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryBtnSupprimer.Name = "repositoryBtnSupprimer";
             this.repositoryBtnSupprimer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryBtnSupprimer.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryBtnSupprimer_ButtonClick);
@@ -201,8 +191,7 @@
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem2,
             this.layoutControlItem3,
-            this.emptySpaceItem1,
-            this.layoutControlItem4});
+            this.emptySpaceItem1});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(715, 370);
@@ -213,14 +202,14 @@
             this.layoutControlItem2.Control = this.gridControl1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(695, 252);
+            this.layoutControlItem2.Size = new System.Drawing.Size(695, 320);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.BtnAjouterChaine;
-            this.layoutControlItem3.Location = new System.Drawing.Point(541, 252);
+            this.layoutControlItem3.Location = new System.Drawing.Point(541, 320);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(154, 30);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -229,20 +218,10 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 252);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 320);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(541, 30);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.label1;
-            this.layoutControlItem4.Image = ((System.Drawing.Image)(resources.GetObject("layoutControlItem4.Image")));
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 282);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(695, 68);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlGroup1
             // 
@@ -289,7 +268,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
@@ -312,8 +290,6 @@
         private DevExpress.XtraEditors.SimpleButton BtnAjouterChaine;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         public System.Windows.Forms.BindingSource chaineBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn Supprimer;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryBtnSupprimer;

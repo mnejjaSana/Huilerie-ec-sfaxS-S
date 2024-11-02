@@ -36,12 +36,7 @@ namespace Gestion_de_Stock.Forms
         private void FrmLicence_Load(object sender, EventArgs e)
         {
             string macAddress = "";
-            textcodeLicence.Text = "HuilerieEC, version : V1";
-            LabelAdresseTunis.Text = "Golden Estates Towers, 9éme étage App.A9.8 Centre Urbain Nord, 1080, Tunis-Tunisie";
-            LabelAdresseSfax.Text = "Route Gabes Km3, Immeuble SOTEME 1er étage, 3052, Sfax-Tunisie";
-            LabelTel.Text = "+216 70 033 140";
-            LabelEmail.Text = "contact@econsult.com.tn";
-            LabelSite.Text = "www.econsult.com.tn";
+           
 
             NetworkInterface[] interfaces = NetworkInterface.GetAllNetworkInterfaces();
             foreach (NetworkInterface inter in interfaces)

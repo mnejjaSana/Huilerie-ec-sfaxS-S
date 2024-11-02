@@ -388,39 +388,7 @@ namespace Gestion_de_Stock.Forms
             }
         }
 
-        private void repositoryBtnModifierVente_Click(object sender, EventArgs e)
-        {
-            Vente vente = gridView1.GetFocusedRow() as Vente;
-
-            db = new Model.ApplicationContext();
-
-            Vente VenteDb = db.Vente.Where(x => x.Id == vente.Id).FirstOrDefault();
-
-            if (VenteDb.EtatVente != Model.Enumuration.EtatVente.Reglee)
-            {
-
-                FormshowNotParent(Forms.FrmModifierVente.InstanceFrmModifierVente);
-                if (Application.OpenForms.OfType<FrmModifierVente>().FirstOrDefault() != null)
-                {
-                    Application.OpenForms.OfType<FrmModifierVente>().First().TxtCode.Text = VenteDb.Id.ToString(); ;
-                    Application.OpenForms.OfType<FrmModifierVente>().First().TxtClient.Text = VenteDb.IntituleClient;
-                    Application.OpenForms.OfType<FrmModifierVente>().First().TxtQteVendue.Text = VenteDb.QteVendue.ToString();
-                    Application.OpenForms.OfType<FrmModifierVente>().First().TxtTotalCommande.Text = VenteDb.MontantReglement.ToString();
-                    Application.OpenForms.OfType<FrmModifierVente>().First().TxtAvance.Text = VenteDb.MontantRegle.ToString();
-                    Application.OpenForms.OfType<FrmModifierVente>().First().TxtSolde.Text = VenteDb.ResteApayer.ToString();
-
-
-                }
-            }
-            else
-            {
-                XtraMessageBox.Show("Votre demande est non Autorisée ", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-            }
-
-        }
-
+        
         private void gridControl1_Click(object sender, EventArgs e)
         {
 

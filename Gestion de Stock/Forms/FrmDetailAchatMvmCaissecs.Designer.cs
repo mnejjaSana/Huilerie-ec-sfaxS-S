@@ -34,7 +34,6 @@
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.txtNumBon = new DevExpress.XtraEditors.TextEdit();
             this.TxtStatut = new DevExpress.XtraEditors.TextEdit();
-            this.label1 = new System.Windows.Forms.Label();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.historiquePaiementAchatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -62,7 +61,6 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.statut = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutQteProduite = new DevExpress.XtraLayout.LayoutControlItem();
             this.EtatAchat = new DevExpress.XtraLayout.LayoutControlItem();
@@ -100,7 +98,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutQteProduite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EtatAchat)).BeginInit();
@@ -135,7 +132,6 @@
             // 
             this.layoutControl2.Controls.Add(this.txtNumBon);
             this.layoutControl2.Controls.Add(this.TxtStatut);
-            this.layoutControl2.Controls.Add(this.label1);
             this.layoutControl2.Controls.Add(this.gridControl1);
             this.layoutControl2.Controls.Add(this.separatorControl1);
             this.layoutControl2.Controls.Add(this.TxtEtatAchat);
@@ -181,14 +177,6 @@
             this.TxtStatut.StyleController = this.layoutControl2;
             this.TxtStatut.TabIndex = 16;
             // 
-            // label1
-            // 
-            this.label1.Image = global::Gestion_de_Stock.Properties.Resources.EC;
-            this.label1.Location = new System.Drawing.Point(12, 522);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(573, 35);
-            this.label1.TabIndex = 15;
-            // 
             // gridControl1
             // 
             this.gridControl1.DataSource = this.historiquePaiementAchatsBindingSource;
@@ -197,7 +185,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(573, 97);
+            this.gridControl1.Size = new System.Drawing.Size(573, 136);
             this.gridControl1.TabIndex = 14;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -229,7 +217,7 @@
             this.colDateCreation.OptionsColumn.AllowEdit = false;
             this.colDateCreation.Visible = true;
             this.colDateCreation.VisibleIndex = 0;
-            this.colDateCreation.Width = 35;
+            this.colDateCreation.Width = 40;
             // 
             // colMontantReglement
             // 
@@ -426,7 +414,6 @@
             this.layoutControlItem7,
             this.layoutControlItem8,
             this.layoutControlItem12,
-            this.layoutControlItem13,
             this.statut,
             this.layoutQteProduite,
             this.EtatAchat,
@@ -534,18 +521,9 @@
             this.layoutControlItem12.Control = this.gridControl1;
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 409);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(577, 101);
+            this.layoutControlItem12.Size = new System.Drawing.Size(577, 140);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
-            // 
-            // layoutControlItem13
-            // 
-            this.layoutControlItem13.Control = this.label1;
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 510);
-            this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(577, 39);
-            this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem13.TextVisible = false;
             // 
             // statut
             // 
@@ -674,7 +652,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutQteProduite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EtatAchat)).EndInit();
@@ -694,7 +671,6 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
@@ -705,7 +681,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         public DevExpress.XtraEditors.TextEdit TxtEtatAchat;
         public DevExpress.XtraEditors.TextEdit TxtQteProduite;
         public DevExpress.XtraEditors.TextEdit TxtPrixLitre;

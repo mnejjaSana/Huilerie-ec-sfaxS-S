@@ -93,7 +93,7 @@ namespace Gestion_de_Stock.Forms
             {
                 foreach (var Source in ListeBanques)
                 {
-                    if (Source != "Service" && Source != "Vente")
+                    if (Source != "Service" && Source != "Vente" && Source != "AnnulationAvance")
                     {
                         comboBoxBank.Properties.Items.Add(Source);
                     }

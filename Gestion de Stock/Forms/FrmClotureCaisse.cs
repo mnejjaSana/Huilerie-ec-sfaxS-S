@@ -86,7 +86,7 @@ namespace Gestion_de_Stock.Forms
 
             if (MontantCloture > MontantCaisse || MontantCloture <= 0)
             {
-                XtraMessageBox.Show("Montant Clôture est Invalid", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Montant Clôture est Invalide", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TxtMontantCloture.Text = string.Empty;
                  TxtSolde.Text = string.Empty;
 

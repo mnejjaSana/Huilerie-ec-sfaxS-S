@@ -170,12 +170,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExpressionBindingCollection.cs" />
-    <Compile Include="Forms\FrmAjouterBanque.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmAjouterBanque.Designer.cs">
-      <DependentUpon>FrmAjouterBanque.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmAjouterChaine.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,12 +278,6 @@
     <Compile Include="Forms\FrmAjouterReglementVente.Designer.cs">
       <DependentUpon>FrmAjouterReglementVente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmAjouterUtilisateur.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmAjouterUtilisateur.Designer.cs">
-      <DependentUpon>FrmAjouterUtilisateur.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmAjouterVente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,12 +289,6 @@
     </Compile>
     <Compile Include="Forms\FrmAjouterAlimentation.Designer.cs">
       <DependentUpon>FrmAjouterAlimentation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmAPropos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmAPropos.Designer.cs">
-      <DependentUpon>FrmAPropos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmClient.cs">
       <SubType>Form</SubType>
@@ -422,12 +404,6 @@
     <Compile Include="Forms\FrmListeAlimentation.Designer.cs">
       <DependentUpon>FrmListeAlimentation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmListeBanques.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmListeBanques.Designer.cs">
-      <DependentUpon>FrmListeBanques.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmListeChaines.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -476,12 +452,6 @@
     <Compile Include="Forms\FrmlistePrélèvements.Designer.cs">
       <DependentUpon>FrmlistePrélèvements.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmListeReglementFounisseur.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmListeReglementFounisseur.Designer.cs">
-      <DependentUpon>FrmListeReglementFounisseur.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmListeVente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -493,12 +463,6 @@
     </Compile>
     <Compile Include="Forms\FrmMasrafProduction.Designer.cs">
       <DependentUpon>FrmMasrafProduction.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmMatriculeFiscale.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmMatriculeFiscale.Designer.cs">
-      <DependentUpon>FrmMatriculeFiscale.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmModifierClient.cs">
       <SubType>Form</SubType>
@@ -535,18 +499,6 @@
     </Compile>
     <Compile Include="Forms\FrmModifierPile.Designer.cs">
       <DependentUpon>FrmModifierPile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmModifierProduction.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmModifierProduction.Designer.cs">
-      <DependentUpon>FrmModifierProduction.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmModifierVente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmModifierVente.Designer.cs">
-      <DependentUpon>FrmModifierVente.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmMouvementCaisse.cs">
       <SubType>Form</SubType>
@@ -602,12 +554,6 @@
     <Compile Include="Forms\FrmProduction.Designer.cs">
       <DependentUpon>FrmProduction.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmReleveeFournisseurs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmReleveeFournisseurs.Designer.cs">
-      <DependentUpon>FrmReleveeFournisseurs.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmSociete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -643,12 +589,6 @@
     </Compile>
     <Compile Include="Forms\FrmTransfertPile.Designer.cs">
       <DependentUpon>FrmTransfertPile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmUtilisateur.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmUtilisateur.Designer.cs">
-      <DependentUpon>FrmUtilisateur.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmWaitForm.cs">
       <SubType>Form</SubType>
@@ -979,9 +919,6 @@
     <Compile Include="Repport\XrAvancePersonne.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="Forms\FrmAjouterBanque.resx">
-      <DependentUpon>FrmAjouterBanque.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAjouterChaine.resx">
       <DependentUpon>FrmAjouterChaine.cs</DependentUpon>
     </EmbeddedResource>
@@ -1038,17 +975,11 @@
     <EmbeddedResource Include="Forms\FrmAjouterReglementVente.resx">
       <DependentUpon>FrmAjouterReglementVente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmAjouterUtilisateur.resx">
-      <DependentUpon>FrmAjouterUtilisateur.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAjouterVente.resx">
       <DependentUpon>FrmAjouterVente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAjouterAlimentation.resx">
       <DependentUpon>FrmAjouterAlimentation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmAPropos.resx">
-      <DependentUpon>FrmAPropos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmClient.resx">
       <DependentUpon>FrmClient.cs</DependentUpon>
@@ -1109,9 +1040,6 @@
     <EmbeddedResource Include="Forms\FrmListeAlimentation.resx">
       <DependentUpon>FrmListeAlimentation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmListeBanques.resx">
-      <DependentUpon>FrmListeBanques.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmListeChaines.resx">
       <DependentUpon>FrmListeChaines.cs</DependentUpon>
     </EmbeddedResource>
@@ -1136,17 +1064,11 @@
     <EmbeddedResource Include="Forms\FrmlistePrélèvements.resx">
       <DependentUpon>FrmlistePrélèvements.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmListeReglementFounisseur.resx">
-      <DependentUpon>FrmListeReglementFounisseur.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmListeVente.resx">
       <DependentUpon>FrmListeVente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMasrafProduction.resx">
       <DependentUpon>FrmMasrafProduction.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmMatriculeFiscale.resx">
-      <DependentUpon>FrmMatriculeFiscale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmModifierClient.resx">
       <DependentUpon>FrmModifierClient.cs</DependentUpon>
@@ -1165,12 +1087,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmModifierPile.resx">
       <DependentUpon>FrmModifierPile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmModifierProduction.resx">
-      <DependentUpon>FrmModifierProduction.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmModifierVente.resx">
-      <DependentUpon>FrmModifierVente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMouvementCaisse.resx">
       <DependentUpon>FrmMouvementCaisse.cs</DependentUpon>
@@ -1200,9 +1116,6 @@
       <DependentUpon>FrmProduction.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmReleveeFournisseurs.resx">
-      <DependentUpon>FrmReleveeFournisseurs.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSociete.resx">
       <DependentUpon>FrmSociete.cs</DependentUpon>
     </EmbeddedResource>
@@ -1220,9 +1133,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmTransfertPile.resx">
       <DependentUpon>FrmTransfertPile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmUtilisateur.resx">
-      <DependentUpon>FrmUtilisateur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmWaitForm.resx">
       <DependentUpon>FrmWaitForm.cs</DependentUpon>

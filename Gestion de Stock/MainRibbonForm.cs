@@ -70,27 +70,14 @@ namespace Gestion_de_Stock
             frm.Show();
             frm.Activate();
         }
-
-
-        private void Utilisateurs_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmUtilisateur.InstanceFrmUtilisateur);
-        }
+        
 
         private void MainRibbonForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
-        private void AjouterUtilisateur_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmAjouterUtilisateur.InstanceFrmAjouterUtilisateur);
-        }
-
-
-
-
-
+       
         private void barbarAjouterClient_ItemClick(object sender, ItemClickEventArgs e)
         {
             FormshowNotParent(Gestion_de_Stock.Forms.FrmAjouterClient.InstanceFrmAjouterClient);
@@ -187,11 +174,7 @@ namespace Gestion_de_Stock
 
 
 
-        private void barButtonMatriculeVerification_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            FormshowNotParent(Gestion_de_Stock.Forms.FrmMatriculeFiscale.InstanceFrmMatriculeFiscale);
-        }
-
+       
         private void barBtnListeAchats_ItemClick(object sender, ItemClickEventArgs e)
         {
             Formshow(Gestion_de_Stock.Forms.FrmListeAchats.InstanceFrmListeAchats);
@@ -217,10 +200,7 @@ namespace Gestion_de_Stock
 
         }
 
-        private void barButtonItemListeReglementFournisseur_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmListeReglementFounisseur.InstanceFrmListeReglementFounisseur);
-        }
+       
 
 
 
@@ -264,8 +244,18 @@ namespace Gestion_de_Stock
 
         private void barBtnListeProduction_ItemClick(object sender, ItemClickEventArgs e)
         {
-
-            Formshow(Gestion_de_Stock.Forms.FrmListeProduction.InstanceFrmListeProduction);
+            db = new Model.ApplicationContext();
+            Societe Ste = db.Societe.FirstOrDefault();
+            if (Ste.AchatBase)
+            {
+                Formshow(Gestion_de_Stock.Forms.FrmListeProduction.InstanceFrmListeProduction);
+            }
+            else
+            {
+                XtraMessageBox.Show("Accès non autorisé", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+           
         }
 
         private void barBtnMouvementStock_ItemClick(object sender, ItemClickEventArgs e)
@@ -274,11 +264,7 @@ namespace Gestion_de_Stock
             Formshow(Gestion_de_Stock.Forms.FrmStockHuile.InstanceFrmStockHuile);
         }
 
-        private void barButtonItemReleveeFournisseur_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Formshow(Gestion_de_Stock.Forms.FrmReleveeFournisseurs.InstanceFrmReleveeFournisseurs);
-        }
-
+       
         private void barButtonItemPile_ItemClick(object sender, ItemClickEventArgs e)
         {
             Formshow(Gestion_de_Stock.Forms.FrmPile.InstanceFrmPile);
@@ -348,16 +334,7 @@ namespace Gestion_de_Stock
             FormshowNotParent(Forms.FrmSortieDiversPile.InstanceFrmSortieDiversPile);
         }
 
-        private void MainRibbonForm_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
-        {
-
-            if (e.KeyCode == Keys.M && (e.Control || e.Shift))
-            {
-
-                FormshowNotParent(Forms.FrmModifierProduction.InstanceFrmModifierProduction);
-
-            }
-        }
+      
 
         private void barBtnEtatClient_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -768,10 +745,7 @@ namespace Gestion_de_Stock
             Formshow(Forms.FrmListeDepensesAgriculteurs.InstanceFrmListeDepensesAgriculteurs);
         }
 
-        private void barBtnModifierProduction_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            FormshowNotParent(Forms.FrmModifierProduction.InstanceFrmModifierProduction);
-        }
+        
 
         private void btnEntreeDivers_ItemClick(object sender, ItemClickEventArgs e)
         {

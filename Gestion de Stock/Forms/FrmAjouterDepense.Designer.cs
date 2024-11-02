@@ -38,7 +38,6 @@
             this.TxtNumCheque = new DevExpress.XtraEditors.TextEdit();
             this.dateEchance = new DevExpress.XtraEditors.DateEdit();
             this.comboBoxModePaie = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.label1 = new System.Windows.Forms.Label();
             this.searchLookUpOuvrier = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.salarierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -54,7 +53,6 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlOuvrier = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemPaiement = new DevExpress.XtraLayout.LayoutControlItem();
             this.DateEcheance = new DevExpress.XtraLayout.LayoutControlItem();
             this.numCheque = new DevExpress.XtraLayout.LayoutControlItem();
@@ -90,7 +88,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlOuvrier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPaiement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateEcheance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCheque)).BeginInit();
@@ -109,7 +106,7 @@
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(645, 467);
+            this.layoutControl1.Size = new System.Drawing.Size(645, 433);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -119,7 +116,7 @@
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(621, 443);
+            this.groupControl1.Size = new System.Drawing.Size(621, 409);
             this.groupControl1.TabIndex = 4;
             // 
             // layoutControl2
@@ -129,7 +126,6 @@
             this.layoutControl2.Controls.Add(this.TxtNumCheque);
             this.layoutControl2.Controls.Add(this.dateEchance);
             this.layoutControl2.Controls.Add(this.comboBoxModePaie);
-            this.layoutControl2.Controls.Add(this.label1);
             this.layoutControl2.Controls.Add(this.searchLookUpOuvrier);
             this.layoutControl2.Controls.Add(this.BtnEnregistrer);
             this.layoutControl2.Controls.Add(this.TxtCommentaire);
@@ -141,7 +137,7 @@
             this.layoutControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(617, 421);
+            this.layoutControl2.Size = new System.Drawing.Size(617, 387);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -223,14 +219,6 @@
             this.comboBoxModePaie.TabIndex = 13;
             this.comboBoxModePaie.SelectedIndexChanged += new System.EventHandler(this.comboBoxModePaie_SelectedIndexChanged);
             // 
-            // label1
-            // 
-            this.label1.Image = global::Gestion_de_Stock.Properties.Resources.EC;
-            this.label1.Location = new System.Drawing.Point(12, 366);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(593, 43);
-            this.label1.TabIndex = 12;
-            // 
             // searchLookUpOuvrier
             // 
             this.searchLookUpOuvrier.EditValue = "";
@@ -308,6 +296,8 @@
             this.TxtMontant.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMontant.Properties.Appearance.Options.UseFont = true;
             this.TxtMontant.Properties.AutoHeight = false;
+            this.TxtMontant.Properties.Mask.EditMask = "n3";
+            this.TxtMontant.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TxtMontant.Size = new System.Drawing.Size(189, 32);
             this.TxtMontant.StyleController = this.layoutControl2;
             this.TxtMontant.TabIndex = 7;
@@ -340,7 +330,6 @@
             this.emptySpaceItem2,
             this.layoutControlItem7,
             this.layoutControlOuvrier,
-            this.layoutControlItem9,
             this.layoutControlItemPaiement,
             this.DateEcheance,
             this.numCheque,
@@ -350,7 +339,7 @@
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup2.Size = new System.Drawing.Size(617, 421);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(617, 387);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem2
@@ -386,7 +375,7 @@
             this.layoutControlItem8.Control = this.BtnEnregistrer;
             this.layoutControlItem8.Location = new System.Drawing.Point(340, 324);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(257, 30);
+            this.layoutControlItem8.Size = new System.Drawing.Size(257, 43);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -395,7 +384,7 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 324);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(340, 30);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(340, 43);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem7
@@ -427,15 +416,6 @@
             this.layoutControlOuvrier.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlOuvrier.Text = "Salarié";
             this.layoutControlOuvrier.TextSize = new System.Drawing.Size(121, 19);
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.label1;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 354);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(597, 47);
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextVisible = false;
             // 
             // layoutControlItemPaiement
             // 
@@ -532,7 +512,7 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(645, 467);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(645, 433);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -540,7 +520,7 @@
             this.layoutControlItem1.Control = this.groupControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(625, 447);
+            this.layoutControlItem1.Size = new System.Drawing.Size(625, 413);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -548,7 +528,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 467);
+            this.ClientSize = new System.Drawing.Size(645, 433);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -584,7 +564,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlOuvrier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPaiement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateEcheance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCheque)).EndInit();
@@ -619,8 +598,6 @@
         private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpOuvrier;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlOuvrier;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         public System.Windows.Forms.BindingSource salarierBindingSource;
         private DevExpress.XtraEditors.DateEdit dateEchance;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxModePaie;

@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDetailServiceMvmCaisse));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.TxtStatut = new DevExpress.XtraEditors.TextEdit();
             this.TxtEtatAchat = new DevExpress.XtraEditors.TextEdit();
-            this.label1 = new System.Windows.Forms.Label();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.historiquePaiementAchatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -60,7 +58,6 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -93,7 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
@@ -126,7 +122,6 @@
             // 
             this.layoutControl2.Controls.Add(this.TxtStatut);
             this.layoutControl2.Controls.Add(this.TxtEtatAchat);
-            this.layoutControl2.Controls.Add(this.label1);
             this.layoutControl2.Controls.Add(this.gridControl1);
             this.layoutControl2.Controls.Add(this.separatorControl1);
             this.layoutControl2.Controls.Add(this.TxtQteAchete);
@@ -170,14 +165,6 @@
             this.TxtEtatAchat.StyleController = this.layoutControl2;
             this.TxtEtatAchat.TabIndex = 13;
             // 
-            // label1
-            // 
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(12, 484);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(611, 44);
-            this.label1.TabIndex = 12;
-            // 
             // gridControl1
             // 
             this.gridControl1.DataSource = this.historiquePaiementAchatsBindingSource;
@@ -186,7 +173,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(611, 166);
+            this.gridControl1.Size = new System.Drawing.Size(611, 214);
             this.gridControl1.TabIndex = 11;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -213,8 +200,8 @@
             this.colDateCreation.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colDateCreation.AppearanceHeader.Options.UseFont = true;
             this.colDateCreation.Caption = "Date";
-            this.colDateCreation.DisplayFormat.FormatString = "n3";
-            this.colDateCreation.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colDateCreation.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.colDateCreation.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colDateCreation.FieldName = "DateCreation";
             this.colDateCreation.Name = "colDateCreation";
             this.colDateCreation.OptionsColumn.AllowEdit = false;
@@ -370,7 +357,6 @@
             this.layoutControlItem7,
             this.layoutControlItem8,
             this.layoutControlItem9,
-            this.layoutControlItem10,
             this.layoutControlItem11,
             this.layoutControlItem12,
             this.emptySpaceItem1});
@@ -474,19 +460,9 @@
             this.layoutControlItem9.Control = this.gridControl1;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 302);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(615, 170);
+            this.layoutControlItem9.Size = new System.Drawing.Size(615, 218);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.label1;
-            this.layoutControlItem10.Image = ((System.Drawing.Image)(resources.GetObject("layoutControlItem10.Image")));
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 472);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(615, 48);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
             // 
             // layoutControlItem11
             // 
@@ -583,7 +559,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
@@ -616,8 +591,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMontantReglement;
         private DevExpress.XtraGrid.Columns.GridColumn colMontantRegle;
         private DevExpress.XtraGrid.Columns.GridColumn colResteApayer;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         public System.Windows.Forms.BindingSource historiquePaiementAchatsBindingSource;
         public DevExpress.XtraEditors.TextEdit TxtQteAchete;
         public DevExpress.XtraEditors.TextEdit TxtNbSacs;

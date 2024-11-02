@@ -35,7 +35,6 @@ namespace Gestion_de_Stock.Forms
         }
     }
 
-  
-}
 
+}
 

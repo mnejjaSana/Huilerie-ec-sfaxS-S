@@ -400,6 +400,11 @@ namespace Gestion_de_Stock.Forms
             }
             else
             {
+                if (dateVente.EditValue == null)
+                {
+                    dateVente.ErrorText = "Date vente est Obligatoire";
+                    return;
+                }
                 Vente.Date = dateVente.DateTime;
 
                 Client C = new Client();
@@ -424,7 +429,7 @@ namespace Gestion_de_Stock.Forms
 
                 if (MontantRegle > MontantReglement || MontantRegle < 0)
                 {
-                    XtraMessageBox.Show("Montant Règlement est Invalid", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Montant Règlement est Invalide", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     TxtMontantRegle.Text = "";
                     return;
                 }
@@ -470,7 +475,7 @@ namespace Gestion_de_Stock.Forms
 
                         if (MontantRegle <= 0)
                         {
-                            XtraMessageBox.Show("Montant Règlement est Invalid", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                            XtraMessageBox.Show("Montant Règlement est Invalide", "Configuration de l'application", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                             TxtMontantRegle.Text = "";
                             return;
                         }

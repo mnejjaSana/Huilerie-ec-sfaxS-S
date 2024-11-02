@@ -227,14 +227,7 @@ namespace Gestion_de_Stock.Forms
 
       
 
-        private void FrmListeProduction_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.M)
-            {
-
-                FormshowNotParent(Forms.FrmModifierProduction.InstanceFrmModifierProduction);
-            }
-        }
+       
 
         private void BtnActualiser_Click(object sender, EventArgs e)
         {

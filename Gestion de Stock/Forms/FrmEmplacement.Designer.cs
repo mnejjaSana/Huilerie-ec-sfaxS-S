@@ -34,7 +34,6 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.BtnAjouter = new DevExpress.XtraEditors.SimpleButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.BtnModifier = new DevExpress.XtraEditors.SimpleButton();
             this.BtnSupprimer = new DevExpress.XtraEditors.SimpleButton();
             this.BtnActualiser = new DevExpress.XtraEditors.SimpleButton();
@@ -60,7 +59,6 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -83,7 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -112,7 +109,6 @@
             // layoutControl2
             // 
             this.layoutControl2.Controls.Add(this.BtnAjouter);
-            this.layoutControl2.Controls.Add(this.label1);
             this.layoutControl2.Controls.Add(this.BtnModifier);
             this.layoutControl2.Controls.Add(this.BtnSupprimer);
             this.layoutControl2.Controls.Add(this.BtnActualiser);
@@ -132,7 +128,7 @@
             this.BtnAjouter.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAjouter.Appearance.Options.UseFont = true;
             this.BtnAjouter.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnAjouter.ImageOptions.Image")));
-            this.BtnAjouter.Location = new System.Drawing.Point(584, 444);
+            this.BtnAjouter.Location = new System.Drawing.Point(584, 476);
             this.BtnAjouter.Name = "BtnAjouter";
             this.BtnAjouter.Size = new System.Drawing.Size(180, 26);
             this.BtnAjouter.StyleController = this.layoutControl2;
@@ -140,20 +136,12 @@
             this.BtnAjouter.Text = "Ajouter";
             this.BtnAjouter.Click += new System.EventHandler(this.BtnAjouter_Click);
             // 
-            // label1
-            // 
-            this.label1.Image = global::Gestion_de_Stock.Properties.Resources.EC;
-            this.label1.Location = new System.Drawing.Point(12, 474);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1131, 28);
-            this.label1.TabIndex = 11;
-            // 
             // BtnModifier
             // 
             this.BtnModifier.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnModifier.Appearance.Options.UseFont = true;
             this.BtnModifier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnModifier.ImageOptions.Image")));
-            this.BtnModifier.Location = new System.Drawing.Point(768, 444);
+            this.BtnModifier.Location = new System.Drawing.Point(768, 476);
             this.BtnModifier.Name = "BtnModifier";
             this.BtnModifier.Size = new System.Drawing.Size(189, 26);
             this.BtnModifier.StyleController = this.layoutControl2;
@@ -166,7 +154,7 @@
             this.BtnSupprimer.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSupprimer.Appearance.Options.UseFont = true;
             this.BtnSupprimer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnSupprimer.ImageOptions.Image")));
-            this.BtnSupprimer.Location = new System.Drawing.Point(961, 444);
+            this.BtnSupprimer.Location = new System.Drawing.Point(961, 476);
             this.BtnSupprimer.Name = "BtnSupprimer";
             this.BtnSupprimer.Size = new System.Drawing.Size(182, 26);
             this.BtnSupprimer.StyleController = this.layoutControl2;
@@ -219,7 +207,7 @@
             this.gridControl1.Location = new System.Drawing.Point(12, 64);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1131, 376);
+            this.gridControl1.Size = new System.Drawing.Size(1131, 408);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -374,7 +362,6 @@
             this.emptySpaceItem2,
             this.layoutControlItem6,
             this.layoutControlItem7,
-            this.layoutControlItem9,
             this.layoutControlItem8,
             this.emptySpaceItem3});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
@@ -387,7 +374,7 @@
             this.layoutControlItem2.Control = this.gridControl1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 52);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1135, 380);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1135, 412);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -437,7 +424,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.BtnSupprimer;
-            this.layoutControlItem6.Location = new System.Drawing.Point(949, 432);
+            this.layoutControlItem6.Location = new System.Drawing.Point(949, 464);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(186, 30);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
@@ -446,25 +433,16 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.BtnModifier;
-            this.layoutControlItem7.Location = new System.Drawing.Point(756, 432);
+            this.layoutControlItem7.Location = new System.Drawing.Point(756, 464);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(193, 30);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.label1;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 462);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(1135, 32);
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextVisible = false;
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.BtnAjouter;
-            this.layoutControlItem8.Location = new System.Drawing.Point(572, 432);
+            this.layoutControlItem8.Location = new System.Drawing.Point(572, 464);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(184, 30);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -473,7 +451,7 @@
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 432);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 464);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
             this.emptySpaceItem3.Size = new System.Drawing.Size(572, 30);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -527,7 +505,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -568,8 +545,6 @@
         private DevExpress.XtraEditors.SimpleButton BtnSupprimer;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraEditors.SimpleButton BtnAjouter;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;

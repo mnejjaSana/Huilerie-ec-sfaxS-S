@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAjouterReglementAchat));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -56,11 +56,9 @@
             this.TxtMontatntTotalService = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.BtnValider = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.personnePassagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -89,7 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personnePassagerBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -97,7 +94,6 @@
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.groupControl1);
-            this.layoutControl1.Controls.Add(this.label1);
             this.layoutControl1.Controls.Add(this.BtnValider);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -114,7 +110,7 @@
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(685, 523);
+            this.groupControl1.Size = new System.Drawing.Size(685, 549);
             this.groupControl1.TabIndex = 0;
             // 
             // layoutControl2
@@ -132,19 +128,19 @@
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(3198, 234, 562, 500);
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(681, 501);
+            this.layoutControl2.Size = new System.Drawing.Size(681, 527);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
             // gridControl1
             // 
             this.gridControl1.DataSource = this.personneListeAchatBindingSource;
-            this.gridControl1.Location = new System.Drawing.Point(12, 222);
+            this.gridControl1.Location = new System.Drawing.Point(12, 234);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.BtnSupprimer});
-            this.gridControl1.Size = new System.Drawing.Size(657, 267);
+            this.gridControl1.Size = new System.Drawing.Size(657, 281);
             this.gridControl1.TabIndex = 13;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -224,74 +220,76 @@
             // BtnSupprimer
             // 
             this.BtnSupprimer.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.BtnSupprimer.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.BtnSupprimer.Name = "BtnSupprimer";
             this.BtnSupprimer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.BtnSupprimer.Click += new System.EventHandler(this.BtnSupprimer_Click_1);
             // 
             // TxtAvance
             // 
-            this.TxtAvance.Location = new System.Drawing.Point(139, 117);
+            this.TxtAvance.Location = new System.Drawing.Point(139, 123);
             this.TxtAvance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtAvance.Name = "TxtAvance";
             this.TxtAvance.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtAvance.Properties.Appearance.Options.UseFont = true;
             this.TxtAvance.Properties.AutoHeight = false;
             this.TxtAvance.Properties.ReadOnly = true;
-            this.TxtAvance.Size = new System.Drawing.Size(530, 31);
+            this.TxtAvance.Size = new System.Drawing.Size(530, 33);
             this.TxtAvance.StyleController = this.layoutControl2;
             this.TxtAvance.TabIndex = 12;
             // 
             // TxtMontantOperation
             // 
-            this.TxtMontantOperation.Location = new System.Drawing.Point(139, 82);
+            this.TxtMontantOperation.Location = new System.Drawing.Point(139, 86);
             this.TxtMontantOperation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtMontantOperation.Name = "TxtMontantOperation";
             this.TxtMontantOperation.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMontantOperation.Properties.Appearance.Options.UseFont = true;
             this.TxtMontantOperation.Properties.AutoHeight = false;
             this.TxtMontantOperation.Properties.ReadOnly = true;
-            this.TxtMontantOperation.Size = new System.Drawing.Size(530, 31);
+            this.TxtMontantOperation.Size = new System.Drawing.Size(530, 33);
             this.TxtMontantOperation.StyleController = this.layoutControl2;
             this.TxtMontantOperation.TabIndex = 11;
             // 
             // TxtMontantEncaisse
             // 
-            this.TxtMontantEncaisse.Location = new System.Drawing.Point(139, 187);
+            this.TxtMontantEncaisse.Location = new System.Drawing.Point(139, 197);
             this.TxtMontantEncaisse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtMontantEncaisse.Name = "TxtMontantEncaisse";
             this.TxtMontantEncaisse.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMontantEncaisse.Properties.Appearance.Options.UseFont = true;
             this.TxtMontantEncaisse.Properties.AutoHeight = false;
-            this.TxtMontantEncaisse.Size = new System.Drawing.Size(530, 31);
+            this.TxtMontantEncaisse.Properties.Mask.EditMask = "n3";
+            this.TxtMontantEncaisse.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.TxtMontantEncaisse.Size = new System.Drawing.Size(530, 33);
             this.TxtMontantEncaisse.StyleController = this.layoutControl2;
             this.TxtMontantEncaisse.TabIndex = 8;
             // 
             // TxtSolde
             // 
-            this.TxtSolde.Location = new System.Drawing.Point(139, 152);
+            this.TxtSolde.Location = new System.Drawing.Point(139, 160);
             this.TxtSolde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtSolde.Name = "TxtSolde";
             this.TxtSolde.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtSolde.Properties.Appearance.Options.UseFont = true;
             this.TxtSolde.Properties.AutoHeight = false;
             this.TxtSolde.Properties.ReadOnly = true;
-            this.TxtSolde.Size = new System.Drawing.Size(530, 31);
+            this.TxtSolde.Size = new System.Drawing.Size(530, 33);
             this.TxtSolde.StyleController = this.layoutControl2;
             this.TxtSolde.TabIndex = 7;
             // 
             // TxtAgriculteur
             // 
-            this.TxtAgriculteur.Location = new System.Drawing.Point(139, 47);
+            this.TxtAgriculteur.Location = new System.Drawing.Point(139, 49);
             this.TxtAgriculteur.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtAgriculteur.Name = "TxtAgriculteur";
             this.TxtAgriculteur.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtAgriculteur.Properties.Appearance.Options.UseFont = true;
             this.TxtAgriculteur.Properties.AutoHeight = false;
             this.TxtAgriculteur.Properties.ReadOnly = true;
-            this.TxtAgriculteur.Size = new System.Drawing.Size(530, 31);
+            this.TxtAgriculteur.Size = new System.Drawing.Size(530, 33);
             this.TxtAgriculteur.StyleController = this.layoutControl2;
             this.TxtAgriculteur.TabIndex = 5;
             // 
@@ -304,7 +302,7 @@
             this.TxtCodeAchat.Properties.Appearance.Options.UseFont = true;
             this.TxtCodeAchat.Properties.AutoHeight = false;
             this.TxtCodeAchat.Properties.ReadOnly = true;
-            this.TxtCodeAchat.Size = new System.Drawing.Size(530, 31);
+            this.TxtCodeAchat.Size = new System.Drawing.Size(530, 33);
             this.TxtCodeAchat.StyleController = this.layoutControl2;
             this.TxtCodeAchat.TabIndex = 4;
             // 
@@ -323,7 +321,7 @@
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "Root";
             this.layoutControlGroup2.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup2.Size = new System.Drawing.Size(681, 501);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(681, 527);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem2
@@ -334,7 +332,7 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(228, 29);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(661, 35);
+            this.layoutControlItem2.Size = new System.Drawing.Size(661, 37);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "Code Achat(s)";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(123, 19);
@@ -344,10 +342,10 @@
             this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem3.Control = this.TxtAgriculteur;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 35);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 37);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(228, 29);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(661, 35);
+            this.layoutControlItem3.Size = new System.Drawing.Size(661, 37);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.Text = "Agriculteur";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(123, 19);
@@ -357,10 +355,10 @@
             this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem5.Control = this.TxtSolde;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 140);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 148);
             this.layoutControlItem5.MinSize = new System.Drawing.Size(228, 29);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(661, 35);
+            this.layoutControlItem5.Size = new System.Drawing.Size(661, 37);
             this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.Text = "Solde";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(123, 19);
@@ -370,10 +368,10 @@
             this.layoutControlMtAPayer.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlMtAPayer.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlMtAPayer.Control = this.TxtMontantEncaisse;
-            this.layoutControlMtAPayer.Location = new System.Drawing.Point(0, 175);
+            this.layoutControlMtAPayer.Location = new System.Drawing.Point(0, 185);
             this.layoutControlMtAPayer.MinSize = new System.Drawing.Size(228, 29);
             this.layoutControlMtAPayer.Name = "layoutControlMtAPayer";
-            this.layoutControlMtAPayer.Size = new System.Drawing.Size(661, 35);
+            this.layoutControlMtAPayer.Size = new System.Drawing.Size(661, 37);
             this.layoutControlMtAPayer.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlMtAPayer.Text = "Montant à payer";
             this.layoutControlMtAPayer.TextSize = new System.Drawing.Size(123, 19);
@@ -383,10 +381,10 @@
             this.TxtMontatntTotalService.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMontatntTotalService.AppearanceItemCaption.Options.UseFont = true;
             this.TxtMontatntTotalService.Control = this.TxtMontantOperation;
-            this.TxtMontatntTotalService.Location = new System.Drawing.Point(0, 70);
+            this.TxtMontatntTotalService.Location = new System.Drawing.Point(0, 74);
             this.TxtMontatntTotalService.MinSize = new System.Drawing.Size(227, 28);
             this.TxtMontatntTotalService.Name = "TxtMontatntTotalService";
-            this.TxtMontatntTotalService.Size = new System.Drawing.Size(661, 35);
+            this.TxtMontatntTotalService.Size = new System.Drawing.Size(661, 37);
             this.TxtMontatntTotalService.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.TxtMontatntTotalService.Text = "Total Opération(s)";
             this.TxtMontatntTotalService.TextSize = new System.Drawing.Size(123, 19);
@@ -396,10 +394,10 @@
             this.layoutControlItem9.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem9.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem9.Control = this.TxtAvance;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 105);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 111);
             this.layoutControlItem9.MinSize = new System.Drawing.Size(250, 28);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(661, 35);
+            this.layoutControlItem9.Size = new System.Drawing.Size(661, 37);
             this.layoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem9.Text = "Avance";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(123, 19);
@@ -407,26 +405,18 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.gridControl1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 210);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 222);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(661, 271);
+            this.layoutControlItem4.Size = new System.Drawing.Size(661, 285);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
-            // 
-            // label1
-            // 
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(12, 569);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(685, 22);
-            this.label1.TabIndex = 1;
             // 
             // BtnValider
             // 
             this.BtnValider.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnValider.Appearance.Options.UseFont = true;
             this.BtnValider.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnValider.ImageOptions.Image")));
-            this.BtnValider.Location = new System.Drawing.Point(12, 539);
+            this.BtnValider.Location = new System.Drawing.Point(12, 565);
             this.BtnValider.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnValider.Name = "BtnValider";
             this.BtnValider.Size = new System.Drawing.Size(685, 26);
@@ -441,7 +431,6 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem6,
             this.layoutControlItem7});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
@@ -454,23 +443,14 @@
             this.layoutControlItem1.Control = this.groupControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(689, 527);
+            this.layoutControlItem1.Size = new System.Drawing.Size(689, 553);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.label1;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 557);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(689, 26);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.BtnValider;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 527);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 553);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(689, 30);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
@@ -519,7 +499,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personnePassagerBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -536,7 +515,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton BtnValider;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         public DevExpress.XtraEditors.TextEdit TxtAgriculteur;
@@ -555,7 +533,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn GcDelete;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit BtnSupprimer;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraGrid.Columns.GridColumn colFullname;
         public DevExpress.XtraGrid.GridControl gridControl1;

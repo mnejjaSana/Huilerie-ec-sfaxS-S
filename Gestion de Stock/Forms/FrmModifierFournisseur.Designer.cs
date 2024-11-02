@@ -33,7 +33,6 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.TxtCin = new DevExpress.XtraEditors.TextEdit();
-            this.label1 = new System.Windows.Forms.Label();
             this.TxtVehicule = new DevExpress.XtraEditors.TextEdit();
             this.TxtTel = new DevExpress.XtraEditors.TextEdit();
             this.BtnEnregister = new DevExpress.XtraEditors.SimpleButton();
@@ -49,7 +48,6 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -75,7 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -103,7 +100,6 @@
             // layoutControl2
             // 
             this.layoutControl2.Controls.Add(this.TxtCin);
-            this.layoutControl2.Controls.Add(this.label1);
             this.layoutControl2.Controls.Add(this.TxtVehicule);
             this.layoutControl2.Controls.Add(this.TxtTel);
             this.layoutControl2.Controls.Add(this.BtnEnregister);
@@ -130,14 +126,6 @@
             this.TxtCin.Size = new System.Drawing.Size(261, 26);
             this.TxtCin.StyleController = this.layoutControl2;
             this.TxtCin.TabIndex = 34;
-            // 
-            // label1
-            // 
-            this.label1.Image = global::Gestion_de_Stock.Properties.Resources.EC;
-            this.label1.Location = new System.Drawing.Point(12, 239);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(379, 20);
-            this.label1.TabIndex = 33;
             // 
             // TxtVehicule
             // 
@@ -170,7 +158,7 @@
             this.BtnEnregister.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEnregister.Appearance.Options.UseFont = true;
             this.BtnEnregister.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnEnregister.ImageOptions.Image")));
-            this.BtnEnregister.Location = new System.Drawing.Point(203, 209);
+            this.BtnEnregister.Location = new System.Drawing.Point(203, 233);
             this.BtnEnregister.Name = "BtnEnregister";
             this.BtnEnregister.Size = new System.Drawing.Size(188, 26);
             this.BtnEnregister.StyleController = this.layoutControl2;
@@ -225,7 +213,6 @@
             this.layoutControlItem11,
             this.layoutControlItem2,
             this.layoutControlItem4,
-            this.layoutControlItem5,
             this.layoutControlItem6});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
@@ -238,7 +225,7 @@
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 187);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(383, 10);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(383, 34);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem8
@@ -259,7 +246,7 @@
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 197);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 221);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(191, 30);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -294,7 +281,7 @@
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.BtnEnregister;
-            this.layoutControlItem11.Location = new System.Drawing.Point(191, 197);
+            this.layoutControlItem11.Location = new System.Drawing.Point(191, 221);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(192, 30);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
@@ -326,15 +313,6 @@
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.Text = "Véhicule ";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(115, 19);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.label1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 227);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(383, 24);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
@@ -410,7 +388,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -441,8 +418,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         public DevExpress.XtraEditors.TextEdit TxtTel;
         public DevExpress.XtraEditors.TextEdit TxtVehicule;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         public DevExpress.XtraEditors.TextEdit TxtCin;
     }

@@ -35,7 +35,6 @@
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.TxtStockMasrafSoratnt = new DevExpress.XtraEditors.TextEdit();
             this.TxtValeur = new DevExpress.XtraEditors.TextEdit();
-            this.label1 = new System.Windows.Forms.Label();
             this.BtnValider = new DevExpress.XtraEditors.SimpleButton();
             this.TxtPrixMoyen = new DevExpress.XtraEditors.TextEdit();
             this.TxtRendement = new DevExpress.XtraEditors.TextEdit();
@@ -48,15 +47,14 @@
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -78,15 +76,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
@@ -114,7 +111,6 @@
             // 
             this.layoutControl2.Controls.Add(this.TxtStockMasrafSoratnt);
             this.layoutControl2.Controls.Add(this.TxtValeur);
-            this.layoutControl2.Controls.Add(this.label1);
             this.layoutControl2.Controls.Add(this.BtnValider);
             this.layoutControl2.Controls.Add(this.TxtPrixMoyen);
             this.layoutControl2.Controls.Add(this.TxtRendement);
@@ -151,22 +147,14 @@
             this.TxtValeur.StyleController = this.layoutControl2;
             this.TxtValeur.TabIndex = 11;
             // 
-            // label1
-            // 
-            this.label1.Image = global::Gestion_de_Stock.Properties.Resources.EC;
-            this.label1.Location = new System.Drawing.Point(12, 252);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(414, 28);
-            this.label1.TabIndex = 10;
-            // 
             // BtnValider
             // 
             this.BtnValider.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnValider.Appearance.Options.UseFont = true;
             this.BtnValider.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnValider.ImageOptions.Image")));
-            this.BtnValider.Location = new System.Drawing.Point(177, 222);
+            this.BtnValider.Location = new System.Drawing.Point(293, 222);
             this.BtnValider.Name = "BtnValider";
-            this.BtnValider.Size = new System.Drawing.Size(249, 26);
+            this.BtnValider.Size = new System.Drawing.Size(133, 26);
             this.BtnValider.StyleController = this.layoutControl2;
             this.BtnValider.TabIndex = 9;
             this.BtnValider.Text = "Valider";
@@ -272,7 +260,6 @@
             this.layoutControlItem6,
             this.layoutControlItem7,
             this.emptySpaceItem2,
-            this.layoutControlItem8,
             this.layoutControlItem9,
             this.layoutControlItem10,
             this.layoutControlItem3,
@@ -292,28 +279,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(418, 30);
             this.layoutControlItem2.Text = "Masraf Sortant";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(208, 19);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem3.Control = this.MasrafEntrant;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 150);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(418, 30);
-            this.layoutControlItem3.Text = "Masraf Entrant";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(208, 19);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem4.Control = this.TxtQteOlive;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 180);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(418, 30);
-            this.layoutControlItem4.Text = "Quantité Olive Transfert";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(208, 19);
             // 
             // layoutControlItem5
             // 
@@ -340,9 +305,9 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.BtnValider;
-            this.layoutControlItem7.Location = new System.Drawing.Point(165, 210);
+            this.layoutControlItem7.Location = new System.Drawing.Point(281, 210);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(253, 30);
+            this.layoutControlItem7.Size = new System.Drawing.Size(137, 62);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -351,17 +316,8 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 210);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(165, 30);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(281, 62);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.label1;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 240);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(418, 32);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem9
             // 
@@ -386,6 +342,28 @@
             this.layoutControlItem10.Size = new System.Drawing.Size(418, 30);
             this.layoutControlItem10.Text = "Stock physique/Masraf Sortant";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(208, 19);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem3.Control = this.MasrafEntrant;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 150);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(418, 30);
+            this.layoutControlItem3.Text = "Masraf Entrant";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(208, 19);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem4.Control = this.TxtQteOlive;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 180);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(418, 30);
+            this.layoutControlItem4.Text = "Quantité Olive Transfert";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(208, 19);
             // 
             // layoutControlGroup1
             // 
@@ -438,15 +416,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
@@ -469,7 +446,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.TextEdit TxtQteOlive;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton BtnValider;
         private DevExpress.XtraEditors.TextEdit TxtPrixMoyen;
         private DevExpress.XtraEditors.TextEdit TxtRendement;
@@ -477,7 +453,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraEditors.TextEdit TxtValeur;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         public System.Windows.Forms.BindingSource emplacementEntrantBindingSource;

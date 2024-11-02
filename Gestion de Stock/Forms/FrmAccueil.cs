@@ -72,12 +72,7 @@ namespace Gestion_de_Stock.Forms
             _FrmAccueil = null;
         }
 
-        private void tileIAPropos_ItemClick(object sender, TileItemEventArgs e)
-        {
-            //Formshow(Form frm);
-            FormshowNotParent(Gestion_de_Stock.Forms.FrmAPropos.InstanceFrmAPropos);
-        }
-
+     
         private void tileIFactures_ItemClick(object sender, TileItemEventArgs e)
         {
             Formshow(Gestion_de_Stock.Forms.FrmAjouterVente.InstanceFrmAjouterVente);
@@ -200,7 +195,18 @@ namespace Gestion_de_Stock.Forms
 
         private void tileItem1_ItemClick(object sender, TileItemEventArgs e)
         {
-            Formshow(Gestion_de_Stock.Forms.FrmListeProduction.InstanceFrmListeProduction);
+            db = new Model.ApplicationContext();
+            Societe Ste = db.Societe.FirstOrDefault();
+            if (Ste.AchatBase)
+            {
+                Formshow(Gestion_de_Stock.Forms.FrmListeProduction.InstanceFrmListeProduction);
+            }
+            else
+            {
+                XtraMessageBox.Show("Accès non autorisé", "Application Configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+           
         }
 
         private void tileItem2_ItemClick(object sender, TileItemEventArgs e)

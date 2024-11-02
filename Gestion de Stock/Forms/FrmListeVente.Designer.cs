@@ -42,7 +42,6 @@
             this.BtnActualiser = new DevExpress.XtraEditors.SimpleButton();
             this.BtnExportExcel = new DevExpress.XtraEditors.SimpleButton();
             this.BtnExportPDF = new DevExpress.XtraEditors.SimpleButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.dateDebut = new DevExpress.XtraEditors.DateEdit();
             this.dateFin = new DevExpress.XtraEditors.DateEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -72,7 +71,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.DateFinItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.controlItemDateDebut = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -104,7 +102,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateFinItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.controlItemDateDebut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
@@ -139,7 +136,6 @@
             this.layoutControl2.Controls.Add(this.BtnActualiser);
             this.layoutControl2.Controls.Add(this.BtnExportExcel);
             this.layoutControl2.Controls.Add(this.BtnExportPDF);
-            this.layoutControl2.Controls.Add(this.label1);
             this.layoutControl2.Controls.Add(this.dateDebut);
             this.layoutControl2.Controls.Add(this.dateFin);
             this.layoutControl2.Controls.Add(this.gridControl1);
@@ -192,14 +188,6 @@
             this.BtnExportPDF.Text = "Export PDF";
             this.BtnExportPDF.Click += new System.EventHandler(this.BtnExportPDF_Click);
             // 
-            // label1
-            // 
-            this.label1.Image = global::Gestion_de_Stock.Properties.Resources.EC;
-            this.label1.Location = new System.Drawing.Point(12, 388);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1067, 44);
-            this.label1.TabIndex = 7;
-            // 
             // dateDebut
             // 
             this.dateDebut.EditValue = null;
@@ -241,7 +229,7 @@
             this.repositoryBtnAjouterReglement,
             this.repositorHistoriquePaiementVente,
             this.repositoryBtnModifierVente});
-            this.gridControl1.Size = new System.Drawing.Size(1067, 296);
+            this.gridControl1.Size = new System.Drawing.Size(1067, 344);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -512,8 +500,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions6, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
             this.repositoryBtnModifierVente.Name = "repositoryBtnModifierVente";
             this.repositoryBtnModifierVente.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryBtnModifierVente.Click += new System.EventHandler(this.repositoryBtnModifierVente_Click);
-            // 
+         
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -522,7 +509,6 @@
             this.layoutControlItem2,
             this.DateFinItem,
             this.controlItemDateDebut,
-            this.layoutControlItem3,
             this.layoutControlItem4,
             this.emptySpaceItem1,
             this.layoutControlItem5,
@@ -538,7 +524,7 @@
             this.layoutControlItem2.Control = this.gridControl1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 76);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1071, 300);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1071, 348);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -563,15 +549,6 @@
             this.controlItemDateDebut.Size = new System.Drawing.Size(536, 24);
             this.controlItemDateDebut.Text = "Date Début ";
             this.controlItemDateDebut.TextSize = new System.Drawing.Size(63, 15);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.label1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 376);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1071, 48);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
@@ -670,7 +647,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateFinItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.controlItemDateDebut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
@@ -709,8 +685,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Details;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemDeatis;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraGrid.Columns.GridColumn colEtatVente;
         public System.Windows.Forms.BindingSource venteBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colAjouterReglement;

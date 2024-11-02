@@ -268,7 +268,7 @@ namespace Gestion_de_Stock.Forms
 
             }
             if (Application.OpenForms.OfType<FrmFournisseur>().FirstOrDefault() != null)
-                Application.OpenForms.OfType<FrmFournisseur>().First().fournisseurBindingSource.DataSource = ListAgriculteurs.Select(x => new { x.Id, x.Nom, x.Numero, x.Prenom, x.Tel, x.TotalAchats, x.TotalAvances, x.SoldeAgriculteurAvecSens }).ToList();
+                Application.OpenForms.OfType<FrmFournisseur>().First().fournisseurBindingSource.DataSource = ListAgriculteurs.Select(x => new { x.Id, x.Nom, x.Numero, x.Prenom,x.cin,x.Vehicule, x.Tel, x.TotalAchats, x.TotalAvances, x.SoldeAgriculteurAvecSens }).ToList();
 
             if (Application.OpenForms.OfType<FrmAchats>().FirstOrDefault() != null)
                 Application.OpenForms.OfType<FrmAchats>().First().fournisseurBindingSource.DataSource = ListAgriculteurs.AsEnumerable().Select(x => new { x.Id, x.Numero, x.FullName, x.Tel, TotalAchats = Math.Truncate(x.TotalAchats * 1000m) / 1000m  , TotalAvances = Math.Truncate(x.TotalAvances * 1000m) / 1000m , x.SoldeAgriculteurAvecSens }).ToList();
