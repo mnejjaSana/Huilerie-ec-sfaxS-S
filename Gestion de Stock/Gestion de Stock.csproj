@@ -1410,13 +1410,16 @@
     <Content Include="Huilerie Log\LogoSte.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ec.ico" />
+    <Content Include="ec.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Image\download.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Image\ec.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Image\ec2.ico" />
     <Content Include="Image\lance.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
